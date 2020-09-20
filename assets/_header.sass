@@ -2,13 +2,15 @@
   margin-top: 20px
   margin-bottom: 20px
   &-wrapper
+    position: relative
     background: linear-gradient(180deg, #FFFFFF 0%, #FFF9F9 100%)
     box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.05)
-    border-radius: 100px
+    border-radius: 20px
     padding: 20px 10px 20px 50px
     display: flex
     align-items: center
     justify-content: space-between
+    z-index: 11
   &-logo
     a
       color: #5B5B5B
@@ -25,4 +27,54 @@
       margin-right: 50px
       &:last-child
         margin-right: 0
+  &-mobile-btn
+    display: none
+    background: url(/m-btn.png) no-repeat center
+    height: 34px
+    width: 34px
+    opacity: .9
+    cursor: pointer
+    &:hover
+      opacity: 1
+    &.mobileBtnActive
+      background: url(/close.png) no-repeat center
+
+.mobile-menu
+  opacity: 0
+  pointer-events: none
+  position: absolute
+  background: #ffffff
+  top: 45px
+  left: 10px
+  right: 10px
+  padding: 100px 50px 50px 50px
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  z-index: 10
+  transition: all .2s linear
+  &__item
+    font-size: 12px
+    font-weight: 600
+    letter-spacing: 0.05em
+    text-transform: uppercase
+    color: #5B5B5B
+    margin-bottom: 25px
+    display: inline-block
+    &:last-child
+      margin-bottom: 0
+  &.menuActive
+    opacity: 1
+    pointer-events: all
+
+
+@media (max-width: 960px)
+  .header
+    &-nav
+      display: none
+    &-btn
+      display: none
+    &-mobile-btn
+      display: block
 

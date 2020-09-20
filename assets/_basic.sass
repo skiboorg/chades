@@ -1,17 +1,106 @@
 $bg-gradient: linear-gradient(94.67deg, #EB5757 0%, #BB6BD9 100%)
+@font-face
+	font-family: 'Msyh'
+	src: url('/chinese.msyh.ttf')
 
+	font-display: swap
+	font-style: normal
 body
-  font: 14px 'Montserrat', sans-serifi
+  font: 14px 'Msyh', sans-serifi
+
   background: #f4f4f4
   color: #5B5B5B
 
 section
   margin-bottom: 150px
 
+.bg-green
+  background: linear-gradient(94.67deg, #578EEB 0%, #6BD9B8 100%) !important
+  padding: 40px
+  display: flex
+  align-items: center
+  justify-content: space-between
+  flex-wrap: wrap
+  margin-bottom: 50px
+  p
+    color: #ffffff
+    flex-basis: 95%
+  img
+    margin: 0 auto
+.text-green
+  color: #6BD9B8
+.index-dialog
+  &__content
+    text-align: center
+    max-width: 700px
+    margin: 0 auto
+
+    p
+      font-size: 18px
+      text-transform: uppercase
+      letter-spacing: 0.05em
+      margin-bottom: 15px
+    span
+      display: block
+      font-size: 14px
+      line-height: 150%
+      padding-bottom: 25px
+      border-bottom: 1px solid rgba(91, 91, 91, 0.25)
+      margin-bottom: 25px
+  &__img
+    position: relative
+    height: 270px
+    background-repeat: no-repeat !important
+    background-size: cover !important
+    background-position-y: center !important
+    display: flex
+    align-items: center
+    justify-content: center
+    margin-bottom: 75px
+    p
+      font-size: 26px
+      color: #ffffff
+      text-align: center
+      text-transform: uppercase
+    span
+      position: absolute
+      top: 0
+      right: 0
+      width: 50px
+      height: 50px
+      background: #ffffff
+      display: inline-flex
+      align-items: center
+      justify-content: center
+      font-size: 30px
+      cursor: pointer
+
+  & .el-dialog__header
+    display: none
+  & .el-dialog__body
+    padding: 0 !important
+
 .bg-light
   background: linear-gradient(180deg, #FFFFFF 0%, #FFF9F9 100%)
   box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.05)
-
+.p-40
+  padding: 40px
+.el-radio
+  display: flex !important
+  align-items: center
+.el-radio-group
+  display: flex !important
+  flex-wrap: wrap
+.el-collapse-item__header
+  background: transparent !important
+  font-size: 20px !important
+  border-bottom-color: #5b5b5b40
+.el-collapse-item__wrap
+  background: transparent !important
+  border-bottom-color: #5b5b5b40
+.el-collapse
+  border-top-color: #5b5b5b40
+  border-bottom-color: #5b5b5b40
 .no-mb
   margin-bottom: 0 !important
 .section-header
@@ -30,6 +119,13 @@ section
   .section-header
     font-size: 35px
     margin-bottom: 25px
+@media (max-width: 500px)
+  section
+    margin-bottom: 75px
+  .section-header
+    font-size: 20px
+
+
 .container
   max-width: 1220px
   padding: 0 10px
@@ -45,15 +141,25 @@ section
   padding: 15px 40px
   box-sizing: border-box
   display: inline-block
+  cursor: pointer
+  &.btnDisabled
+    pointer-events: none
+    opacity: .9
+    cursor: not-allowed
   &.btn-white
     background: #ffffff
     color: #BB6BD9
     max-width: 200px
     width: 200px
     text-align: center
+    &.btn-outline
+      border: 1px solid
 
 .fs-24
   font-size: 24px !important
+
+.fs-36
+  font-size: 36px !important
 
 .fs-14
   font-size: 14px !important
@@ -67,8 +173,19 @@ section
   -webkit-background-clip: text
   -webkit-text-fill-color: transparent
 
+.mb-100
+  margin-bottom: 100px !important
+
 .mb-50
   margin-bottom: 50px !important
+.mb-75
+  margin-bottom: 75px !important
+
+.mb-25
+  margin-bottom: 25px !important
+
+.mb-15
+  margin-bottom: 15px !important
 
 .mw-600
   max-width: 600px
@@ -76,7 +193,9 @@ section
 .text-16
   font-size: 16px
   line-height: 150%
-
+@media (max-width: 500px)
+  .text-16
+    font-size: 12px !important
 @media (max-width: 980px)
   .text-16
     font-size: 14px
@@ -88,11 +207,13 @@ section
   text-align: center
 .text-bold
   font-weight: 600
-
+.center
+  margin: 0 auto
 .round-block
   background: linear-gradient(180deg, #FFFFFF 0%, #FFF9F9 100%)
   box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.05)
-  border-radius: 100px
+  border-radius: 20px
+  justify-self: center
 
 .block-feature
   display: flex
@@ -101,8 +222,10 @@ section
   justify-content: center
   height: 370px
   width: 100%
+  border-radius: 100px
   text-align: center
   box-sizing: border-box
+
   img
     margin-bottom: 40px
 
@@ -112,8 +235,16 @@ section
     img
       width: 70px
 
-
-
+@media (max-width: 500px)
+  .round-block
+    border-radius: 20px
+  .block-feature
+    height: 140px
+    width: 140px
+    border-radius: 40px
+    img
+      width: 40px
+      margin-bottom: 10px
 
 .features
   display: grid
@@ -124,9 +255,13 @@ section
   .features
     grid-template-columns: repeat(auto-fill,minmax(220px,1fr))
     grid-gap: 20px
+@media (max-width: 500px)
+  .features
+    grid-template-columns: repeat(auto-fill,minmax(125px,1fr))
+    grid-gap: 10px
 .banner
   position: relative
-  background: url(../images/banner.png) no-repeat center
+  background: url(/banner.png) no-repeat center
   height: 650px
   &-first-line
     position: absolute
@@ -161,7 +296,27 @@ section
       letter-spacing: 0.05em
       text-transform: uppercase
       color: #ffffff
+@media (max-width: 1024px)
+  .banner
+    &-first-line
+      top: unset
+      bottom: 20px
+      max-width: 300px
+      left: 0
+      right: 0
+      margin: 0 auto
+      &__inner
+        font-size: 15px
 
+    &-second-line
+      max-width: 300px
+      left: 0
+      right: 0
+      margin: 0 auto
+      top: unset
+      bottom: -40px
+      &__inner
+        font-size: 15px
 .learn
   display: grid
   grid-template-columns: repeat(auto-fill,minmax(250px,1fr))
@@ -169,6 +324,7 @@ section
 .learn-item
   position: relative
   height: 270px
+  cursor: pointer
   span
     position: absolute
     color: #ffffff
@@ -195,13 +351,13 @@ section
 
 
   &.learn1
-    background: url(../images/learn1.png) no-repeat
+    background: url(/learn1.png) no-repeat
   &.learn2
-      background: url(../images/learn2.png) no-repeat
+      background: url(/learn2.png) no-repeat
   &.learn3
-        background: url(../images/learn3.png) no-repeat
+        background: url(/learn3.png) no-repeat
   &.learn4
-        background: url(../images/learn4.png) no-repeat
+        background: url(/learn4.png) no-repeat
 
 @media (max-width: 960px)
   .learn
@@ -211,13 +367,24 @@ section
       background-size: cover !important
       width: 200px
       height: 200px
-
+@media (max-width: 500px)
+  .learn
+    grid-template-columns: repeat(auto-fill,minmax(125px,1fr))
+    grid-gap: 30px
+    &-item
+      background-size: cover !important
+      width: 140px
+      height: 140px
+      p
+        top: 50px
+        font-size: 12px
 .feedback
   display: grid
   grid-template-columns: repeat(auto-fill,minmax(450px,1fr))
   grid-gap: 60px
   &-item
     padding: 60px 50px
+    border-radius: 40px
     &__header
       display: flex
       align-items: center
@@ -246,13 +413,34 @@ section
     grid-template-columns: repeat(auto-fill,minmax(350px,1fr))
     grid-gap: 40px
 
+@media (max-width: 500px)
+  .feedback
+    grid-template-columns: 1fr
+    grid-gap: 20px
+    &-item
+      padding: 20px
+      border-radius: 40px
+      &__header
+        img
+          width: 30px
+          height: 30px
+        &-name
+          p
+            font-size: 12px
+            margin-bottom: 0
+          span
+            font-size: 10px
+      &__text
+        font-size: 10px
 .no-after::after
   content: none !important
+
 .steps
   display: grid
   grid-template-columns: repeat(auto-fill,minmax(250px,1fr))
   grid-gap: 40px
 .step
+  justify-self: center
   &-number
     position: relative
     background: $bg-gradient
@@ -268,21 +456,15 @@ section
     p
       color: #ffffff
       font-weight: 600
-    &::after
-      position: absolute
-      content: ''
-      right: -220px
-      width: 200px
-      height: 5px
-      background: $bg-gradient
-      box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.05)
+
   &-item
-    padding: 90px 50px
+    padding: 45px 50px
     min-height: 270px
     display: flex
     flex-direction: column
     align-items: center
     justify-content: center
+    border-radius: 100px
     p
       font-size: 16px
       font-weight: 600
@@ -296,25 +478,37 @@ section
     &-number
       width: 40px
       height: 40px
-      &::after
-        right: -175px
-        width: 150px
-
     &-item
-      padding: 50px 15px
+      //padding: 50px 15px
       min-height: 200px
       width: 200px
       height: 200px
 
 
+@media (max-width: 500px)
+  .steps
+    grid-template-columns: repeat(auto-fill,minmax(130px,1fr))
+    grid-gap: 10px
+  .step
+    &-item
+      padding: 50px 15px
+      min-height: 170px
+      width: 170px
+      height: 170px
+
 .tarifs
   display: grid
   grid-template-columns: repeat(auto-fill,minmax(300px,1fr))
   grid-gap: 45px
+  &-slider
+    display: none
+.el-carousel__container
+  height: 490px !important
 
 .tarif
-  padding: 50px 0 50px 50px
+  padding: 50px 20px 50px 50px
   position: relative
+  border-radius: 100px
   & .btn
     //position: absolute
     bottom: 50px
@@ -329,6 +523,8 @@ section
     justify-content: center
     flex-direction: column
     margin-bottom: 30px
+    &.notActive
+      opacity: .7
     p
       color: #ffffff
       font-weight: 600
@@ -361,11 +557,12 @@ section
 
 
 .best-tarif
-  padding: 50px 0 50px 50px
+  padding: 50px 20px 50px 50px
   background: $bg-gradient
   position: relative
+  border-radius: 100px
   & .btn
-    position: absolute
+    //position: absolute
     //bottom: 50px
     background: #ffffff
     color: #BB6BD9
@@ -414,6 +611,12 @@ section
     text-transform: uppercase
     color: #ffffff
 
+@media (max-width: 500px)
+  .tarifs
+    display: none
+    &-slider
+      display: block
+
 @media (max-width: 960px)
   .tarifs
     grid-template-columns: repeat(auto-fill,minmax(200px,1fr))
@@ -423,6 +626,7 @@ section
     padding: 40px
   .best-tarif
     padding: 40px
+
 .best-item
   padding: 15px 30px
   display: flex
@@ -484,6 +688,21 @@ section
       letter-spacing: 0.05em
       text-transform: uppercase
 
+@media (max-width: 768px)
+  .best-item
+    flex-wrap: wrap
+    &__num
+      display: none
+    &__name
+      flex-basis: unset
+      flex-wrap: wrap
+      justify-content: center
+      margin-bottom: 20px
+    &__ahi
+      flex-basis: unset
+      flex-wrap: wrap
+      justify-content: center
+
 
 .footer
   padding-top: 60px
@@ -520,7 +739,62 @@ section
       &:last-child
         margin-right: 0
 
+@media (max-width: 768px)
+  .footer
+    padding-top: 60px
+    padding-bottom: 25px
+    &-btn
+      order: 1
+      margin-bottom: 30px
+    &-bottom
+      display: flex
+      align-items: center
+      justify-content: center
+      padding-bottom: 25px
+      flex-direction: column
 
+
+      p
+        font-weight: 600
+        text-transform: uppercase
+
+    &-wrapper
+      padding-bottom: 100px
+      margin-bottom: 25px
+      border-bottom: 1px solid rgba(0, 0, 0, 0.11)
+      align-items: center
+      justify-content: center
+
+      flex-direction: column
+    &-logo
+      margin-bottom: 30px
+      a
+        color: #5B5B5B
+        font-size: 14px
+        font-weight: 600
+        letter-spacing: 0.05em
+        text-transform: uppercase
+
+    &-nav
+      order: 2
+
+      display: flex
+      align-items: center
+      justify-content: center
+
+      flex-direction: column
+      &__item
+        letter-spacing: 0.05em
+        text-transform: uppercase
+        margin-right: 0
+        margin-bottom: 20px
+        font-size: 12px
+        font-weight: 600
+        color: #5B5B5B
+        display: inline-block
+
+        &:last-child
+          margin-bottom: 0
 .breadcrumbs
   margin-bottom: 25px
   ul
@@ -537,13 +811,15 @@ section
         color: #5B5B5B
 
 .about-teacher
-  padding: 50px 60px
+  padding: 10px 20px
   display: flex
   align-items: center
   justify-content: space-between
-  &.lk
-    padding: 10px 60px
+  flex-wrap: wrap
+  border-radius: 40px
+
   &__img
+    //margin: 0 auto
     position: relative
     border-radius: 50%
     background: $bg-gradient
@@ -558,6 +834,7 @@ section
       left: 5px
       object-fit: cover
   &__left
+    margin: 0 auto
     display: flex
     align-items: center
     img
@@ -584,6 +861,7 @@ section
       display: inline-block
       margin-bottom: 5px
   &__right
+    //margin: 0 auto
     ul
       li
         margin-bottom: 5px
@@ -591,15 +869,17 @@ section
           margin-bottom: 0
         a
           text-transform: uppercase
-          color: #5B5B5B
+          background: $bg-gradient
+          -webkit-background-clip: text
+          -webkit-text-fill-color: transparent
           font-weight: 600
-          font-size: 16px
+          font-size: 14px
           letter-spacing: 0.05em
 
 .progress-top
   display: grid
-  grid-template-columns: repeat(auto-fill,minmax(175px,1fr))
-  grid-gap: 45px
+  grid-template-columns: repeat(auto-fill,minmax(250px,1fr))
+  //grid-gap: 45px
   margin-bottom: 25px
   &__item
     & .tarif-number
@@ -623,12 +903,16 @@ section
     height: 15px
     width: 25%
     left: 0
+    p
+      position: absolute
+      right: 0
+      bottom: -30px
 
 @media (max-width: 960px)
   .progress-top
     display: grid
     grid-template-columns: repeat(auto-fill,minmax(125px,1fr))
-    grid-gap: 45px
+    //grid-gap: 45px
     margin-bottom: 25px
     &__item
       & .tarif-number
@@ -641,43 +925,58 @@ section
   grid-gap: 45px
 
 .course
-  padding: 20px 35px
+  padding: 40px 20px
   text-align: center
-  &-progress
-    position: relative
-    width: 100%
-    height: 5px
-    background: #c4c4c4
-    box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.05)
-    border-radius: 100px
-    margin-bottom: 45px
-    &__inner
-      position: absolute
-      content: ''
-      background: $bg-gradient
-      border-radius: 100px
-      box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.05)
-      height: 5px
-      width: 25%
-      left: 0
+  border-radius: 100px
+  width: 260px
+  height: 260px
+  position: relative
+
+
+
+  &.courceDone
+    background: linear-gradient(180deg, #FFFFFF 29.81%, #DDF9E8 113.33%) !important
+
+  &.courceNotAvaiable
+    background: #F5F5F5
+    pointer-events: none
+    opacity: .7
   &-count
     font-weight: 600
     font-size: 14px
     letter-spacing: 0.05em
+    -webkit-text-fill-color: #5b5b5b
+    &.inProgress
+      -webkit-text-fill-color: #ffffff
+  &-image
+    margin-bottom: 20px
+    width: 50px
+    height: 50px
+    object-fit: contain
+
+  &-name
+    letter-spacing: 0.05em
+    margin-bottom: 30px
+    font-weight: 600
+    text-transform: uppercase
     background: $bg-gradient
     -webkit-background-clip: text
     -webkit-text-fill-color: transparent
-    margin-bottom: 20px
-  &-name
-    letter-spacing: 0.05em
-    margin-bottom: 70px
-    font-weight: 600
-    text-transform: uppercase
+    &.inProgress
+      -webkit-text-fill-color: #ffffff
+
   &-status
+    position: absolute
+    bottom: 45px
     letter-spacing: 0.05em
     font-weight: 600
     text-transform: uppercase
-    opacity: 0.5
+    color: #5B5B5B
+    //opacity: 0.5
+    left: 0
+    right: 0
+
+
 
 @media (max-width: 960px)
   .courses
@@ -685,9 +984,9 @@ section
     grid-template-columns: repeat(auto-fill,minmax(185px,1fr))
     grid-gap: 30px
   .course
-    padding: 16px 8px
+    padding: 40px
     text-align: center
-    border-radius: 70px
+
     &-progress
       position: relative
       width: 150px
@@ -707,20 +1006,16 @@ section
         height: 4px
         width: 25%
         left: 0
+    &-image
+      margin-bottom: 20px
     &-count
       font-weight: 600
       font-size: 12px
       letter-spacing: 0.05em
-      background: $bg-gradient
-      -webkit-background-clip: text
-      -webkit-text-fill-color: transparent
-      margin-bottom: 10px
     &-name
       letter-spacing: 0.05em
       font-size: 12px
       margin-bottom: 50px
-      font-weight: 600
-      text-transform: uppercase
     &-status
       letter-spacing: 0.05em
       font-weight: 600
@@ -728,22 +1023,25 @@ section
       opacity: 0.5
 
 
+.achivements
+  display: grid
+  grid-template-columns: repeat(auto-fill,minmax(500px,1fr))
+  grid-gap: 30px
 .achivement
-  border: 1px solid #CECECE
+  //border: 1px solid #CECECE
   box-sizing: border-box
   box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.05)
-  border-radius: 100px
+  border-radius: 40px
   display: flex
-  align-items: center
-  margin-bottom: 15px
+  align-items: flex-start
   padding: 15px 30px
-  &:last-child
-    margin-bottom: 0
+  opacity: 0.8
   &.done
     background: linear-gradient(180deg, #FFFFFF 0%, #FFF9F9 100%)
     box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.05)
-    border-radius: 100px
+    border-radius: 40px
     border: none
+    opacity: 1
   & .course-progress
     width: 200px
     margin-bottom: 0
@@ -751,7 +1049,12 @@ section
   &__info
     flex-grow: 1
     display: flex
-    align-items: center
+    height: 110px
+    justify-content: space-between
+    flex-direction: column
+    img
+      width: 50px
+      height: 50px
     p
       font-weight: 600
       font-size: 16px
@@ -759,16 +1062,21 @@ section
       text-transform: uppercase
       margin-right: 15px
     span
-      font-weight: 600
       font-size: 14px
-      letter-spacing: 0.05em
-      text-transform: uppercase
-      opacity: .5
+
 
   &__check
     opacity: 0
     &.done
       opacity: 1
+      span
+        font-weight: 600
+        font-size: 14px
+        letter-spacing: 0.05em
+        text-transform: uppercase
+        opacity: .5
+        display: inline-block
+        margin-right: 20px
 
 
 .form-group
@@ -797,6 +1105,8 @@ section
   color: #B7B7B7
   margin-bottom: 15px
   min-width: 350px
+  &.no-mw
+    min-width: unset !important
   &:focus
     outline: none
     border-color: #BB6BD9
@@ -807,7 +1117,10 @@ section
     font-size: 16px
     letter-spacing: 0.05em
     text-transform: uppercase
-
+  &.small-ph
+    &::placeholder
+      text-transform: unset !important
+      font-size: 14px !important
 .lk-form
   display: flex
   justify-content: space-between
@@ -816,27 +1129,31 @@ section
 @media (max-width: 960px)
   .form-group
     margin-bottom: 50px
+
 .lessons
   display: grid
   grid-template-columns: repeat(auto-fill,minmax(250px,1fr))
   grid-column-gap: 40px
   grid-row-gap: 20px
-  flex-basis: 960px
+  flex-basis: 900px
 
 
 .lesson
   &-wrapper
     display: flex
-    align-items: center
+    align-items: flex-start
     justify-content: space-between
     & .course
       flex-basis: 270px
 
+
   background: linear-gradient(180deg, #FFFFFF 0%, #FFF9F9 100%)
   box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.05)
   border-radius: 100px
-  padding: 20px 50px
+  //padding: 20px 50px
+  cursor: pointer
   p
+    padding: 20px 0
     font-weight: 600
     font-size: 14px
     opacity: .5
@@ -845,8 +1162,13 @@ section
 
   &.complete
     border: 1px solid #DADADA
+    background: #84BD95
     box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.05)
     border-radius: 100px
+
+  &.notAvaiable
+    background: #a0a0a0
+    cursor: not-allowed !important
   &.progress
     background: $bg-gradient
     border-radius: 100px
@@ -864,3 +1186,31 @@ section
     &-wrapper
       & .course
         margin-right: 10px
+
+
+.form-block
+  width: 500px
+  max-width: 500px
+  padding: 50px 100px
+
+.faq-item
+  border-top: 1px solid rgba(91, 91, 91, 0.25)
+  padding: 25px 0
+  &:last-child
+    border-bottom: 1px solid rgba(91, 91, 91, 0.25)
+
+
+.over-info
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+  &__item
+    flex-basis: 45%
+
+    img
+      margin-bottom: 25px
+    p
+      font-size: 20px
+      margin-bottom: 15px
+    span
+      line-height: 150%
