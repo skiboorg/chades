@@ -29,7 +29,7 @@
 
           </div>
         </div>
-      {{this.$auth.user}}
+<!--      {{this.$auth.user}}-->
 
     </header>
 </template>
