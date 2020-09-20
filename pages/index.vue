@@ -1,0 +1,379 @@
+<template>
+  <div class="">
+    <section class="">
+      <div class="container ">
+        <div class="banner">
+          <div class="banner-first-line"><p class="banner-first-line__inner">START YOUR LEARNING</p></div>
+          <div class="banner-second-line"><p class="banner-second-line__inner">TODAY WITH CHADEC!</p></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <h3 class="section-header">少儿英语信息技术（IT）编程课程</h3>
+        <p class="text-16 mw-600 mb-50">我们让孩子自幼龄时期就开始开发英语语言能力并学习有前途的职业！孩子们才刚刚开始探索世界并发现新的兴趣爱好。<br>
+          在现代社会，英语不仅是一项必要技能，还是编程中特别重要的一部分——所有编码都有英文语法和命名。此外，编程是一项兴趣爱好，不仅能娱乐，还能发展心智，将来还能提供一份有前途的职业。
+        </p>
+        <div class="features">
+          <div class="round-block block-feature">
+            <img src="/icon_en.png" alt="">
+            <p class="text-16 text-upper text-bold">提升英语语言技能</p>
+          </div>
+          <div class="round-block block-feature">
+            <img src="/icon_2.png" alt="">
+            <p class="text-16 text-upper text-bold">在线学习——每个孩子按照自己的节奏学习</p>
+          </div>
+          <div class="round-block block-feature">
+            <img src="/icon_3.png" alt="">
+            <p class="text-16 text-upper text-bold">拓展计算机知识和编程能力</p>
+          </div>
+          <div class="round-block block-feature">
+            <img src="/icon_4.png" alt="">
+            <p class="text-16 text-upper text-bold">开发逻辑和创造性思维能力</p>
+          </div>
+          <div class="round-block block-feature">
+            <img src="/icon_5.png" alt="">
+            <p class="text-16 text-upper text-bold">国际结业证书和文凭</p>
+          </div>
+          <div class="round-block block-feature">
+            <img src="/icon_6.png" alt="">
+            <p class="text-16 text-upper text-bold">成功的孩子，有前途的职业</p>
+          </div>
+
+
+
+        </div>
+      </div>
+    </section>
+    <section class="no-mb">
+      <div class="container">
+        <h3 class="section-header">我们有哪些课程:</h3>
+        <div class="learn mb-50">
+          <div class="learn-item learn1">
+            <span>01</span>
+            <p>计算机课程素养</p>
+          </div>
+          <div class="learn-item learn2">
+            <span>02</span>
+            <p>设计与视频编辑创意课程</p>
+          </div>
+          <div class="learn-item learn3">
+            <span>03</span>
+            <p>儿童编程和游戏开发</p>
+          </div>
+          <div class="learn-item learn4">
+            <span>04</span>
+            <p>网站开发和网页编程</p>
+          </div>
+        </div>
+<!--        <div class="text-center mb-50"><a href="" class="btn">смотреть все курсы</a></div>-->
+      </div>
+    </section>
+    <section  >
+      <div style="padding: 80px 0" class="container bg-light">
+        <h3 class="section-header text-center">现在开始培训！</h3>
+        <div class="text-center "><a href="" class="btn">注册</a></div>
+      </div>
+
+    </section>
+    <section>
+      <div class="container">
+        <h3 class="section-header">我们将教您的孩子什么</h3>
+        <div class="over-info">
+          <div class="over-info__item mb-75">
+            <img src="http://placehold.it/70" alt="">
+            <p class="text-color">开发逻辑和思维能力</p>
+            <span>我们的每堂课不仅教授专业的计算机能力，还开发思维能力，并教授思考和学习方法。<br>
+我们还设置逻辑和教育益智游戏，帮助开发孩子们的逻辑性和创造性。</span>
+          </div>
+           <div class="over-info__item mb-75">
+            <img src="http://placehold.it/70" alt="">
+            <p class="text-color">英语技能</p>
+            <span>我们的主要任务是提升语言技能，并展示如何在实践中进行运用。<br>
+编程与英语紧密相连。我们让孩子清楚地看到如何将它用于发展和教育。<br>
+我们的技巧在于每个句子都有两行，以便孩子们记住句型结构和语言模式。<br>
+此外，每堂课中，我们都给孩子们提供需要识记的关键词——名词和动词，以及IT领域使用的简介词。</span>
+          </div>
+           <div class="over-info__item">
+            <img src="http://placehold.it/70" alt="">
+            <p class="text-color">计算机教育</p>
+            <span>编程是二十一世纪需求最大的专业。即使孩子选择了不同的职业道路，任何聘用单位都会高度重视IT技术领域的知识。我们的课程旨在开发各种专业领域的儿童计算机技能：<br>
+基础系统技能<br>
+演示文稿和文档处理能力<br>
+创造性设计和动画技能</span>
+          </div>
+           <div class="over-info__item">
+            <img src="http://placehold.it/70" alt="">
+            <p class="text-color">编程技能</p>
+            <span>编程是一个很大的领域，不仅包括数学和逻辑学，还包括处理信息和算法的能力。<br>
+我们教授您的孩子从入门到高层次知识，期间考虑了所有学习的特殊性，使课堂变得有趣且具吸引力——并为此设计了一个阶段性学习系统。</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <h3 class="section-header mw-600">关于我们的评论</h3>
+        <div class="feedback">
+          <div class="feedback-item round-block">
+            <div class="feedback-item__header">
+              <img src="http://placehold.it/300" alt="">
+              <div class="feedback-item__header-name">
+                <p>СУ ЛИНЬ ПИНЬ</p>
+                <span>работает в гугл, 27 лет</span>
+              </div>
+
+            </div>
+            <p class="feedback-item__text">我的孩子已经在我们平台上学习一个月了，他比我更了解计算机的结构和工作原理！</p>
+          </div>
+          <div class="feedback-item round-block">
+            <div class="feedback-item__header">
+              <img src="http://placehold.it/300" alt="">
+              <div class="feedback-item__header-name">
+                <p>СУ ЛИНЬ ПИНЬ</p>
+                <span>работает в гугл, 27 лет</span>
+              </div>
+
+            </div>
+            <p class="feedback-item__text">儿子很开心，他在空闲时间学习有用的技能。这个学习系统很方便，不仓促，一切都清晰易懂。</p>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+    <section>
+      <div class="container">
+        <h3 class="section-header mw-600">常见问答</h3>
+      <div class="faq-item">
+        <h3 class="text-color fs-24 text-upper mb-25">1. 我们教孩子什么？</h3>
+        <p>我们为您的孩子提供将英语教学和现代技术相结合的课程：计算机素养、网页设计、编程和网站开发、视频编辑以及游戏开发。同时，我们还为您的孩子设置了益智逻辑游戏，通过这些游戏可以提升您孩子的逻辑思维能力以及信息获取速度。</p>
+      </div>
+        <div class="faq-item">
+        <h3 class="text-color fs-24 text-upper mb-25">2. 以什么形式进行培训？</h3>
+        <p>我们提供了所有领域的课程目录，为方便起见，将其分为多个培训阶段。只有成功完成前面的课程，您才能够进入更为复杂和高级的课程。<br>
+每门课程均包含按主题划分的多个课时。每个课时都有一个理论部分、一个测验/作业形式的实践部分以及必须写在笔记本上并记住词义和正确发音的英语词汇和英语动词。</p>
+      </div>
+        <div class="faq-item">
+        <h3 class="text-color fs-24 text-upper mb-25">3. 孩子的推荐学习年龄是多少？</h3>
+        <p>我们平台设计主要针对中小儿童。建议第一阶段的培训孩童为6-7岁，第二阶段为9-10岁，第三阶段为12-13岁。</p>
+      </div>
+        <div class="faq-item">
+        <h3 class="text-color fs-24 text-upper mb-25">4.为什么我们限制每日的课时数？</h3>
+        <p>在我们系统中，每日都会开放后续课时的访问权限。这一设置专门用于确保孩子能更好的消化吸收必要的信息量，系统且从容地掌握知识，而非匆忙的学习所有课程。</p>
+      </div>
+        <div class="faq-item">
+        <h3 class="text-color fs-24 text-upper mb-25">5. 孩子如何更好按时地学习？</h3>
+        <p>我们建议，对于幼龄儿童，一周不超过两课时，对于中龄儿童，一周不超过三课时。当然，您的孩子是不受限制的，可以更快的完成项目。</p>
+      </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <h3 class="section-header">如何在我们的平台上完成学习</h3>
+        <div class="steps">
+          <div class="step">
+
+            <div class="step-item round-block">
+              <div class="step-number"><p>01</p></div>
+              <p>注册并创建一个有孩子学习进度的个人账号</p>
+            </div>
+          </div>
+          <div class="step">
+
+            <div class="step-item round-block">
+              <div class="step-number"><p>02</p></div>
+              <p>教育阶段的选择——依据孩子的年龄和技能</p>
+            </div>
+          </div>
+          <div class="step">
+
+            <div class="step-item round-block">
+              <div class="step-number"><p>03</p></div>
+              <p>分成课时的课程——每课时——包含实践作业的酒店主题</p>
+            </div>
+          </div>
+          <div class="step">
+
+            <div class="step-item round-block">
+              <div class="step-number no-after"><p>04</p></div>
+              <p>追溯学习进度和成就，以及空闲时间的益智游戏</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <h3 class="section-header">我们的费用</h3>
+        <el-carousel class="tarifs-slider" :interval="5000" arrow="hover">
+          <el-carousel-item >
+            <div class="tarif round-block">
+              <div class="tarif-number">
+                <p>1</p>
+                <span>мес</span>
+              </div>
+              <p class="tarif-name">1个月使用权限</p>
+              <ul class="tarif-list">
+                <li>— Бесплатный доступ ко всем курсам</li>
+                <li>— Онлайн-консультации от кураторов</li>
+                <li>— Ведение личной статистики</li>
+              </ul>
+              <p class="tarif-price">70$\месяц</p>
+              <a href="" class="btn">регистрация</a>
+            </div>
+
+          </el-carousel-item>
+          <el-carousel-item >
+            <div class="round-block best-tarif">
+              <div class="best-tarif-number">
+                <p>6</p>
+                <span>мес</span>
+              </div>
+              <p class="best-tarif-name">базовый на 1 месяц</p>
+              <ul class="best-tarif-list">
+                <li>— Бесплатный доступ ко всем курсам</li>
+                <li>— Онлайн-консультации от кураторов</li>
+                <li>— Ведение личной статистики</li>
+              </ul>
+              <p class="best-tarif-price">70$\месяц</p>
+              <a href="" class="btn">购买</a>
+            </div>
+
+          </el-carousel-item>
+          <el-carousel-item >
+            <div class="tarif round-block">
+              <div class="tarif-number">
+                <p>1</p>
+                <span>мес</span>
+              </div>
+              <p class="tarif-name">базовый на 1 месяц</p>
+              <ul class="tarif-list">
+                <li>— Бесплатный доступ ко всем курсам</li>
+                <li>— Онлайн-консультации от кураторов</li>
+                <li>— Ведение личной статистики</li>
+              </ul>
+              <p class="tarif-price">70$\месяц</p>
+              <a href="" class="btn">购买</a>
+            </div>
+
+          </el-carousel-item>
+        </el-carousel>
+        <div class="tarifs">
+          <div class="tarif round-block">
+            <div class="tarif-number">
+              <p>1</p>
+              <span>мес</span>
+            </div>
+            <p class="tarif-name">1个月使用权限</p>
+            <ul class="tarif-list">
+              <li>— Бесплатный доступ ко всем курсам</li>
+              <li>— Онлайн-консультации от кураторов</li>
+              <li>— Ведение личной статистики</li>
+            </ul>
+            <p class="tarif-price">70$\месяц</p>
+            <a href="" class="btn">购买</a>
+          </div>
+          <div class="round-block best-tarif">
+            <div class="best-tarif-number">
+              <p>6</p>
+              <span>мес</span>
+            </div>
+            <p class="best-tarif-name">базовый на 1 месяц</p>
+            <ul class="best-tarif-list">
+              <li>— Бесплатный доступ ко всем курсам</li>
+              <li>— Онлайн-консультации от кураторов</li>
+              <li>— Ведение личной статистики</li>
+            </ul>
+            <p class="best-tarif-price">70$\месяц</p>
+            <a href="" class="btn">购买</a>
+          </div>
+          <div class="tarif round-block">
+            <div class="tarif-number">
+              <p>12</p>
+              <span>мес</span>
+            </div>
+            <p class="tarif-name">базовый на 1 месяц</p>
+            <ul class="tarif-list">
+              <li>— Бесплатный доступ ко всем курсам</li>
+              <li>— Онлайн-консультации от кураторов</li>
+              <li>— Ведение личной статистики</li>
+            </ul>
+            <p class="tarif-price">70$\месяц</p>
+            <a href="" class="btn">购买</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <h3 class="section-header">лучшие ученики</h3>
+        <div class="best">
+          <div class="best-item round-block">
+            <p class="best-item__num">#1</p>
+            <div class="best-item__name"><img src="http://placehold.it/300" alt=""><p>сунь ли вен</p><span>@suniliven</span></div>
+            <div class="best-item__ahi">
+              <img src="/ah1.png" alt="">
+              <img src="/ah1.png" alt="">
+              <img src="/ah1.png" alt="">
+              <p class="best-item__ahi-count">6/19 courses</p>
+              <p class="best-item__ahi-ball">2485 баллов</p>
+            </div>
+          </div>
+          <div class="best-item round-block">
+            <p class="best-item__num">#1</p>
+            <div class="best-item__name"><img src="http://placehold.it/300" alt=""><p>сунь ли вен</p><span>@suniliven</span></div>
+            <div class="best-item__ahi">
+              <img src="/ah1.png" alt="">
+
+              <img src="/ah1.png" alt="">
+              <p class="best-item__ahi-count">6/9 courses</p>
+              <p class="best-item__ahi-ball">285 баллов</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <el-dialog
+      class="index-dialog"
+  :visible.sync="centerDialogVisible"
+  width="55%"
+  :show-close="false"
+
+  center>
+      <div class="index-dialog__img" style="background: url(http://placehold.it/900x270)">
+        <span @click="centerDialogVisible=false">&#10005;</span>
+        <p>web<br>программирование</p>
+      </div>
+      <div class="index-dialog__content">
+        <p>01. название курса</p>
+        <span>Описание курса. Беспристрастный анализ любого творческого акта показывает, что снижение вызывает цвет.
+          Гений, согласно традиционным представлениям, иллюстрирует определенный горизонт ожидания. Игровое начало
+          сложно. Коллективное бессознательное диссонирует
+          психологический параллелизм. Либидо представляет собой элитарный декаданс. Романтизм традиционен.</span>
+        <p>01. название курса</p>
+        <span>Описание курса. Беспристрастный анализ любого творческого акта показывает, что снижение вызывает цвет.
+          Гений, согласно традиционным представлениям, иллюстрирует определенный горизонт ожидания. Игровое начало
+          сложно. Коллективное бессознательное диссонирует
+          психологический параллелизм. Либидо представляет собой элитарный декаданс. Романтизм традиционен.</span>
+        <p>01. название курса</p>
+        <span>Описание курса. Беспристрастный анализ любого творческого акта показывает, что снижение вызывает цвет.
+          Гений, согласно традиционным представлениям, иллюстрирует определенный горизонт ожидания. Игровое начало
+          сложно. Коллективное бессознательное диссонирует
+          психологический параллелизм. Либидо представляет собой элитарный декаданс. Романтизм традиционен.</span>
+      </div>
+
+</el-dialog>
+  </div>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        centerDialogVisible: false
+      };
+    }
+  };
+</script>
+
