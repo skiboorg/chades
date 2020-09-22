@@ -33,54 +33,25 @@
         </div>
       </div>
     </section>
+
     <section id="achivements">
       <div class="container">
         <h3 class="section-header">achivements</h3>
         <div class="achivements" >
-          <div class="achivement done">
+          <div v-for="achive in achives" class="achivement " :class="{'done':checkAchive(achive.id)}">
             <div class="achivement__info">
-              <img src="http://placehold.it/50" alt="">
-              <p>пройти 10 часов курсов</p>
-              <span>Завершить весь 1 этап обучения</span>
+              <img :src="achive.icon" alt="">
+              <p>{{achive.name}}</p>
+              <span>{{achive.rules}}</span>
             </div>
-            <div class="achivement__check done">
-               <span>15.02.2020</span>
+
+            <div v-if="checkAchive(achive.id)" class="achivement__check done">
+               <span>{{getAchive(achive.id)}}</span>
               <img src="/chack-mark.png" alt="">
             </div>
           </div>
-           <div class="achivement ">
-            <div class="achivement__info">
-              <img src="http://placehold.it/50" alt="">
-              <p>пройти 10 часов курсов</p>
-              <span>Завершить весь 1 этап обучения</span>
-            </div>
-            <div class="achivement__check ">
-               <span>15.02.2020</span>
-              <img src="/chack-mark.png" alt="">
-            </div>
-          </div>
-          <div class="achivement done">
-            <div class="achivement__info">
-              <img src="http://placehold.it/50" alt="">
-              <p>пройти 10 часов курсов</p>
-              <span>Завершить весь 1 этап обучения</span>
-            </div>
-            <div class="achivement__check done">
-               <span>15.02.2020</span>
-              <img src="/chack-mark.png" alt="">
-            </div>
-          </div>
-           <div class="achivement ">
-            <div class="achivement__info">
-              <img src="http://placehold.it/50" alt="">
-              <p>пройти 10 часов курсов</p>
-              <span>Завершить весь 1 этап обучения</span>
-            </div>
-            <div class="achivement__check ">
-               <span>15.02.2020</span>
-              <img src="/chack-mark.png" alt="">
-            </div>
-          </div>
+
+
 
 
         </div>
@@ -138,6 +109,21 @@
 
 <script>
   export default {
+     async asyncData({$axios}){
+
+      try{
+        const  response_achives= await $axios.get(`/api/v1/user/getAllAchives/`)
+
+        const achives = response_achives.data
+       console.log(achives)
+
+        return {achives}
+
+      }catch (e) {
+        throw e
+      }
+
+    },
     data() {
       return {
 
@@ -145,6 +131,22 @@
 
 
       };
+    },
+    methods:{
+       checkAchive(id){
+         if (this.$auth.user.earned_achives.find(x => x.achives === id)){
+           return true
+         } else {
+           return false}
+       },
+      getAchive(id){
+         let ach = this.$auth.user.earned_achives.find(x => x.achives === id)
+         if (ach){
+           return ach.created_at
+         } else {
+           return false}
+       },
+
     }
   };
 </script>

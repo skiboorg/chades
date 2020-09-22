@@ -260,9 +260,22 @@ section
     grid-template-columns: repeat(auto-fill,minmax(125px,1fr))
     grid-gap: 10px
 .banner
-  position: relative
-  background: url(/banner.png) no-repeat center
+  &-slider
+    height: 650px !important
+    & .el-carousel__container
+      height: 650px !important
+    &-item
+      height: 650px !important
   height: 650px
+  position: relative
+  border-radius: 20px
+  background-repeat: no-repeat !important
+  background-position: center !important
+
+  &__inner
+    position: absolute
+    left: 40px
+    top: 30%
   &-first-line
     position: absolute
     left: 25px
@@ -296,8 +309,19 @@ section
       letter-spacing: 0.05em
       text-transform: uppercase
       color: #ffffff
-@media (max-width: 1024px)
+@media (max-width: 620px)
   .banner
+    &-slider
+      height: 410px !important
+      & .el-carousel__container
+        height: 410px !important
+      &-item
+        height: 410px !important
+    height: 410px
+    &__inner
+      width: 94%
+      left: 10px
+      top: 25%
     &-first-line
       top: unset
       bottom: 20px
@@ -931,6 +955,8 @@ section
   width: 260px
   height: 260px
   position: relative
+  background-position: center !important
+  background-size: cover !important
 
 
 

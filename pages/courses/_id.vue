@@ -75,32 +75,56 @@
       </div>
     </section>
     <section v-if="lessons[this.cur_lesson_id].status !== 2">
-<!--    <section>-->
+      <!--    <section>-->
       <div class="container">
         <div class="">
           <h3 class="section-header">Тест</h3>
 
-          <div class="round-block p-40 mb-50" v-if="cource.lessons[cur_lesson].test.length>0" >
-            <div class="mb-25" v-html="cource.lessons[cur_lesson].test[0].description"></div>
-            <el-radio-group  v-model="testRadio">
-              <el-radio :label="test.id" v-for="test in cource.lessons[cur_lesson].test[0].choices" :key="test.id">
+          <!--          <div class="round-block p-40 mb-50" v-if="cource.lessons[cur_lesson].test.length>0" >-->
+          <!--            <div class="mb-25" v-html="cource.lessons[cur_lesson].test[0].description"></div>-->
+          <!--            <el-radio-group  v-model="testRadio">-->
+          <!--              <el-radio :label="test.id" v-for="test in cource.lessons[cur_lesson].test[0].choices" :key="test.id">-->
+          <!--                <div class="lesson-question">-->
+          <!--                  <img v-if="test.image" :src="test.image" alt="">-->
+          <!--                  <p>{{test.description}}</p>-->
+          <!--                </div>-->
+          <!--              </el-radio>-->
+
+
+          <!--            </el-radio-group>-->
+          <!--          </div>-->
+
+
+          <div class="round-block p-40 mb-50" v-for="(test,index) in cource.lessons[cur_lesson].test" >
+            <div class="mb-25" v-html="test.description"></div>
+            <el-radio-group  v-model="radioTests.test_id[index].answer">
+              <el-radio :label="choice.id" v-for="choice in test.choices" :key="choice.id">
                 <div class="lesson-question">
-                  <img v-if="test.image" :src="test.image" alt="">
-                  <p>{{test.description}}</p>
+                  <img v-if="choice.image" :src="choice.image" alt="">
+                  <p>{{choice.description}}</p>
                 </div>
               </el-radio>
 
             </el-radio-group>
           </div>
 
-          <div class="round-block p-40 mb-50" v-if="cource.lessons[cur_lesson].input_test.length>0" >
-            <div class="mb-25" v-html="cource.lessons[cur_lesson].input_test[0].description"> </div>
-            <el-input placeholder="" v-model="testInput">
+          <!--          <div class="round-block p-40 mb-50" v-if="cource.lessons[cur_lesson].input_test.length>0" >-->
+          <!--            <div class="mb-25" v-html="cource.lessons[cur_lesson].input_test[0].description"> </div>-->
+          <!--            <el-input placeholder="" v-model="testInput">-->
+          <!--              <template slot="prepend">Ответ</template>-->
+          <!--            </el-input>-->
+          <!--          </div>-->
+
+          <div class="round-block p-40 mb-50" v-for="(test,index) in cource.lessons[cur_lesson].input_test">
+            <div class="mb-25" v-html="test.description"> </div>
+            <el-input placeholder="" v-model="inputTests.test_id[index].answer">
               <template slot="prepend">Ответ</template>
             </el-input>
           </div>
+
           <div class="text-center">
-            <span :class="{'btnDisabled': !testRadio || testInput===''}" class="btn " @click="checkTest">Проверить</span>
+            <!--            <span :class="{'btnDisabled': !testRadio || testInput===''}" class="btn " @click="checkTest">Проверить</span>-->
+            <span  class="btn " @click="checkTest">Проверить</span>
           </div>
 
         </div>
@@ -179,9 +203,33 @@
         const  response_lessons= await $axios.get(`/api/v1/shool/avaiable_lessons?user_id=${$auth.user.id}&course_id=${params.id}`)
         const lessons = response_lessons.data
         const cource = response_cource.data
+        let radioTests={
+          test_id:[]
+        }
+        let inputTests={
+          test_id:[]
+        }
+        for (let i of cource.lessons){
+          for (let t of i.test){
+            console.log(t.id)
+            radioTests.test_id.push({
+              test_id:t.id,
+              answer:null
+            })
+          }
+          for (let t of i.input_test){
+            console.log(t.id)
+            inputTests.test_id.push({
+              test_id:t.id,
+              answer:null
+            })
+          }
+        }
 
-        console.log(cource)
-        return {cource,lessons}
+
+        return {cource,lessons,radioTests,inputTests}
+
+
 
       }catch (e) {
         throw e
@@ -199,6 +247,11 @@
         value2:false,
         cur_lesson:0,
         cur_lesson_id:0,
+        // radioTests:{
+        //   test1:null,
+        //   test2:null
+        // }
+
 
 
       }
@@ -209,8 +262,47 @@
 
 
     },
+    created() {
+
+    },
     methods: {
       async checkTest(){
+        try {
+          let radioTest = true
+          let inputTest = true
+          for (let test of this.radioTests.test_id) {
+            radioTest = radioTest && this.cource.lessons[this.cur_lesson_id].test.find(x => x.id === test.test_id).choices.find(x => x.id === test.answer).is_right
+          }
+          for (let test of this.inputTests.test_id) {
+            let answer = this.cource.lessons[this.cur_lesson_id].input_test.find(x => x.id === test.test_id).answer
+            if (answer.toLowerCase() === test.answer.toLowerCase()) {
+              inputTest = inputTest && true
+            } else {
+              inputTest = inputTest && false
+            }
+          }
+          console.log(radioTest)
+          console.log(inputTest)
+          if (radioTest && inputTest){
+            this.lessons[this.cur_lesson_id].status = 2
+            console.log(this.lessons[this.cur_lesson_id].id)
+            const respond = await this.$axios.post('/api/v1/shool/lesson_done/',{lesson_id:this.lessons[this.cur_lesson_id].id})
+            console.log(respond.status)
+            if (respond.status === 201){
+              this.courseOver = true
+            }else{
+              this.rightAnswer = true
+            }
+          }else{
+            this.wrongAnswer = true
+          }
+        }
+        catch (e) {
+          console.log('error ')
+        }
+      },
+
+      async checkTest1(){
         let test = this.cource.lessons[this.cur_lesson_id].test[0].choices.find(x => x.id === this.testRadio).is_right
         let input_test = this.cource.lessons[this.cur_lesson_id].input_test[0].answer
         console.log(input_test)
@@ -230,8 +322,6 @@
         else{
           this.wrongAnswer = true
         }
-
-
       },
       changeLesson(id){
         this.cur_lesson = this.cource.lessons.findIndex(x => x.id === id)

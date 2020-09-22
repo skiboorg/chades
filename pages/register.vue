@@ -1,9 +1,10 @@
 <template>
-  <div style="height: 59vh;display: flex;align-items: center;justify-content: center" class="container">
-      <div  class="round-block form-block text-center">
+  <div style="display: flex;align-items: center;justify-content: center" class="container">
+      <div  class="round-block form-block text-center mb-25">
         <h3 class="text-color fs-24 text-bold mb-25">регистрация {{curStep}}/3</h3>
 
         <div v-if="curStep===1" class="">
+           <input type="text" class="form-control no-mw small-ph" v-model="user.promo" placeholder="ПромоКод">
            <input type="text" class="form-control no-mw small-ph" v-model="user.name" placeholder="Введите ваше имя">
            <input type="text" class="form-control no-mw small-ph" v-model="user.email" placeholder="Введите вашу почту">
                 <input type="text" class="form-control no-mw small-ph " v-model="user.login" placeholder="Придумайте логин">
@@ -37,6 +38,7 @@
         is_registered:false,
         user: {
           name: '',
+          promo: '',
           login: '',
           email: '',
           password1: '',
@@ -63,6 +65,7 @@
           email: this.user.email,
           name: this.user.name,
           nickname: this.user.login,
+          promo: this.user.promo,
 
 
         })

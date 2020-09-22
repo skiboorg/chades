@@ -74,7 +74,7 @@
               <p v-if="finished_courses.includes(cource.id) " style="color: #27AE60" class="course-status">done</p>
               <div v-if="!avaiable_courses.includes(cource.id)" class="course-status">
                 <img src="/lock.png" alt="">
-                <p class="">not</p>
+                <p class="">зависит от {{cource.depence}}</p>
               </div>
 
             </nuxt-link>

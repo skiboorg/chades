@@ -2,10 +2,16 @@
   <div class="">
     <section class="">
       <div class="container ">
-        <div class="banner">
-          <div class="banner-first-line"><p class="banner-first-line__inner">START YOUR LEARNING</p></div>
-          <div class="banner-second-line"><p class="banner-second-line__inner">TODAY WITH CHADEC!</p></div>
-        </div>
+        <el-carousel class="banner-slider" :interval="5000" arrow="hover">
+          <el-carousel-item class="banner-slider-item">
+            <div class="banner" style="background: url(/banner.png)">
+              <img class="banner__inner" src="http://placehold.it/500x300" alt="">
+            </div>
+          </el-carousel-item>
+
+
+        </el-carousel>
+
       </div>
     </section>
     <section>
@@ -66,7 +72,7 @@
             <p>网站开发和网页编程</p>
           </div>
         </div>
-<!--        <div class="text-center mb-50"><a href="" class="btn">смотреть все курсы</a></div>-->
+        <!--        <div class="text-center mb-50"><a href="" class="btn">смотреть все курсы</a></div>-->
       </div>
     </section>
     <section  >
@@ -86,7 +92,7 @@
             <span>我们的每堂课不仅教授专业的计算机能力，还开发思维能力，并教授思考和学习方法。<br>
 我们还设置逻辑和教育益智游戏，帮助开发孩子们的逻辑性和创造性。</span>
           </div>
-           <div class="over-info__item mb-75">
+          <div class="over-info__item mb-75">
             <img src="http://placehold.it/70" alt="">
             <p class="text-color">英语技能</p>
             <span>我们的主要任务是提升语言技能，并展示如何在实践中进行运用。<br>
@@ -94,7 +100,7 @@
 我们的技巧在于每个句子都有两行，以便孩子们记住句型结构和语言模式。<br>
 此外，每堂课中，我们都给孩子们提供需要识记的关键词——名词和动词，以及IT领域使用的简介词。</span>
           </div>
-           <div class="over-info__item">
+          <div class="over-info__item">
             <img src="http://placehold.it/70" alt="">
             <p class="text-color">计算机教育</p>
             <span>编程是二十一世纪需求最大的专业。即使孩子选择了不同的职业道路，任何聘用单位都会高度重视IT技术领域的知识。我们的课程旨在开发各种专业领域的儿童计算机技能：<br>
@@ -102,7 +108,7 @@
 演示文稿和文档处理能力<br>
 创造性设计和动画技能</span>
           </div>
-           <div class="over-info__item">
+          <div class="over-info__item">
             <img src="http://placehold.it/70" alt="">
             <p class="text-color">编程技能</p>
             <span>编程是一个很大的领域，不仅包括数学和逻辑学，还包括处理信息和算法的能力。<br>
@@ -145,27 +151,27 @@
     <section>
       <div class="container">
         <h3 class="section-header mw-600">常见问答</h3>
-      <div class="faq-item">
-        <h3 class="text-color fs-24 text-upper mb-25">1. 我们教孩子什么？</h3>
-        <p>我们为您的孩子提供将英语教学和现代技术相结合的课程：计算机素养、网页设计、编程和网站开发、视频编辑以及游戏开发。同时，我们还为您的孩子设置了益智逻辑游戏，通过这些游戏可以提升您孩子的逻辑思维能力以及信息获取速度。</p>
-      </div>
         <div class="faq-item">
-        <h3 class="text-color fs-24 text-upper mb-25">2. 以什么形式进行培训？</h3>
-        <p>我们提供了所有领域的课程目录，为方便起见，将其分为多个培训阶段。只有成功完成前面的课程，您才能够进入更为复杂和高级的课程。<br>
-每门课程均包含按主题划分的多个课时。每个课时都有一个理论部分、一个测验/作业形式的实践部分以及必须写在笔记本上并记住词义和正确发音的英语词汇和英语动词。</p>
-      </div>
+          <h3 class="text-color fs-24 text-upper mb-25">1. 我们教孩子什么？</h3>
+          <p>我们为您的孩子提供将英语教学和现代技术相结合的课程：计算机素养、网页设计、编程和网站开发、视频编辑以及游戏开发。同时，我们还为您的孩子设置了益智逻辑游戏，通过这些游戏可以提升您孩子的逻辑思维能力以及信息获取速度。</p>
+        </div>
         <div class="faq-item">
-        <h3 class="text-color fs-24 text-upper mb-25">3. 孩子的推荐学习年龄是多少？</h3>
-        <p>我们平台设计主要针对中小儿童。建议第一阶段的培训孩童为6-7岁，第二阶段为9-10岁，第三阶段为12-13岁。</p>
-      </div>
+          <h3 class="text-color fs-24 text-upper mb-25">2. 以什么形式进行培训？</h3>
+          <p>我们提供了所有领域的课程目录，为方便起见，将其分为多个培训阶段。只有成功完成前面的课程，您才能够进入更为复杂和高级的课程。<br>
+            每门课程均包含按主题划分的多个课时。每个课时都有一个理论部分、一个测验/作业形式的实践部分以及必须写在笔记本上并记住词义和正确发音的英语词汇和英语动词。</p>
+        </div>
         <div class="faq-item">
-        <h3 class="text-color fs-24 text-upper mb-25">4.为什么我们限制每日的课时数？</h3>
-        <p>在我们系统中，每日都会开放后续课时的访问权限。这一设置专门用于确保孩子能更好的消化吸收必要的信息量，系统且从容地掌握知识，而非匆忙的学习所有课程。</p>
-      </div>
+          <h3 class="text-color fs-24 text-upper mb-25">3. 孩子的推荐学习年龄是多少？</h3>
+          <p>我们平台设计主要针对中小儿童。建议第一阶段的培训孩童为6-7岁，第二阶段为9-10岁，第三阶段为12-13岁。</p>
+        </div>
         <div class="faq-item">
-        <h3 class="text-color fs-24 text-upper mb-25">5. 孩子如何更好按时地学习？</h3>
-        <p>我们建议，对于幼龄儿童，一周不超过两课时，对于中龄儿童，一周不超过三课时。当然，您的孩子是不受限制的，可以更快的完成项目。</p>
-      </div>
+          <h3 class="text-color fs-24 text-upper mb-25">4.为什么我们限制每日的课时数？</h3>
+          <p>在我们系统中，每日都会开放后续课时的访问权限。这一设置专门用于确保孩子能更好的消化吸收必要的信息量，系统且从容地掌握知识，而非匆忙的学习所有课程。</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="text-color fs-24 text-upper mb-25">5. 孩子如何更好按时地学习？</h3>
+          <p>我们建议，对于幼龄儿童，一周不超过两课时，对于中龄儿童，一周不超过三课时。当然，您的孩子是不受限制的，可以更快的完成项目。</p>
+        </div>
       </div>
     </section>
     <section>
@@ -336,11 +342,11 @@
     </section>
     <el-dialog
       class="index-dialog"
-  :visible.sync="centerDialogVisible"
-  width="55%"
-  :show-close="false"
+      :visible.sync="centerDialogVisible"
+      width="55%"
+      :show-close="false"
 
-  center>
+      center>
       <div class="index-dialog__img" style="background: url(http://placehold.it/900x270)">
         <span @click="centerDialogVisible=false">&#10005;</span>
         <p>web<br>программирование</p>
@@ -363,7 +369,7 @@
           психологический параллелизм. Либидо представляет собой элитарный декаданс. Романтизм традиционен.</span>
       </div>
 
-</el-dialog>
+    </el-dialog>
   </div>
 </template>
 
