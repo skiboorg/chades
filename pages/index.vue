@@ -42,9 +42,6 @@
             <img src="/icon_6.png" alt="">
             <p class="text-16 text-upper text-bold">成功的孩子，有前途的职业</p>
           </div>
-
-
-
         </div>
       </div>
     </section>
@@ -78,7 +75,6 @@
         <h3 class="section-header text-center">现在开始培训！</h3>
         <div class="text-center "><a href="" class="btn">注册</a></div>
       </div>
-
     </section>
     <section>
       <div class="container">
@@ -126,7 +122,6 @@
                 <p>СУ ЛИНЬ ПИНЬ</p>
                 <span>работает в гугл, 27 лет</span>
               </div>
-
             </div>
             <p class="feedback-item__text">我的孩子已经在我们平台上学习一个月了，他比我更了解计算机的结构和工作原理！</p>
           </div>
@@ -137,14 +132,11 @@
                 <p>СУ ЛИНЬ ПИНЬ</p>
                 <span>работает в гугл, 27 лет</span>
               </div>
-
             </div>
             <p class="feedback-item__text">儿子很开心，他在空闲时间学习有用的技能。这个学习系统很方便，不仓促，一切都清晰易懂。</p>
           </div>
-
         </div>
       </div>
-
     </section>
     <section>
       <div class="container">
@@ -198,7 +190,6 @@
             </div>
           </div>
           <div class="step">
-
             <div class="step-item round-block">
               <div class="step-number no-after"><p>04</p></div>
               <p>追溯学习进度和成就，以及空闲时间的益智游戏</p>
