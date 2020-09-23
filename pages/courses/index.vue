@@ -12,13 +12,13 @@
       <div class="container">
         <div class="round-block about-teacher lk">
           <div class="about-teacher__img">
-            <img src="http://placehold.it/300" alt="">
+            <img :src="$auth.user.avatar" alt="">
           </div>
           <div class="about-teacher__left">
             <div class="">
               <p style="color: #FFB800">"Молодой разраб"</p>
-              <p class="fs-24">СУ ЛИНЬ ПИНЬ</p>
-              <p class="fs-14 text-color">285 баллов</p>
+              <p class="fs-24">{{$auth.user.name}}</p>
+              <p class="fs-14 text-color">{{$auth.user.score}} баллов</p>
               <span class="fs-14 text-trans text-bold text-upper">6/9 courses</span>
             </div>
           </div>

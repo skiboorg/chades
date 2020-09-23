@@ -3,15 +3,12 @@
     <section class="">
       <div class="container ">
         <el-carousel class="banner-slider" :interval="5000" arrow="hover">
-          <el-carousel-item class="banner-slider-item">
-            <div class="banner" style="background: url(/banner.png)">
-              <img class="banner__inner" src="http://placehold.it/500x300" alt="">
+          <el-carousel-item class="banner-slider-item" v-for="banner in banners" :key="banner.id">
+            <div class="banner" :style="{'background': 'url('+ banner.bg+')'}">
+              <img class="banner__inner" :src="banner.top" alt="">
             </div>
           </el-carousel-item>
-
-
         </el-carousel>
-
       </div>
     </section>
     <section>
@@ -87,13 +84,13 @@
         <h3 class="section-header">我们将教您的孩子什么</h3>
         <div class="over-info">
           <div class="over-info__item mb-75">
-            <img src="http://placehold.it/70" alt="">
+            <img src="/icon-logic.png" alt="">
             <p class="text-color">开发逻辑和思维能力</p>
             <span>我们的每堂课不仅教授专业的计算机能力，还开发思维能力，并教授思考和学习方法。<br>
 我们还设置逻辑和教育益智游戏，帮助开发孩子们的逻辑性和创造性。</span>
           </div>
           <div class="over-info__item mb-75">
-            <img src="http://placehold.it/70" alt="">
+            <img src="/icon-eng.png" alt="">
             <p class="text-color">英语技能</p>
             <span>我们的主要任务是提升语言技能，并展示如何在实践中进行运用。<br>
 编程与英语紧密相连。我们让孩子清楚地看到如何将它用于发展和教育。<br>
@@ -101,7 +98,7 @@
 此外，每堂课中，我们都给孩子们提供需要识记的关键词——名词和动词，以及IT领域使用的简介词。</span>
           </div>
           <div class="over-info__item">
-            <img src="http://placehold.it/70" alt="">
+            <img src="/icon-comp.png" alt="">
             <p class="text-color">计算机教育</p>
             <span>编程是二十一世纪需求最大的专业。即使孩子选择了不同的职业道路，任何聘用单位都会高度重视IT技术领域的知识。我们的课程旨在开发各种专业领域的儿童计算机技能：<br>
 基础系统技能<br>
@@ -109,7 +106,7 @@
 创造性设计和动画技能</span>
           </div>
           <div class="over-info__item">
-            <img src="http://placehold.it/70" alt="">
+            <img src="/icon-code.png" alt="">
             <p class="text-color">编程技能</p>
             <span>编程是一个很大的领域，不仅包括数学和逻辑学，还包括处理信息和算法的能力。<br>
 我们教授您的孩子从入门到高层次知识，期间考虑了所有学习的特殊性，使课堂变得有趣且具吸引力——并为此设计了一个阶段性学习系统。</span>
@@ -375,6 +372,16 @@
 
 <script>
   export default {
+     async asyncData({$axios}){
+      try{
+        const  response_banners= await $axios.get(`/api/v1/shool/get_banner/`)
+        const banners = response_banners.data
+        return {banners}
+      }catch (e) {
+        throw e
+      }
+
+    },
     data() {
       return {
         centerDialogVisible: false

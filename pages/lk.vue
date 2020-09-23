@@ -10,15 +10,16 @@
     </div>
     <section>
       <div class="container">
+
         <div class="round-block about-teacher lk">
           <div class="about-teacher__img">
-            <img src="http://placehold.it/300" alt="">
+           <img :src="$auth.user.avatar" alt="">
           </div>
           <div class="about-teacher__left">
             <div class="">
               <p style="color: #FFB800">"Молодой разраб"</p>
-              <p class="fs-24">СУ ЛИНЬ ПИНЬ</p>
-              <p class="fs-14 text-color">285 баллов</p>
+              <p class="fs-24">{{$auth.user.name}}</p>
+              <p class="fs-14 text-color">{{$auth.user.score}} баллов</p>
               <span class="fs-14 text-trans text-bold text-upper">6/9 courses</span>
             </div>
           </div>
@@ -62,15 +63,27 @@
         <h3 class="section-header">certificates</h3>
         <div class="features">
           <div class="round-block block-feature">
-            <img src="images/icon_en.png" alt="">
+            <img src="/icon_en.png" alt="">
             <p class="text-16 text-upper text-bold">programming nominee</p>
           </div>
           <div class="round-block block-feature">
-            <img src="images/icon_2.png" alt="">
+            <img src="/icon_2.png" alt="">
             <p class="text-16 text-upper text-bold">best webcode</p>
           </div>
           <div class="round-block block-feature">
-            <img src="images/icon_3.png" alt="">
+            <img src="/icon_3.png" alt="">
+            <p class="text-16 text-upper text-bold">golden #1 website</p>
+          </div>
+          <div class="round-block block-feature">
+            <img src="/icon_en.png" alt="">
+            <p class="text-16 text-upper text-bold">programming nominee</p>
+          </div>
+          <div class="round-block block-feature">
+            <img src="/icon_2.png" alt="">
+            <p class="text-16 text-upper text-bold">best webcode</p>
+          </div>
+          <div class="round-block block-feature">
+            <img src="/icon_3.png" alt="">
             <p class="text-16 text-upper text-bold">golden #1 website</p>
           </div>
         </div>
@@ -81,15 +94,20 @@
         <h3 class="section-header">settings</h3>
         <div class="lk-form">
           <div class="form-group">
-            <label >nickname</label>
-            <input type="text" class="form-control" placeholder="@dsfsdf">
-            <a href="" class="btn btn-white">ok</a>
+            <label >avatar</label>
+            <el-upload class="avatar-uploader" action="" :show-file-list="false" :on-success="handleAvatarSuccess">
+            <img v-if="userData.imageUrl" :src="userData.imageUrl" alt="" class="avatar">
+            <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+          </el-upload>
+            <a href="" class="btn btn-white">сохранить</a>
           </div>
           <div class="form-group">
-            <label >change email</label>
-            <input type="text" class="form-control" placeholder="enter new email">
-            <a href="" class="btn btn-white">send accept</a>
+
+            <label >nickname</label>
+            <input type="text" class="form-control" v-model="userData.nickname" placeholder="@dsfsdf">
+            <a href="" class="btn btn-white">ok</a>
           </div>
+
           <div class="form-group">
             <label >change password</label>
             <input type="text" class="form-control" placeholder="enter new password">
@@ -126,13 +144,21 @@
     },
     data() {
       return {
+        avatar:null,
+        userData:{
+          nickname: this.$auth.user.nickname,
+          imageUrl: this.$auth.user.avatar,
 
-
-
-
-      };
+        }
+      }
     },
     methods:{
+       handleAvatarSuccess(res, file) {
+        this.userData.imageUrl = URL.createObjectURL(file.raw);
+
+        this.avatar = file.raw
+
+      },
        checkAchive(id){
          if (this.$auth.user.earned_achives.find(x => x.achives === id)){
            return true
