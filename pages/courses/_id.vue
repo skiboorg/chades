@@ -6,8 +6,8 @@
       <div class="breadcrumbs">
 
         <ul>
-          <li><nuxt-link to="/courses">ГЛАВНАЯ</nuxt-link></li>
-          <li><nuxt-link to="/courses">Все курсы</nuxt-link></li>
+          <li><nuxt-link to="/courses">主页</nuxt-link></li>
+          <li><nuxt-link to="/courses">我的课程</nuxt-link></li>
           <li>{{cource.description}}</li>
         </ul>
       </div>

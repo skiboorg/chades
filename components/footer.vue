@@ -11,15 +11,15 @@
                     <a class="footer-nav__item" href="#">Контакты</a>
                 </div>
                   <div v-if="!this.$auth.loggedIn" class="footer-btn">
-                   <nuxt-link  to="/register" class="btn">регистрация</nuxt-link>
+                   <nuxt-link  to="/register" class="btn">登录或注册</nuxt-link>
                  </div>
               <div v-else class="footer-btn">
-                 <span  @click="$auth.logout()" class="btn">выход</span>
+                 <span  @click="$auth.logout()" class="btn">从您的个人资料中删除</span>
               </div>
             </div>
             <div class="footer-bottom">
-                <p>chadec 2020 all rights reserved</p>
-                <p>privacy politics</p>
+                <p>版权所有 2020.</p>
+                <p>我公司文件</p>
 
             </div>
         </div>

@@ -51,12 +51,13 @@
     <section class="no-mb">
       <div class="container">
         <h3 class="section-header">我们有哪些课程:</h3>
+        <p class="text-16 mw-600 mb-50">单击您感兴趣的方向以查看所选方向上所有课程列表</p>
         <div class="learn mb-50">
-          <div class="learn-item learn1">
+          <div @click="c1DialogVisible = true" class="learn-item learn1">
             <span>01</span>
             <p>计算机课程素养</p>
           </div>
-          <div class="learn-item learn2">
+          <div @click="c2DialogVisible = true" class="learn-item learn2">
             <span>02</span>
             <p>设计与视频编辑创意课程</p>
           </div>
@@ -261,6 +262,23 @@
             </div>
 
           </el-carousel-item>
+           <el-carousel-item >
+            <div class="tarif round-block">
+              <div class="tarif-number">
+                <p>1</p>
+                <span>мес</span>
+              </div>
+              <p class="tarif-name">базовый на 1 месяц</p>
+              <ul class="tarif-list">
+                <li>— Бесплатный доступ ко всем курсам</li>
+                <li>— Онлайн-консультации от кураторов</li>
+                <li>— Ведение личной статистики</li>
+              </ul>
+              <p class="tarif-price">70$\месяц</p>
+              <a href="" class="btn">购买</a>
+            </div>
+
+          </el-carousel-item>
         </el-carousel>
         <div class="tarifs">
           <div class="tarif round-block">
@@ -268,11 +286,11 @@
               <p>1</p>
               <span>мес</span>
             </div>
-            <p class="tarif-name">1个月使用权限</p>
+            <p class="tarif-name">1个月费用</p>
             <ul class="tarif-list">
-              <li>— Бесплатный доступ ко всем курсам</li>
-              <li>— Онлайн-консультации от кураторов</li>
-              <li>— Ведение личной статистики</li>
+              <li>获得所有课程</li>
+              <li>成就与进步</li>
+              <li>国际标准注册证书</li>
             </ul>
             <p class="tarif-price">70$\месяц</p>
             <a href="" class="btn">购买</a>
@@ -282,11 +300,11 @@
               <p>6</p>
               <span>мес</span>
             </div>
-            <p class="best-tarif-name">базовый на 1 месяц</p>
+            <p class="best-tarif-name">6个月费用</p>
             <ul class="best-tarif-list">
-              <li>— Бесплатный доступ ко всем курсам</li>
-              <li>— Онлайн-консультации от кураторов</li>
-              <li>— Ведение личной статистики</li>
+              <li>获得所有课程</li>
+              <li>成就与进步</li>
+              <li>国际标准注册证书</li>
             </ul>
             <p class="best-tarif-price">70$\месяц</p>
             <a href="" class="btn">购买</a>
@@ -296,11 +314,27 @@
               <p>12</p>
               <span>мес</span>
             </div>
-            <p class="tarif-name">базовый на 1 месяц</p>
+            <p class="tarif-name">12个月费用</p>
             <ul class="tarif-list">
-              <li>— Бесплатный доступ ко всем курсам</li>
-              <li>— Онлайн-консультации от кураторов</li>
-              <li>— Ведение личной статистики</li>
+               <li>获得所有课程</li>
+              <li>成就与进步</li>
+              <li>国际标准注册证书</li>
+            </ul>
+            <p class="tarif-price">70$\месяц</p>
+            <a href="" class="btn">购买</a>
+          </div>
+           <div class="tarif round-block">
+            <div class="tarif-number">
+              <p>12</p>
+              <span>мес</span>
+            </div>
+            <p class="tarif-name">12个月VIP费用</p>
+            <ul class="tarif-list">
+               <li>获得所有课程</li>
+              <li>成就与进步</li>
+              <li>国际标准注册证书</li>
+              <li>与老师一对一聊天</li>
+              <li>课程奖励材料</li>
             </ul>
             <p class="tarif-price">70$\месяц</p>
             <a href="" class="btn">购买</a>
@@ -339,32 +373,61 @@
     </section>
     <el-dialog
       class="index-dialog"
-      :visible.sync="centerDialogVisible"
+      :visible.sync="c1DialogVisible"
       width="55%"
       :show-close="false"
 
       center>
       <div class="index-dialog__img" style="background: url(http://placehold.it/900x270)">
-        <span @click="centerDialogVisible=false">&#10005;</span>
-        <p>web<br>программирование</p>
+        <span @click="c1DialogVisible=false">&#10005;</span>
+        <p>计算机知识</p>
       </div>
       <div class="index-dialog__content">
-        <p>01. название курса</p>
-        <span>Описание курса. Беспристрастный анализ любого творческого акта показывает, что снижение вызывает цвет.
-          Гений, согласно традиционным представлениям, иллюстрирует определенный горизонт ожидания. Игровое начало
-          сложно. Коллективное бессознательное диссонирует
-          психологический параллелизм. Либидо представляет собой элитарный декаданс. Романтизм традиционен.</span>
-        <p>01. название курса</p>
-        <span>Описание курса. Беспристрастный анализ любого творческого акта показывает, что снижение вызывает цвет.
-          Гений, согласно традиционным представлениям, иллюстрирует определенный горизонт ожидания. Игровое начало
-          сложно. Коллективное бессознательное диссонирует
-          психологический параллелизм. Либидо представляет собой элитарный декаданс. Романтизм традиционен.</span>
-        <p>01. название курса</p>
-        <span>Описание курса. Беспристрастный анализ любого творческого акта показывает, что снижение вызывает цвет.
-          Гений, согласно традиционным представлениям, иллюстрирует определенный горизонт ожидания. Игровое начало
-          сложно. Коллективное бессознательное диссонирует
-          психологический параллелизм. Либидо представляет собой элитарный декаданс. Романтизм традиционен.</span>
+        <span style="display: block;padding-bottom: 50px" >我们这一方向的课程旨在教授您的孩子使用计算机的基本技能和能力：从计算机设备及其操作方法到使用基本软件的能力！我们的课程内容涵盖诸如信息的类型和如何传输，什么是网络等，除此之外，我们将教您的孩子自己手动组装和拆卸计算机，清除病毒，并使用软件处理文档、演示文稿等。</span>
+        <p>1.	“计算机设备”课程</p>
+        <span>这是我们的主修课，在这门课上我们将带领学生熟悉计算机及其类型，学习计算机内部结构、部件和基本工作原理。这门课程对于了解计算机的整体操作和研究不同类型计算机的性能都是必要的。<br>
+我们还会详细学习计算机模块和组件，学习如何将其组合在一起，并在特定任务中相互匹配。</span>
+        <p>2.	“计算机知识”课程</p>
+        <span>在这门课程中，我们将学习计算机使用规范和基本知识：包括如何在计算机上正常工作，它有什么功能，文件和程序是什么，系统是什么等。<br>
+本课程是进一步学习程序设计和所有其他计算机课程的起点。</span>
+        <p>3.	“什么是信息”课程</p>
+        <span>本课程教孩子们如何处理信息：信息是什么，您能用它做什么，如何使用和处理它。在本课程中我们还将学生信息学基础知识，其基础信息理论、信息怎样传输、计算机内部信息是什么形式以及信息如何投身到屏幕上。</span>
+      <p>4.“网络与互联网基础”课程</p>
+        <span>这门课程是为最有好奇心的孩子们准备的——它将带领我们了解互联网的历史，了解信息是如何通过网络传输的，有哪些网络，如何创建自己的网络，以及网络中是否可以再存在一个网络等。</span>
+        <p>5.“使用office程序：MS office”课程</p>
+        <span>本课程是孩子们未来职业生涯的重要课程：我们教您如何使用基本的office程序，即Microsoft office（PowerPoint、Word、Excel、Access）。<br>
+无论您的孩子将来选择什么样的职业，在生活和工作的各个领域都重视使用这些软件的工作能力！
+</span>
       </div>
+
+
+    </el-dialog>
+    <el-dialog
+      class="index-dialog"
+      :visible.sync="c2DialogVisible"
+      width="55%"
+      :show-close="false"
+
+      center>
+      <div class="index-dialog__img" style="background: url(http://placehold.it/900x270)">
+        <span @click="c2DialogVisible=false">&#10005;</span>
+        <p>视频创意设计与编辑课程</p>
+      </div>
+      <div class="index-dialog__content">
+        <span style="display: block;padding-bottom: 50px" >我们这一方向的课程旨在培养您的孩子从事创造性职业——网页设计师、用户体验设计师、视频编辑、视频博主等职业的基本技能和能力。</span>
+        <p>1. “设计基础”课程</p>
+        <span>儿童创意设计课程：我们教您的孩子如何使用图形和设计工具和软件，培养孩子的创造性思维和品味。我们还将了解主要的设计技巧、设计方法、色彩组合和一般的设计类型！<br>
+设计师的职业总是有现实需求的。具有设计才能的人才在设计工作中必须保证项目具有趣味和创造性！</span>
+         <p>2. “网页设计”课程</p>
+        <span>我们将教孩子们创建和实现网站和应用程序的设计：从简单的布局到复杂的图表和带有弹窗和转换功能的页面。我们将教孩子们这项工作的基本规则和基础网页设计，以及如何正确使用软件界面和基本的设计技巧。</span>
+         <p>3. “视频编辑”课程</p>
+        <span>在本课程中，我们将教给您的孩子一项有趣且有用的技能：在现代信息世界中运用视频材料：我们将教您如何正确录制视频、编辑和处理视频、提高视频质量和应用效果！<br>
+编辑视频能力被应用于许多活动领域：从电视、广播，到视频博客和在大公司创建演示文稿。</span>
+         <p>4. “绘制标识”课程</p>
+        <span>我们将教孩子们正确和创造性地绘制标识：从简单的形状和明亮的字体到最复杂难忘的几何设计！为您的孩子未来的工作学习储备一些作品。<br>
+这门课程可以为开发孩子的创造性潜能打造良好基础。在设计行业，年龄并不重要，天赋和毅力才是重要的！所以，您的孩子可以从小开始练习了！</span>
+      </div>
+
 
     </el-dialog>
   </div>
@@ -384,7 +447,8 @@
     },
     data() {
       return {
-        centerDialogVisible: false
+        c1DialogVisible: false,
+        c2DialogVisible: false
       };
     }
   };

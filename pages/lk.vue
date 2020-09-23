@@ -3,8 +3,8 @@
     <div class="container">
       <div class="breadcrumbs">
         <ul>
-          <li><a href="">ГЛАВНАЯ</a></li>
-          <li>ЛИЧНЫЙ КАБИНЕТ</li>
+          <li><a href="">主页</a></li>
+          <li>我的个人资料</li>
         </ul>
       </div>
     </div>
@@ -13,14 +13,14 @@
 
         <div class="round-block about-teacher lk">
           <div class="about-teacher__img">
-           <img :src="$auth.user.avatar" alt="">
+            <img :src="$auth.user.avatar" alt="">
           </div>
           <div class="about-teacher__left">
             <div class="">
-              <p style="color: #FFB800">"Молодой разраб"</p>
+              <!--              <p style="color: #FFB800">"Молодой разраб"</p>-->
               <p class="fs-24">{{$auth.user.name}}</p>
               <p class="fs-14 text-color">{{$auth.user.score}} баллов</p>
-              <span class="fs-14 text-trans text-bold text-upper">6/9 courses</span>
+              <!--              <span class="fs-14 text-trans text-bold text-upper">6/9 courses</span>-->
             </div>
           </div>
 
@@ -47,7 +47,7 @@
             </div>
 
             <div v-if="checkAchive(achive.id)" class="achivement__check done">
-               <span>{{getAchive(achive.id)}}</span>
+              <span>{{getAchive(achive.id)}}</span>
               <img src="/chack-mark.png" alt="">
             </div>
           </div>
@@ -96,19 +96,15 @@
           <div class="form-group">
             <label >avatar</label>
             <el-upload class="avatar-uploader" action="" :show-file-list="false" :on-success="handleAvatarSuccess">
-            <img v-if="userData.imageUrl" :src="userData.imageUrl" alt="" class="avatar">
-            <i v-else class="el-icon-plus avatar-uploader-icon"></i>
-          </el-upload>
-            <a href="" class="btn btn-white">сохранить</a>
-          </div>
-          <div class="form-group">
+              <img v-if="userData.imageUrl" :src="userData.imageUrl" alt="" class="avatar">
+              <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+            </el-upload>
+
+
 
             <label >nickname</label>
             <input type="text" class="form-control" v-model="userData.nickname" placeholder="@dsfsdf">
-            <a href="" class="btn btn-white">ok</a>
-          </div>
 
-          <div class="form-group">
             <label >change password</label>
             <input type="text" class="form-control" placeholder="enter new password">
             <input type="text" class="form-control" placeholder="confirm new password">
@@ -127,13 +123,13 @@
 
 <script>
   export default {
-     async asyncData({$axios}){
+    async asyncData({$axios}){
 
       try{
         const  response_achives= await $axios.get(`/api/v1/user/getAllAchives/`)
 
         const achives = response_achives.data
-       console.log(achives)
+        console.log(achives)
 
         return {achives}
 
@@ -153,25 +149,25 @@
       }
     },
     methods:{
-       handleAvatarSuccess(res, file) {
+      handleAvatarSuccess(res, file) {
         this.userData.imageUrl = URL.createObjectURL(file.raw);
 
         this.avatar = file.raw
 
       },
-       checkAchive(id){
-         if (this.$auth.user.earned_achives.find(x => x.achives === id)){
-           return true
-         } else {
-           return false}
-       },
+      checkAchive(id){
+        if (this.$auth.user.earned_achives.find(x => x.achives === id)){
+          return true
+        } else {
+          return false}
+      },
       getAchive(id){
-         let ach = this.$auth.user.earned_achives.find(x => x.achives === id)
-         if (ach){
-           return ach.created_at
-         } else {
-           return false}
-       },
+        let ach = this.$auth.user.earned_achives.find(x => x.achives === id)
+        if (ach){
+          return ach.created_at
+        } else {
+          return false}
+      },
 
     }
   };

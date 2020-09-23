@@ -3,8 +3,8 @@
     <div class="container">
       <div class="breadcrumbs">
         <ul>
-          <li><a href="">ГЛАВНАЯ</a></li>
-          <li>КУРСЫ</li>
+          <li><a href="">主页</a></li>
+          <li>我的课程</li>
         </ul>
       </div>
     </div>
@@ -16,17 +16,17 @@
           </div>
           <div class="about-teacher__left">
             <div class="">
-              <p style="color: #FFB800">"Молодой разраб"</p>
+<!--              <p style="color: #FFB800">"Молодой разраб"</p>-->
               <p class="fs-24">{{$auth.user.name}}</p>
               <p class="fs-14 text-color">{{$auth.user.score}} баллов</p>
-              <span class="fs-14 text-trans text-bold text-upper">6/9 courses</span>
+<!--              <span class="fs-14 text-trans text-bold text-upper">6/9 courses</span>-->
             </div>
           </div>
           <div class="about-teacher__right">
             <ul>
-              <li><a href="#" >help</a></li>
-              <li><nuxt-link to="/lk">profile</nuxt-link></li>
-              <li><a href="#" v-scroll-to="'#courses'">courses</a></li>
+              <li><a href="#" >如何使用它？</a></li>
+              <li><nuxt-link to="/lk">我的个人资料</nuxt-link></li>
+
             </ul>
           </div>
         </div>
@@ -34,7 +34,7 @@
     </section>
     <section>
       <div class="container">
-        <h3 class="section-header">progress</h3>
+        <h3 class="section-header">我的进步</h3>
         <div class="progress-top">
           <div class="progress-top__item " v-for="stage in stages" :key="stage.id">
             <div class="tarif-number " :class="{'notActive':stage.number>1}">
@@ -53,7 +53,7 @@
     </section>
     <section id="courses">
       <div class="container">
-        <h3 class="section-header">courses</h3>
+        <h3 class="section-header">我的课程</h3>
         <div class="courses">
           <div  class="course round-block"
                 :class="{'courceDone':finished_courses.includes(cource.id),
@@ -84,7 +84,7 @@
     </section>
      <section id="games">
       <div class="container">
-        <h3 class="section-header">games</h3>
+        <h3 class="section-header">教育游戏</h3>
         <div class="courses">
               <div  class="course round-block courceNotAvaiable">
               <img class="course-image" src="http://placehold.it/50" alt="">
