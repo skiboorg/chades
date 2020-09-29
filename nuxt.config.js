@@ -39,7 +39,8 @@ export default {
   */
   plugins: [
     '@/plugins/element-ui',
-    '@plugins/scroll.js'
+    '@plugins/scroll.js',
+     { src: '~/plugins/confetti.js', mode: 'client' },
   ],
   /*
   ** Auto import components
@@ -49,8 +50,9 @@ export default {
   /*
   ** Nuxt.js dev-modules
   */
-  buildModules: [
-  ],
+  buildModules:
+    ['@nuxt/typescript-build']
+  ,
   /*
   ** Nuxt.js modules
   */
@@ -73,6 +75,8 @@ export default {
   build: {
     transpile: [/^element-ui/],
   },
+
+
   auth: {
   strategies: {
     local: {

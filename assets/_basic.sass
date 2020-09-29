@@ -104,14 +104,35 @@ section
 .no-mb
   margin-bottom: 0 !important
 .section-header
+  position: relative
   font-size: 50px
   font-weight: 600
   letter-spacing: 0.05em
   text-transform: uppercase
-  background: $bg-gradient
-  -webkit-background-clip: text
-  -webkit-text-fill-color: transparent
+  color: #333333
+  //background: $bg-gradient
+  //-webkit-background-clip: text
+  //-webkit-text-fill-color: transparent
   margin-bottom: 50px
+  &.white
+    color: #ffffff
+  &.underline
+    margin-bottom: 100px
+    &::after
+      position: absolute
+      content: ''
+      width: 250px
+      height: 5px
+      left: 0
+      bottom: -40px
+      border-radius: 5px
+      background: #ffffff
+  &.underline-center
+    &::after
+      left: 0
+      right: 0
+      margin: auto
+
 
 @media (max-width: 960px)
   section
@@ -154,6 +175,8 @@ section
     text-align: center
     &.btn-outline
       border: 1px solid
+  &.btn-curved
+    transform: skewX(20deg)
 
 .fs-24
   font-size: 24px !important
@@ -345,6 +368,55 @@ section
   display: grid
   grid-template-columns: repeat(auto-fill,minmax(250px,1fr))
   grid-gap: 40px
+
+.learn-item-new
+  background: #FFFFFF
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1)
+  border-radius: 0 20px 0 0
+  height: 360px
+  width: 270px
+  min-width: 270px
+  cursor: pointer
+  margin: 0 auto
+  &__wrapper
+    &.down
+      padding-top: 50px
+  &__number
+    text-align: center
+    letter-spacing: 0.05em
+    text-transform: uppercase
+    font-size: 14px
+    color: #000000
+    margin-bottom: 15px
+  &__name
+    height: 90px
+    display: flex
+    align-items: center
+    justify-content: center
+    p
+      font-size: 16px
+      letter-spacing: 0.05em
+      text-transform: uppercase
+      color: #000000
+
+  &__inner
+    width: 270px
+    height: 270px
+    border-radius: 0px 20px
+    display: flex
+    align-items: center
+    justify-content: center
+    &.c-blue
+      background: #6EC4FF
+    &.c-orange
+      background: #F1796B
+    &.c-pink
+      background: #FF77A5
+    &.c-yellow
+      background: #FFB800
+
+
+
 .learn-item
   position: relative
   height: 270px
@@ -402,13 +474,34 @@ section
       p
         top: 50px
         font-size: 12px
+.feedback-new
+  background: url(/feedback-bg.png) no-repeat center
+  height: 800px
+  border-radius: 20px
+  &__wrapper
+    padding: 150px 0
 .feedback
   display: grid
   grid-template-columns: repeat(auto-fill,minmax(450px,1fr))
   grid-gap: 60px
   &-item
     padding: 60px 50px
-    border-radius: 40px
+    border-radius: 20px
+    position: relative
+    &::after
+      position: absolute
+      right: 80px
+      top: -80px
+    &.tiger
+      &::after
+        content: url(/tiger.png)
+    &.frog
+      &::after
+        content: url(/frog.png)
+
+    &__wrapper
+      &:first-child
+        padding-top: 40px
     &__header
       display: flex
       align-items: center
@@ -463,13 +556,65 @@ section
   display: grid
   grid-template-columns: repeat(auto-fill,minmax(250px,1fr))
   grid-gap: 40px
+
+.steps-new
+  background: url(/curved-line.png) center no-repeat
+  height: 1000px
+  position: relative
+
+.step-1-number
+  position: absolute
+  top: -20px
+  left: 54%
+.step-1-text
+  position: absolute
+  font-weight: 700
+  left: 54%
+  top: 50px
+
+.step-2-number
+  position: absolute
+  top: 315px
+  left: 15%
+.step-2-text
+  position: absolute
+  font-weight: 700
+  top: 385px
+  left: 19%
+
+.step-3-number
+  position: absolute
+  top: 725px
+  right: 25px
+.step-3-text
+  position: absolute
+  font-weight: 700
+  right: 90px
+  top: 785px
+
+.step-4-number
+  position: absolute
+  bottom: 0
+  left: 44%
+.step-4-text
+  position: absolute
+  font-weight: 700
+  left: 48%
+  bottom: -40px
+.step-img-1
+  position: absolute
+  right: 0
+  top: 20%
+.step-img-2
+  position: absolute
+  left: 0
+  top: 70%
 .step
   justify-self: center
   &-number
-    position: relative
     background: $bg-gradient
-    width: 70px
-    height: 70px
+    width: 60px
+    height: 60px
     box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.05)
     border-radius: 50%
     display: flex
@@ -479,6 +624,7 @@ section
     margin-bottom: 25px
     p
       color: #ffffff
+      font-size: 40px
       font-weight: 600
 
   &-item
@@ -530,9 +676,30 @@ section
   height: 490px !important
 
 .tarif
+  position: relative
   padding: 50px 20px 50px 50px
   position: relative
-  border-radius: 100px
+  border-radius: 20px
+  width: 250px
+  &-overlay
+    position: absolute
+    left: 0
+    right: 0
+    bottom: 0
+    background: rgba(0, 0, 0, 0.45)
+    z-index: 10
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    height: 100%
+    border-radius: 20px
+    p
+      color: #eeeeee
+      font-weight: 600
+      letter-spacing: 0.05em
+    img
+      margin-bottom: 10px
   & .btn
     //position: absolute
     bottom: 50px
@@ -565,6 +732,7 @@ section
     margin-bottom: 15px
   &-list
     margin-bottom: 25px
+    min-height: 115px
     li
       margin-bottom: 5px
       &:last-child
@@ -581,10 +749,12 @@ section
 
 
 .best-tarif
+
   padding: 50px 20px 50px 50px
   background: $bg-gradient
   position: relative
-  border-radius: 100px
+  width: 250px
+  border-radius: 20px
   & .btn
     //position: absolute
     //bottom: 50px
@@ -622,6 +792,7 @@ section
     color: #ffffff
   &-list
     margin-bottom: 25px
+    min-height: 115px
     li
       margin-bottom: 5px
       color: #ffffff
@@ -1219,11 +1390,41 @@ section
   max-width: 500px
   padding: 50px 100px
 
+.faq-wrapper
+    display: grid
+    grid-template-columns: repeat(auto-fill,minmax(450px,1fr))
+    grid-column-gap: 80px
+.faq-monkey
+  display: flex
+  align-items: center
+  justify-content: center
+  padding-top: 20px
+  img
+    margin-right: 35px
+  &__text
+    font-size: 30px
+    font-weight: 700
+    color: #333333
+    margin-bottom: 30px
+
 .faq-item
-  border-top: 1px solid rgba(91, 91, 91, 0.25)
-  padding: 25px 0
+  background: #FFFFFF
+  box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.05)
+  border-radius: 0px 20px
+  padding: 50px 40px
+  margin-bottom: 50px
   &:last-child
-    border-bottom: 1px solid rgba(91, 91, 91, 0.25)
+    margin-bottom: 0
+
+  &__header
+    font-size: 30px
+    font-weight: 700
+    margin-bottom: 50px
+    text-align: center
+  &__text
+    text-align: center
+
+
 
 
 .over-info
@@ -1240,3 +1441,35 @@ section
       margin-bottom: 15px
     span
       line-height: 150%
+
+
+.section-pink
+  background: url(/pink-bg.png) center no-repeat
+  height: 1300px
+  padding: 100px 0
+  border-radius: 20px
+  &-wrapper
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-gap: 80px
+  &-item
+
+    background: linear-gradient(180deg, #FFFFFF 0%, #FFF9F9 100%)
+    box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.05)
+    border-radius: 20px
+    padding: 50px
+    margin-bottom: 80px
+    &:last-child
+      margin-bottom: 0
+    &-top
+      display: flex
+      justify-content: space-between
+    &-text
+      p
+        &:first-child
+          font-size: 20px
+          margin-bottom: 10px
+        &:last-child
+          opacity: .6
+
+
