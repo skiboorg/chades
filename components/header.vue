@@ -42,7 +42,7 @@
       return {
 
         menuOpen:false,
-        indexPage:null
+        indexPage:true
 
 
       };
