@@ -1,5 +1,5 @@
 <template>
-  <div style="height: 59vh;display: flex;align-items: center;justify-content: center" class="container">
+  <div style="display: flex;align-items: center;justify-content: center; margin-bottom: 40px" class="container">
       <div  class="round-block form-block text-center">
         <h3 class="text-color fs-24 text-bold mb-25">Вход</h3>
 
@@ -32,8 +32,13 @@
         try {
           let response = await this.$auth.loginWith('local', { data: this.user})
           console.log(response)
-        } catch (err) {
 
+        } catch (err) {
+             this.$message({
+          showClose: true,
+          message: 'Oops, this is a error message.',
+          type: 'error'
+        });
         }
       },
 

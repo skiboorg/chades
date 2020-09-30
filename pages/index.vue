@@ -107,28 +107,28 @@
             <div  class="section-pink-item">
               <div class="section-pink-item-top">
                 <p>01</p>
-                <img src="http://placehold.it/100" alt="">
+                <img src="/puzle.png" alt="">
               </div>
               <div class="section-pink-item-text">
-                <p>计算机教育</p>
-                <p>编程是二十一世纪需求最大的专业。即使孩子选择了不同的职业道路，任何聘用单位都会高度重视IT技术领域的知识。我们的课程旨在开发各种专业领域的儿童计算机技能：<br>
-                  基础系统技能
-                  演示文稿和文档处理能力
-                  创造性设计和动画技能</p>
+                <p>开发逻辑和思维能力</p>
+                <p>我们的每堂课不仅教授专业的计算机能力，还开发思维能力，并教授思考和学习方法。<br>
+我们还设置逻辑和教育益智游戏，帮助开发孩子们的逻辑性和创造性。
+                </p>
               </div>
 
             </div>
               <div  class="section-pink-item">
               <div class="section-pink-item-top">
-                <p>01</p>
-                <img src="http://placehold.it/100" alt="">
+                <p>02</p>
+                <img src="/en.png" alt="">
               </div>
               <div class="section-pink-item-text">
-                <p>计算机教育</p>
-                <p>编程是二十一世纪需求最大的专业。即使孩子选择了不同的职业道路，任何聘用单位都会高度重视IT技术领域的知识。我们的课程旨在开发各种专业领域的儿童计算机技能：<br>
-                  基础系统技能
-                  演示文稿和文档处理能力
-                  创造性设计和动画技能</p>
+                <p>英语技能</p>
+                <p> 我们的主要任务是提升语言技能，并展示如何在实践中进行运用。                 <br>
+                  编程与英语紧密相连。我们让孩子清楚地看到如何将它用于发展和教育。<br>
+                  我们的技巧在于每个句子都有两行，以便孩子们记住句型结构和语言模式。<br>
+                  此外，每堂课中，我们都给孩子们提供需要识记的关键词——名词和动词，以及IT领域使用的简介词。
+                </p>
               </div>
 
             </div>
@@ -136,29 +136,29 @@
           <div class="section-pink-right">
               <div  class="section-pink-item">
               <div class="section-pink-item-top">
-                <p>01</p>
-                <img src="http://placehold.it/100" alt="">
+                <p>03</p>
+                <img src="/comp.png" alt="">
               </div>
               <div class="section-pink-item-text">
                 <p>计算机教育</p>
                 <p>编程是二十一世纪需求最大的专业。即使孩子选择了不同的职业道路，任何聘用单位都会高度重视IT技术领域的知识。我们的课程旨在开发各种专业领域的儿童计算机技能：<br>
-                  基础系统技能
-                  演示文稿和文档处理能力
-                  创造性设计和动画技能</p>
+                  基础系统技能<br>
+                  演示文稿和文档处理能力<br>
+                  创造性设计和动画技能
+                </p>
               </div>
 
             </div>
               <div  class="section-pink-item">
               <div class="section-pink-item-top">
-                <p>01</p>
-                <img src="http://placehold.it/100" alt="">
+                <p>04</p>
+                <img src="/code.png" alt="">
               </div>
               <div class="section-pink-item-text">
-                <p>计算机教育</p>
-                <p>我们的主要任务是提升语言技能，并展示如何在实践中进行运用。
-编程与英语紧密相连。我们让孩子清楚地看到如何将它用于发展和教育。
-我们的技巧在于每个句子都有两行，以便孩子们记住句型结构和语言模式。
-此外，每堂课中，我们都给孩子们提供需要识记的关键词——名词和动词，以及IT领域使用的简介词。</p>
+                <p>编程技能</p>
+                <p>编程是一个很大的领域，不仅包括数学和逻辑学，还包括处理信息和算法的能力。<br>
+我们教授您的孩子从入门到高层次知识，期间考虑了所有学习的特殊性，使课堂变得有趣且具吸引力——并为此设计了一个阶段性学习系统。
+                </p>
               </div>
 
             </div>
@@ -339,13 +339,13 @@
             <p class="tarif-price">70$\месяц</p>
             <a href="" class="btn btn-curved">购买</a>
           </div>
-          <div class="round-block best-tarif">
+          <div class="round-block best-tarif vip">
             <div class="tarif-overlay">
               <img src="/tl.png" alt="">
               <p>将于十二月开放</p>
             </div>
             <div class="best-tarif-number">
-              <img src="/bt.png" alt="">
+              <img src="/tv.png" alt="">
 
             </div>
             <p class="best-tarif-name">12个月VIP费用</p>

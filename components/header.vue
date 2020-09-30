@@ -1,5 +1,5 @@
 <template>
- <header class="header">
+ <header class="header" :class="{'header-small':!indexPage}">
         <div class="container">
             <div class="header-wrapper">
                 <div class="header-logo">
@@ -42,9 +42,22 @@
       return {
 
         menuOpen:false,
+        indexPage:null
 
 
       };
+    },
+    watch: {
+      '$route.path': function(val) {
+
+        if(val === '/'){
+          this.indexPage = true
+        }else{
+          this.indexPage = false
+        }
+
+
+      }
     },
     methods: {
 
