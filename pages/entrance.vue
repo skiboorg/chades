@@ -96,7 +96,6 @@
           });
         }
       },
-    },
     async registerUser() {
 
       await this.$axios.post('/auth/users/', {
