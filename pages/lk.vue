@@ -13,6 +13,14 @@
 
         <div class="lk-wrapper">
           <div class="lk-left">
+            <section>
+              <div class="container">
+                <div class="lk-news">
+                  <img src="http://placehold.it/340x200" alt="">
+                  <img src="http://placehold.it/340x200" alt="">
+                </div>
+              </div>
+            </section>
             <section id="achivements">
               <div class="container">
                 <h3 class="section-header">achivements</h3>
@@ -64,10 +72,9 @@
                     </el-upload>
 
                     <label >change password</label>
-                     <input type="text" class="form-control" placeholder="current password">
-                    <input type="text" class="form-control" placeholder="enter new password">
-                    <input type="text" class="form-control" placeholder="confirm new password">
-                    <a href="" class="btn btn-white">done</a>
+                    <input type="text" class="form-control" v-model="userData.password1" placeholder="enter new password">
+                    <input type="text" class="form-control" v-model="userData.password2" placeholder="confirm new password">
+                    <a href="" @click.prevent="updateUser" class="btn btn-white">done</a>
                   </div>
                   <div class="form-group">
                     <label >nickname</label>
@@ -149,11 +156,55 @@
         userData:{
           nickname: this.$auth.user.nickname,
           imageUrl: this.$auth.user.avatar,
+          password1:null,
+          password2:null,
 
         }
       }
     },
     methods:{
+      async updateUser(){
+        if (this.userData.password1 !== this.userData.password2){
+          this.$notify({
+            title: 'Ошибка',
+            message: 'Пароли не совпадают',
+            type: 'danger'
+          });
+          return
+        }
+        let formData = new FormData()
+        formData.set('userData', JSON.stringify(this.userData))
+
+        formData.set('avatar',this.avatar)
+
+        await this.$axios({
+          method: 'post',
+          headers:{
+            'content-type': 'multipart/form-data'
+          },
+          url: '/api/v1/user/update/',
+          data: formData
+        }).then((response) => {
+
+          this.$notify({
+            title: 'Успешно',
+            message: 'Ваши данные обновлены',
+            type: 'success'
+          });
+          this.$auth.fetchUser()
+
+
+
+        })
+          .catch(function (error) {
+            // handle error
+
+
+          })
+          .then(function () {
+            // always executed
+          });
+      },
       handleAvatarSuccess(res, file) {
         this.userData.imageUrl = URL.createObjectURL(file.raw);
 

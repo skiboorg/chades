@@ -351,8 +351,8 @@ export default {
       const sourceImg = this.$refs.sourceImg
       const canvas = this.$refs['puzzle-canvas']
       const ctx = canvas.getContext('2d')
-      const w = this.width
-      const h = this.height
+      const w = this.internalWidth
+      const h = this.internalHeight
       const vw = sourceImg.width
       const vh = sourceImg.height
       const ratio = Math.max(w / vw, h / vh)
@@ -368,6 +368,7 @@ export default {
       const marginX = (vw * ratio - w) / 2
       const marginY = (vh * ratio - h) / 2
       ctx.drawImage(this._tmpCanvas, marginX, marginY, w, h, w, 0, w, h)
+      console.log('ctx',this._tmpCtx )
     },
     _loadVideoFrameToCanvas() {
       const sourceImg = this.$refs.sourceImg
