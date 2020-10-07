@@ -7,7 +7,7 @@
         :showNumber="showNumber"
         :cols="dimensions.x"
         :rows="dimensions.y"
-        :src="'https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_480_1_5MG.mp4'"
+        :src="src.video"
 
         :animation="animation"
         :width="width"
@@ -35,9 +35,33 @@ const DIMENSIONS = {
 
 const SOURCEPATHS = {
   Dog: {
-    src: '/banner.png'
+    src: '/assets/dog.jpg'
   },
-
+  Cat: {
+    sources: [
+      {
+        src: '/assets/cat.webm',
+        type: 'video/webm'
+      },
+      // {
+      //   src: '/assets/cat.mp4',
+      //   type: 'video/mp4'
+      // }
+    ]
+  },
+  // Penguin: {
+  //   sources: [
+  //     {
+  //       src: penguinwebm,
+  //       type: 'video/webm'
+  //     },
+  //     {
+  //       src: penguinmp4,
+  //       type: 'video/mp4'
+  //     }
+  //   ]
+  // },
+  // Giphy: {}
 }
 
 const getGiphySrc = async function() {
@@ -54,12 +78,27 @@ const getGiphySrc = async function() {
   ]
 }
   export default {
+   async asyncData({$axios,$auth,params}){
+
+      try{
+        const  response_video= await $axios.get(`/api/v1/game/get_random_video/`)
+        const src = response_video.data
+        console.log(src)
+        return {src}
+
+
+
+      }catch (e) {
+        throw e
+      }
+
+    },
     data() {
       return {
-
+      src:null,
       show: true,
       videoTitle: 'Cat',
-      difficulty: 'Normal',
+      difficulty: null,
       distance: null,
       isGoal: false,
       autoResize: true,
@@ -67,7 +106,7 @@ const getGiphySrc = async function() {
       height: 300,
       showNumber: true,
       animation: true,
-
+      sources: SOURCEPATHS['Cat'].sources
     }
 
 
@@ -78,11 +117,19 @@ const getGiphySrc = async function() {
 
     },
 
-    created() {},
-  computed: {
-    src() {
-      return SOURCEPATHS[this.videoTitle].src
+    created() {
+     console.log(this.$route.query)
+      if (this.$route.query.d==='e'){
+        this.difficulty = 'Easy'
+      }
+       if (this.$route.query.d==='n'){
+        this.difficulty = 'Normal'
+      }
     },
+  computed: {
+    // src() {
+    //   return SOURCEPATHS[this.videoTitle].src
+    // },
     dimensions() {
       return DIMENSIONS[this.difficulty]
     }
@@ -110,14 +157,7 @@ const getGiphySrc = async function() {
     onPuzzleBoardInit() {
       console.log('init')
       this.isGoal = false
-       this.$confetti.start({
-          particles: [
-    {
-      type: 'rect',
-    }
-  ],
-  defaultColors: ['DodgerBlue', 'OliveDrab', 'Gold', 'pink', 'SlateBlue', 'lightblue', 'Violet', 'PaleGreen', 'SteelBlue', 'SandyBrown', 'Chocolate', 'Crimson'],
-        })
+
     },
     onPuzzleBoardStart() {
       console.log('start')

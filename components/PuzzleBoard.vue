@@ -78,7 +78,7 @@ export default {
     this._isStarted = false
     const board = createRandomBoard2D(this.cols, this.rows)
     return {
-      isTouchNeeded: true,
+      isTouchNeeded: false,
       blocks: board.blocks,
       isGoal: false,
       manhattan: null,
@@ -137,6 +137,8 @@ export default {
       return this.internalHeight / this.rows
     },
     isImage() {
+      console.log('this.src',this.src)
+      console.log(/\.(jpe?g|png|webm|gif)$/i.test(this.src))
       return /\.(jpe?g|png|webm|gif)$/i.test(this.src)
     },
     canvasStyle() {
@@ -165,6 +167,7 @@ export default {
     this._lastRenderTime = 0
     if (this.isImage) {
       this.$refs.sourceImg.onload = () => {
+        console.log('draw image')
         this.isTouchNeeded = false
         this._loadImageToCanvas()
       }
@@ -344,6 +347,7 @@ export default {
     },
     _loadImageToCanvas() {
       // TODO: Refactor
+      console.log('this.$refs.sourceImg',this.$refs.sourceImg)
       const sourceImg = this.$refs.sourceImg
       const canvas = this.$refs['puzzle-canvas']
       const ctx = canvas.getContext('2d')
@@ -470,8 +474,8 @@ export default {
 <style scoped>
 #sourceImg,
 #targetImg {
-  width: 300;
-  height: 300;
+  width: 300px;
+  height: 300px;
 }
 .puzzle-canvas {
   position: absolute;

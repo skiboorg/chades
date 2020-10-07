@@ -16,12 +16,19 @@
     <section>
       <div class="container">
         <div class="lesson-wrapper">
-          <div class="course round-block">
-            <img class="course-image" :src="cource.icon_color" alt="">
-            <p class="course-name">{{cource.description}} <span class="course-count">06/{{cource.lessons.length < 9 ? '0'+cource.lessons.length : cource.lessons.length}}</span></p>
-            <p class="course-status">in process</p>
+           <div  class="course" :style="{'background':cource.bg_color}" >
+             <div class="course__wrapper">
+               <div class="course__inner">
+                  <img class="course-image" :src="cource.icon" alt="">
+                </div>
+                 <div class="course__name">
+                  <p >{{cource.description}}<br>
 
-          </div>
+                  </p>
+                </div>
+             </div>
+            </div>
+
           <!-- complete   progress          -->
 
           <div class="lessons">

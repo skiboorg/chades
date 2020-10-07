@@ -1,0 +1,105 @@
+
+.lk
+  &-wrapper
+    display: grid
+    grid-template-columns: 3fr 1fr
+    grid-gap: 20px
+  &-user
+    position: sticky !important
+    top: 20px
+.about-user
+  position: relative
+  padding: 40px
+
+  &__num
+    position: absolute
+    color: #000
+    font-size: 16px
+    letter-spacing: 0.05em
+  &__img
+    //margin: 0 auto
+    position: relative
+    border-radius: 50%
+    background: $bg-gradient
+    width: 170px
+    height: 170px
+    margin-bottom: 25px
+    img
+      position: absolute
+      width: 160px
+      height: 160px
+      border-radius: 50%
+      top: 5px
+      left: 5px
+      object-fit: cover
+
+.achivements
+  display: grid
+  grid-template-columns: repeat(auto-fill,minmax(350px,1fr))
+  grid-gap: 30px
+.achivement
+  //border: 1px solid #CECECE
+  box-sizing: border-box
+  box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.05)
+  border-radius: 40px
+  display: flex
+  align-items: flex-start
+  padding: 15px 30px
+  opacity: 0.8
+  &.done
+    background: linear-gradient(180deg, #FFFFFF 0%, #FFF9F9 100%)
+    box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.05)
+    border-radius: 40px
+    border: none
+    opacity: 1
+  & .course-progress
+    width: 200px
+    margin-bottom: 0
+    margin-right: 30px
+  &__info
+    flex-grow: 1
+    display: flex
+    height: 110px
+    justify-content: space-between
+    flex-direction: column
+    img
+      width: 50px
+      height: 50px
+    p
+      font-weight: 600
+      font-size: 16px
+      letter-spacing: 0.05em
+      text-transform: uppercase
+      margin-right: 15px
+    span
+      font-size: 14px
+
+
+  &__check
+    opacity: 0
+    &.done
+      opacity: 1
+      span
+        font-weight: 600
+        font-size: 14px
+        letter-spacing: 0.05em
+        text-transform: uppercase
+        opacity: .5
+        display: inline-block
+        margin-right: 20px
+
+
+
+.certificates
+  display: grid
+  grid-template-columns: repeat(auto-fill,minmax(350px,1fr))
+  grid-gap: 30px
+.certificate
+  position: relative
+  p
+    position: absolute
+    bottom: 60px
+    left: 0
+    right: 0
+    text-align: center
+

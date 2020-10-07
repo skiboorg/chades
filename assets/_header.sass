@@ -1,12 +1,16 @@
 .header
-  background: url(/header-bg.png) no-repeat center
   height: 900px
   padding-top: 20px
   margin-bottom: 190px
+  background-position: center !important
+  background-repeat: no-repeat !important
   &.header-small
     background: url(http://placehold.it/1920x300) no-repeat center
     height: 300px
     margin-bottom: 100px
+  &.no-header
+    background: none
+    height: unset
   &-wrapper
     position: relative
     background: linear-gradient(180deg, #FFFFFF 0%, #FFF9F9 100%)

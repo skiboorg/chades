@@ -10,32 +10,35 @@
     </div>
     <section>
       <div class="container">
-        <div class="round-block about-teacher lk">
-          <div class="about-teacher__img">
-            <img :src="$auth.user.avatar" alt="">
-          </div>
-          <div class="about-teacher__left">
-            <div class="">
-<!--              <p style="color: #FFB800">"Молодой разраб"</p>-->
-              <p class="fs-24">{{$auth.user.name}}</p>
-              <p class="fs-14 text-color">{{$auth.user.score}} баллов</p>
-<!--              <span class="fs-14 text-trans text-bold text-upper">6/9 courses</span>-->
+         <h3 class="section-header">我的进步</h3>
+        <div class="course-top">
+          <div class="round-block about-user">
+            <p class="about-user__num">#{{$auth.user.id}} </p>
+            <div class="about-user__img">
+              <img :src="$auth.user.avatar" alt="">
+            </div>
+            <div class="about-user__left">
+              <div class="mb-25">
+                <!--              <p style="color: #FFB800">"Молодой разраб"</p>-->
+                <p class="fs-14">@gfdg</p>
+                <p class="fs-24">{{$auth.user.name}}</p>
+                <p class="fs-14 "><span class="text-color">{{$auth.user.score}} баллов</span> 6/9 courses</p>
+                <!--              <span class="fs-14 text-trans text-bold text-upper">6/9 courses</span>-->
+              </div>
+
+              <ul>
+                <li><a href="#" >如何使用它？</a></li>
+                <li><nuxt-link to="/lk">我的个人资料</nuxt-link></li>
+
+              </ul>
             </div>
           </div>
-          <div class="about-teacher__right">
-            <ul>
-              <li><a href="#" >如何使用它？</a></li>
-              <li><nuxt-link to="/lk">我的个人资料</nuxt-link></li>
+          <div class="course-top__progress">
+            <div class="course-top__img">
+              <img src="/course-img.png" alt="">
+            </div>
 
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div class="container">
-        <h3 class="section-header">我的进步</h3>
-        <div class="progress-top">
+              <div class="progress-top">
           <div class="progress-top__item " v-for="stage in stages" :key="stage.id">
             <div class="tarif-number " :class="{'notActive':stage.number>1}">
               <p>{{stage.number}}</p>
@@ -49,53 +52,83 @@
             <p >{{this.$auth.user.score}}</p>
           </div>
         </div>
+          </div>
+        </div>
       </div>
     </section>
+
     <section id="courses">
       <div class="container">
         <h3 class="section-header">我的课程</h3>
         <div class="courses">
-          <div  class="course round-block"
-                :class="{'courceDone':finished_courses.includes(cource.id),
-                                'courceNotAvaiable' : !avaiable_courses.includes(cource.id)
-                              }"
-                v-for="cource in cources" :key="cource.id"
-                :style="progress_courses.includes(cource.id) ? {'background': 'url('+cource.bg_image+')'} : null">
-            <nuxt-link :to="'/courses/'+cource.id">
-              <img class="course-image" :src="progress_courses.includes(cource.id) ? cource.icon_white : cource.icon_color" alt="">
+          <div class="course__wrapper" v-for="cource in cources" :key="cource.id">
+            <div  class="course"
+                  :class="{'courceDone':finished_courses.includes(cource.id),
+                           'progress' : !avaiable_courses.includes(cource.id),
+                           'courceNotAvaiable' : !avaiable_courses.includes(cource.id),
 
-              <p class="course-name" :class="{'inProgress':progress_courses.includes(cource.id)}">{{cource.description}}
-                <span class="course-count" :class="{'inProgress':progress_courses.includes(cource.id)}">
-                        ({{getFinishedLessons(cource.id)}}/{{cource.lessons.length < 9 ? '0'+cource.lessons.length : cource.lessons.length}})
+                           }"
+                  :style="{'background':cource.bg_color}"
+            >
+
+              <nuxt-link :to="'/courses/'+cource.id">
+                <div class="course__inner">
+                  <img class="course-image" :src="cource.icon" alt="">
+
+                  <p v-if="progress_courses.includes(cource.id)" class="course-status">in process</p>
+                  <p v-if="finished_courses.includes(cource.id) " style="color: #27AE60" class="course-status">done</p>
+<!--                  <div v-if="!avaiable_courses.includes(cource.id)" class="course-status">-->
+
+<!--                    <p class="">зависит от {{cource.depence}}</p>-->
+<!--                  </div>-->
+                </div>
+                <div class="course__name">
+                  <p  :class="{'inProgress':progress_courses.includes(cource.id)}">{{cource.description}}<br>
+                    <span :style="{'color':cource.bg_color}" class="course-count" :class="{'inProgress':progress_courses.includes(cource.id)}">
+                        (0/{{cource.lessons.length < 9 ? '0'+cource.lessons.length : cource.lessons.length}})
                       </span>
-              </p>
+                  </p>
+                </div>
 
-              <p v-if="progress_courses.includes(cource.id)" class="course-status">in process</p>
-              <p v-if="finished_courses.includes(cource.id) " style="color: #27AE60" class="course-status">done</p>
-              <div v-if="!avaiable_courses.includes(cource.id)" class="course-status">
-                <img src="/lock.png" alt="">
-                <p class="">зависит от {{cource.depence}}</p>
-              </div>
 
-            </nuxt-link>
+              </nuxt-link>
+            </div>
           </div>
+
         </div>
       </div>
     </section>
-     <section id="games">
+    <section id="games">
       <div class="container">
         <h3 class="section-header">教育游戏</h3>
         <div class="courses">
-              <div  class="course round-block courceNotAvaiable">
-              <img class="course-image" src="http://placehold.it/50" alt="">
-              <p class="course-name" >123123123</p>
-              <div  class="course-status">
-                <img src="/lock.png" alt="">
-              </div>
-          </div>
+           <div  class="course"  >
+             <nuxt-link to="/slider?d=e">
+               <div class="course__wrapper">
+               <div class="course__inner">
+                  <img class="course-image" src="http://placehold.it/50" alt="">
+                </div>
+                 <div class="course__name">
+                  <p>EASY</p>
+                </div>
+             </div>
+             </nuxt-link>
+            </div>
+          <div  class="course"  >
+             <nuxt-link to="/slider?d=n">
+               <div class="course__wrapper">
+               <div class="course__inner">
+                  <img class="course-image" src="http://placehold.it/50" alt="">
+                </div>
+                 <div class="course__name">
+                  <p>Normal</p>
+                </div>
+             </div>
+             </nuxt-link>
+            </div>
         </div>
       </div>
-     </section>
+    </section>
   </div>
 
 

@@ -518,7 +518,8 @@
     data() {
       return {
         c1DialogVisible: false,
-        c2DialogVisible: false
+        c2DialogVisible: false,
+        bg: 'Example blog post'
       };
     }
   };
