@@ -60,15 +60,15 @@
   export default {
     data() {
       return {
-        regActive:true,
-        loginActive:false,
+        regActive: true,
+        loginActive: false,
 
         user_login: {
           email: '',
           password: '',
         },
         curStep: 1,
-        is_registered:false,
+        is_registered: false,
         user_reg: {
           name: '',
           promo: '',
@@ -85,7 +85,7 @@
       async userLogin() {
 
         try {
-          let response = await this.$auth.loginWith('local', { data: this.user_login})
+          let response = await this.$auth.loginWith('local', {data: this.user_login})
           console.log(response)
 
         } catch (err) {
@@ -96,36 +96,37 @@
           });
         }
       },
-    async registerUser() {
+      async registerUser() {
 
-      await this.$axios.post('/auth/users/', {
-        password: this.user_reg.password2,
-        email: this.user_reg.email,
-        name: this.user_reg.name,
-        nickname: this.user_reg.login,
-        promo: this.user_reg.promo,
+        await this.$axios.post('/auth/users/', {
+          password: this.user_reg.password2,
+          email: this.user_reg.email,
+          name: this.user_reg.name,
+          nickname: this.user_reg.login,
+          promo: this.user_reg.promo,
 
 
-      })
-        .then((response) => {
-          console.log(response.status);
-          console.log(response.data);
-          if (response.status === 201) {
-            this.is_registered=true
-          }
-          if (response.status === 400) {
-
-          }
         })
-        .then(response => {
-          console.log('response1')
-          console.log(response)
-        })
-        .catch(error => {
-          console.log('response2')
-          console.log(error.response)
+          .then((response) => {
+            console.log(response.status);
+            console.log(response.data);
+            if (response.status === 201) {
+              this.is_registered = true
+            }
+            if (response.status === 400) {
 
-        });
+            }
+          })
+          .then(response => {
+            console.log('response1')
+            console.log(response)
+          })
+          .catch(error => {
+            console.log('response2')
+            console.log(error.response)
+
+          });
+      }
     }
   }
 </script>
