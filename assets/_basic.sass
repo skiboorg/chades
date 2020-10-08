@@ -586,7 +586,7 @@ section
   &-cover
     margin-bottom: 200px
   &-header
-      margin-bottom: 490px
+      margin-bottom: 90px
 
 .steps-new
   background: url(/curved-line.png) center no-repeat
@@ -1206,13 +1206,11 @@ section
     opacity: .5
     text-transform: uppercase
     text-align: center
-
   &.complete
     border: 1px solid #DADADA
     background: #84BD95
     box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.05)
     border-radius: 100px
-
   &.notAvaiable
     background: #a0a0a0
     cursor: not-allowed !important
@@ -1229,10 +1227,19 @@ section
     grid-column-gap: 10px
     grid-row-gap: 10px
   .lesson
-    padding: 20px 10px
+    padding: 0px 10px
     &-wrapper
       & .course
         margin-right: 10px
+
+@media (max-width: 450px)
+  .lesson
+    &-wrapper
+      display: grid
+      grid-template-columns: 1fr
+      grid-gap: 20px
+      & .course
+        margin: 0 auto
 
 
 .form-block

@@ -1,13 +1,13 @@
 <template>
   <div class="container auth">
     <div class="auth-top">
-      <p class="auth-top__item " :class="{'itemActive':regActive}" @click="regActive=true,loginActive=false">РЕГИСТРАЦИЯ</p>
-      <p class="auth-top__item" :class="{'itemActive':loginActive}" @click="regActive=false,loginActive=true">ВХОД</p>
+      <p class="auth-top__item " :class="{'itemActive':regActive}" @click="regActive=true,loginActive=false">在网站上注册</p>
+      <p class="auth-top__item" :class="{'itemActive':loginActive}" @click="regActive=false,loginActive=true">登录到您的个人帐户</p>
     </div>
 
     <div v-if="loginActive"  class="auth-form text-center">
-      <h3 class="text-color fs-24 text-bold mb-25">Вход</h3>
-
+      <h3 class="text-color fs-24 text-bold mb-25">登录到您的个人帐户</h3>
+      <p v-if="is_registered" class="fs-16 text-trans mb-25">Вы успешно зарегистрированы</p>
       <div  class="auth-form__block">
         <input type="text" class="form-control no-mw small-ph" v-model="user_login.email" placeholder="Введите вашу почту">
         <input type="password" class="form-control no-mw small-ph mb-100" v-model="user_login.password" placeholder="Ваш пароль">
@@ -16,27 +16,27 @@
 
     </div>
     <div v-if="regActive"  class="auth-form text-center">
-      <h3 class="text-color fs-24 text-bold mb-25">регистрация {{curStep}}/3</h3>
+      <h3 class="text-color fs-24 text-bold mb-25">在网站上注册 {{curStep}}/3</h3>
 
       <div v-if="curStep===1" class="auth-form__inner">
         <div class="auth-form__block">
-          <input type="text" class="form-control no-mw small-ph" v-model="user_reg.promo" placeholder="ПромоКод">
-          <input type="text" class="form-control no-mw small-ph" v-model="user_reg.name" placeholder="Введите ваше имя">
-          <input type="text" class="form-control no-mw small-ph" v-model="user_reg.email" placeholder="Введите вашу почту">
-          <input type="text" class="form-control no-mw small-ph " v-model="user_reg.login" placeholder="Придумайте логин">
-          <input type="text" class="form-control no-mw small-ph" v-model="user_reg.password1" placeholder="Придумайте пароль">
-          <input type="text" class="form-control no-mw small-ph mb-25" v-model="user_reg.password2" placeholder="Подтвердите пароль">
+          <input type="text" class="form-control no-mw small-ph" v-model="user_reg.promo" placeholder="促销代码">
+          <input type="text" class="form-control no-mw small-ph" v-model="user_reg.name" placeholder="输入学生姓名">
+          <input type="text" class="form-control no-mw small-ph" v-model="user_reg.email" placeholder="你的邮件">
+          <input type="text" class="form-control no-mw small-ph " v-model="user_reg.login" placeholder="输入昵称">
+          <input type="text" class="form-control no-mw small-ph" v-model="user_reg.password1" placeholder="密码">
+          <input type="text" class="form-control no-mw small-ph mb-25" v-model="user_reg.password2" placeholder="重复输入密码">
 
 
-             <span class="btn" @click="curStep+=1" :class="{'btnDisabled': user_reg.password2 === ''}">далее</span>
+             <span class="btn" @click="curStep+=1" :class="{'btnDisabled': user_reg.password2 === ''}">下一步注册</span>
 
 
 
         </div>
         <div class="auth-form__block">
-          <p>В пароле должно быть как минимум 7 символов</p>
-          <p>В пароле должно быть как минимум 7 символов</p>
-          <p>В пароле должно быть как минимум 7 символов</p>
+          <p>学校将发布促销代码以获取更多奖金。</p>
+          <p>请输入四个字符的数字（0-9）作为密码。</p>
+          <p>付款后，您的注册确认信将发送到您的邮件中。</p>
         </div>
 
 
@@ -111,7 +111,9 @@
             console.log(response.status);
             console.log(response.data);
             if (response.status === 201) {
+              this.regActive = true
               this.is_registered = true
+              this.loginActive = false
             }
             if (response.status === 400) {
 

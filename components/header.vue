@@ -11,6 +11,8 @@
                     <a class="header-nav__item" href="#">关于</a>
                     <a class="header-nav__item" href="#">费率</a>
                     <a class="header-nav__item" href="#">联络</a>
+                  <nuxt-link v-if="this.$auth.loggedIn" class="header-nav__item" to="/lk">个人专区</nuxt-link>
+
                 </div>
                 <div v-if="!this.$auth.loggedIn" class="header-btn">
                    <nuxt-link  to="/entrance" class="btn">登录或注册</nuxt-link>

@@ -193,27 +193,26 @@
     </section><!--    steps-new-->
     <section>
       <div class="container">
-        <h3 class="section-header">лучшие ученики</h3>
+        <h3 class="section-header">我们最好的学生</h3>
         <div class="best">
           <div class="best-item round-block">
             <p class="best-item__num">#1</p>
-            <div class="best-item__name"><img src="http://placehold.it/300" alt=""><p>сунь ли вен</p><span>@suniliven</span></div>
+            <div class="best-item__name"><img src="/avatar.png" alt=""><p>金龙</p><span>@suniliven</span></div>
             <div class="best-item__ahi">
-              <img src="/ah1.png" alt="">
-              <img src="/ah1.png" alt="">
-              <img src="/ah1.png" alt="">
-              <p class="best-item__ahi-count">6/19 courses</p>
               <p class="best-item__ahi-ball">2485 баллов</p>
             </div>
           </div>
           <div class="best-item round-block">
             <p class="best-item__num">#1</p>
-            <div class="best-item__name"><img src="http://placehold.it/300" alt=""><p>сунь ли вен</p><span>@suniliven</span></div>
+            <div class="best-item__name"><img src="/avatar.png" alt=""><p>卫东</p><span>@suniliven</span></div>
             <div class="best-item__ahi">
-              <img src="/ah1.png" alt="">
-
-              <img src="/ah1.png" alt="">
-              <p class="best-item__ahi-count">6/9 courses</p>
+              <p class="best-item__ahi-ball">285 баллов</p>
+            </div>
+          </div>
+          <div class="best-item round-block">
+            <p class="best-item__num">#1</p>
+            <div class="best-item__name"><img src="/avatar.png" alt=""><p>永生</p><span>@suniliven</span></div>
+            <div class="best-item__ahi">
               <p class="best-item__ahi-ball">285 баллов</p>
             </div>
           </div>

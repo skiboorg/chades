@@ -118,7 +118,7 @@
              <nuxt-link to="/slider_video?d=n">
                <div class="course__wrapper">
                <div class="course__inner">
-                  <img class="course-image" src="/slider-v-4.png" alt="">
+                  <img class="course-image" src="/slider-v-5.png" alt="">
                 </div>
                  <div class="course__name">
                   <p>标记视频</p>

@@ -3,12 +3,12 @@
         <div class="container">
             <div class="footer-wrapper">
                 <div class="footer-logo">
-                    <a href="">CHADEC</a>
+                    <nuxt-link to="/"><img src="/logo.png" alt=""></nuxt-link>
                 </div>
                 <div class="footer-nav">
-                    <a class="footer-nav__item" href="#">Наши курсы</a>
-                    <a class="footer-nav__item" href="#">О нас</a>
-                    <a class="footer-nav__item" href="#">Контакты</a>
+                    <a class="footer-nav__item" href="/courses">关于</a>
+                    <a class="footer-nav__item" href="#">费率 </a>
+                    <a class="footer-nav__item" href="#">联络</a>
                 </div>
                   <div v-if="!this.$auth.loggedIn" class="footer-btn">
                    <nuxt-link  to="/register" class="btn">登录或注册</nuxt-link>

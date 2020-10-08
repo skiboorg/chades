@@ -35,9 +35,9 @@
 
 
             <div class="lesson" :class="{'complete':lesson.status===2, 'notAvaiable':lesson.status===0 }"  v-for="(lesson,index) in lessons" :key="lesson.id">
-              <p v-if="lesson.status===1"  @click="changeLesson(lesson.lesson)">урок {{index+1}} </p>
-              <p v-if="lesson.status===0">урок {{index+1}}</p>
-              <p v-if="lesson.status===2" @click="changeLesson(lesson.lesson)">урок {{index+1}}</p>
+              <p v-if="lesson.status===1"  @click="changeLesson(lesson.lesson)">第{{index+1}}课</p>
+              <p v-if="lesson.status===0">第{{index+1}}课</p>
+              <p v-if="lesson.status===2" @click="changeLesson(lesson.lesson)">第{{index+1}}课</p>
             </div>
 
 
@@ -67,7 +67,7 @@
     <section >
       <div class="container ">
         <div class="">
-          <h3 class="section-header">Определения</h3>
+          <h3 class="section-header">新定义</h3>
           <div class="round-block p-40" v-html="cource.lessons[cur_lesson].means"></div>
         </div>
 
@@ -76,7 +76,7 @@
     <section >
       <div class="container ">
         <div class="p-400">
-          <h3 class="section-header">Слова</h3>
+          <h3 class="section-header">新词</h3>
           <div class="round-block p-40" v-html="cource.lessons[cur_lesson].words"></div>
         </div>
       </div>
@@ -85,7 +85,7 @@
       <!--    <section>-->
       <div class="container">
         <div class="">
-          <h3 class="section-header">Тест</h3>
+          <h3 class="section-header">测试</h3>
 
           <!--          <div class="round-block p-40 mb-50" v-if="cource.lessons[cur_lesson].test.length>0" >-->
           <!--            <div class="mb-25" v-html="cource.lessons[cur_lesson].test[0].description"></div>-->
