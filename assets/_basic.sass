@@ -149,11 +149,16 @@ section
   .section-header
     font-size: 35px
     margin-bottom: 25px
+
+
 @media (max-width: 500px)
   section
     margin-bottom: 75px
   .section-header
     font-size: 20px
+  .el-dialog
+    width: 95% !important
+    margin-top: 1vh !important
 
 
 .container
@@ -263,7 +268,8 @@ section
 
 @media (max-width: 1024px)
   .block-feature
-    height: 270px
+    height: 250px
+    width: 250px
     img
       width: 70px
 
@@ -388,8 +394,8 @@ section
   cursor: pointer
   margin: 0 auto
   &__wrapper
-    &.down
-      padding-top: 50px
+    &:nth-child(even)
+      padding-top: 40px
   &__number
     text-align: center
     letter-spacing: 0.05em
@@ -464,25 +470,37 @@ section
   &.learn4
         background: url(/learn4.png) no-repeat
 
-@media (max-width: 960px)
+@media (max-width: 990px)
   .learn
-    grid-template-columns: repeat(auto-fill,minmax(185px,1fr))
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr))
     grid-gap: 30px
-    &-item
-      background-size: cover !important
-      width: 200px
-      height: 200px
+    &-item-new
+      &__wrapper
+        &:nth-child(even)
+          padding-top: 0px
+
 @media (max-width: 500px)
   .learn
     grid-template-columns: repeat(auto-fill,minmax(125px,1fr))
-    grid-gap: 30px
-    &-item
-      background-size: cover !important
-      width: 140px
-      height: 140px
-      p
-        top: 50px
-        font-size: 12px
+    grid-column-gap: 10px
+    grid-row-gap: 40px
+    &-item-new
+      width: 170px
+      min-width: 170px
+      height: 225px
+      img
+        width: 100px
+        height: 100px
+      &__inner
+        width: 170px
+        height: 170px
+      &__wrapper
+        height: 230px
+      &__name
+        height: 60px
+        p
+          font-size: 14px
+
 .feedback-new
   background: url(/feedback-bg.png) no-repeat center
   height: 800px
@@ -542,7 +560,7 @@ section
 @media (max-width: 500px)
   .feedback
     grid-template-columns: 1fr
-    grid-gap: 20px
+    grid-gap: 100px
     &-item
       padding: 20px
       border-radius: 40px
@@ -565,6 +583,10 @@ section
   display: grid
   grid-template-columns: repeat(auto-fill,minmax(250px,1fr))
   grid-gap: 40px
+  &-cover
+    margin-bottom: 200px
+  &-header
+      margin-bottom: 490px
 
 .steps-new
   background: url(/curved-line.png) center no-repeat
@@ -668,12 +690,55 @@ section
   .steps
     grid-template-columns: repeat(auto-fill,minmax(130px,1fr))
     grid-gap: 10px
+    &-cover
+      margin-bottom: 100px
+    &-new
+      height: 315px
+      background-size: contain
+    &-header
+      margin-bottom: 40px
+
   .step
-    &-item
-      padding: 50px 15px
-      min-height: 170px
-      width: 170px
-      height: 170px
+    &-number
+      width: 30px
+      height: 30px
+      p
+        font-size: 25px
+    &-1-text
+      font-size: 12px
+      left: 50%
+      top: 15px
+    &-2-text
+      font-size: 12px
+      left: 20px
+      top: 125px
+    &-3-text
+      font-size: 12px
+      right: 35px
+      top: 230px
+    &-4-text
+      font-size: 12px
+      left: 45%
+      bottom: -50px
+    &-2-number
+      left: 20px
+      top: 95px
+    &-3-number
+      right: 0px
+      top: 225px
+
+    &-4-number
+      bottom: -25px
+
+    &-img-1
+      width: 100px
+      height: 100px
+      top: 20%
+    &-img-2
+      width: 100px
+      height: 100px
+      bottom: -60px
+      top: unset
 
 .tarifs
   display: grid
@@ -821,19 +886,17 @@ section
 
 @media (max-width: 500px)
   .tarifs
-    display: none
-    &-slider
-      display: block
+    grid-template-columns: 1fr
 
-@media (max-width: 960px)
+@media (max-width: 990px)
   .tarifs
-    grid-template-columns: repeat(auto-fill,minmax(200px,1fr))
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr))
     grid-gap: 45px
 
   .tarif
-    padding: 40px
+    width: 340px
   .best-tarif
-    padding: 40px
+    width: 340px
 
 .best-item
   padding: 15px 30px
@@ -1027,10 +1090,10 @@ section
       right: 0
       bottom: -30px
 
-@media (max-width: 960px)
+@media (max-width: 990px)
   .progress-top
     display: grid
-    grid-template-columns: repeat(auto-fill,minmax(125px,1fr))
+    grid-template-columns: repeat(auto-fill,minmax(110px,1fr))
     //grid-gap: 45px
     margin-bottom: 25px
     &__item
@@ -1038,6 +1101,18 @@ section
         margin-bottom: 10px
       &-exp
         margin-left: 15px
+
+@media (max-width: 500px)
+  .progress-top
+    grid-template-columns: repeat(auto-fill,minmax(80px,1fr))
+    &__item
+      & .tarif-number
+        width: 70px
+        height: 70px
+        &.notActive
+          width: 50px
+          height: 50px
+
 
 
 .form-group
@@ -1148,7 +1223,7 @@ section
       color: #ffffff !important
       opacity: 1 !important
 
-@media (max-width: 960px)
+@media (max-width: 990px)
   .lessons
     grid-template-columns: repeat(auto-fill,minmax(200px,1fr))
     grid-column-gap: 10px
@@ -1200,7 +1275,13 @@ section
     text-align: center
 
 
-
+@media (max-width: 990px)
+  .faq
+    &-item
+      margin-bottom: 20px
+    &-wrapper
+      grid-template-columns: repeat(auto-fill,minmax(320px,1fr))
+      grid-gap: 20px
 
 .over-info
   display: flex
@@ -1228,7 +1309,6 @@ section
     grid-template-columns: 1fr 1fr
     grid-gap: 80px
   &-item
-
     background: linear-gradient(180deg, #FFFFFF 0%, #FFF9F9 100%)
     box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.05)
     border-radius: 20px
@@ -1248,3 +1328,19 @@ section
           opacity: .6
 
 
+@media (max-width: 990px)
+  .section-pink
+    height: fit-content
+    background-size: cover
+    &-item
+      margin-bottom: 20px
+    &-wrapper
+      grid-gap: 20px
+
+@media (max-width: 500px)
+  .section-pink
+    height: fit-content
+    &-item
+      padding: 20px
+    &-wrapper
+      grid-template-columns: 1fr

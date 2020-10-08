@@ -8,7 +8,7 @@
         </ul>
       </div>
     </div>
-    <section>
+
       <div class="container">
 
         <div class="lk-wrapper">
@@ -16,8 +16,8 @@
             <section>
               <div class="container">
                 <div class="lk-news">
-                  <img src="http://placehold.it/340x200" alt="">
-                  <img src="http://placehold.it/340x200" alt="">
+                  <img src="/lk-1.png" alt="">
+                  <img src="/lk-2.png" alt="">
                 </div>
               </div>
             </section>
@@ -124,7 +124,7 @@
 
 
       </div>
-    </section>
+
 
 
 

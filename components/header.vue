@@ -69,12 +69,12 @@
         if(url === '/courses'){
           this.indexPage = false
           this.noHeader = false
-          this.bg = '/test.png'
+          this.bg = '/course-top.png'
         }
         if(url === '/lk'){
           this.indexPage = false
           this.noHeader = false
-          this.bg = '/test.png'
+          this.bg = '/lk-top.png'
         }
 
         if(url === '/entrance'){
@@ -82,7 +82,12 @@
           this.noHeader = true
           this.bg = ''
         }
-        if(url === '/slider'){
+        if(url === '/slider_video'){
+          this.indexPage = false
+          this.noHeader = true
+          this.bg = ''
+        }
+        if(url === '/slider_image'){
           this.indexPage = false
           this.noHeader = true
           this.bg = ''

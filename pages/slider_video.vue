@@ -78,7 +78,7 @@ const getGiphySrc = async function() {
   ]
 }
   export default {
-   async asyncData({$axios,$auth,params}){
+   async asyncData({$axios,$auth}){
 
       try{
         const  response_video= await $axios.get(`/api/v1/game/get_random_video/`)

@@ -13,8 +13,9 @@
   cursor: pointer
   margin: 0 auto
   &-top
-    display: flex
-    justify-content: space-between
+    display: grid
+    grid-template-columns: 1fr 3fr
+    grid-gap: 20px
     &__progress
       flex-basis: 900px
     &__img
@@ -102,15 +103,16 @@
 
 
 
-@media (max-width: 960px)
+@media (max-width: 990px)
   .courses
     display: grid
-    grid-template-columns: repeat(auto-fill,minmax(185px,1fr))
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr))
     grid-gap: 30px
   .course
     padding: 40px
     text-align: center
-
+    &__wrapper:nth-child(even)
+      padding-top: 0px
     &-progress
       position: relative
       width: 150px
@@ -146,3 +148,7 @@
       text-transform: uppercase
       opacity: 0.5
 
+@media (max-width: 500px)
+  .course
+    &-top
+      grid-template-columns: 1fr

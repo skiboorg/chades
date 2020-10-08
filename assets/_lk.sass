@@ -10,6 +10,7 @@
 .about-user
   position: relative
   padding: 40px
+  height: fit-content
 
   &__num
     position: absolute
@@ -32,6 +33,7 @@
       top: 5px
       left: 5px
       object-fit: cover
+
 
 .achivements
   display: grid
@@ -115,3 +117,27 @@
 
     &:last-child
       margin-right: 0
+
+@media (max-width: 990px)
+  .about-user
+    &__left
+      ul
+        li
+          margin-bottom: 10px
+
+@media (max-width: 500px)
+  .lk
+    &-wrapper
+      grid-template-columns: 1fr
+    &-left
+      order: 1
+    &-news
+      img
+        &:first-child
+          margin-bottom: 10px
+    &-user
+      text-align: center
+  .about-user__img
+    margin: 0 auto
+    margin-bottom: 20px
+

@@ -170,9 +170,9 @@
 
     </section>
 
-    <section style="margin-bottom: 200px">
+    <section class="steps-cover" >
       <div class="container">
-        <h3 style="margin-bottom: 90px" class="section-header text-center">如何在我们的平台上完成学习</h3>
+        <h3  class="section-header text-center steps-header">如何在我们的平台上完成学习</h3>
         <div class="steps-new">
           <div class="step-number step-1-number"><p>1</p></div>
           <p class="step-1-text">注册并创建一个有孩子学习进度<br>的个人账号</p>
@@ -223,76 +223,7 @@
     <section>
       <div class="container">
         <h3 class="section-header">我们的费用</h3>
-        <el-carousel class="tarifs-slider" :interval="5000" arrow="hover">
-          <el-carousel-item >
-            <div class="tarif round-block">
-              <div class="tarif-number">
-                <p>1</p>
-                <span>мес</span>
-              </div>
-              <p class="tarif-name">1个月使用权限</p>
-              <ul class="tarif-list">
-                <li>— Бесплатный доступ ко всем курсам</li>
-                <li>— Онлайн-консультации от кураторов</li>
-                <li>— Ведение личной статистики</li>
-              </ul>
-              <p class="tarif-price">70$\месяц</p>
-              <a href="" class="btn">регистрация</a>
-            </div>
 
-          </el-carousel-item>
-          <el-carousel-item >
-            <div class="round-block best-tarif">
-              <div class="best-tarif-number">
-                <p>6</p>
-                <span>мес</span>
-              </div>
-              <p class="best-tarif-name">базовый на 1 месяц</p>
-              <ul class="best-tarif-list">
-                <li>— Бесплатный доступ ко всем курсам</li>
-                <li>— Онлайн-консультации от кураторов</li>
-                <li>— Ведение личной статистики</li>
-              </ul>
-              <p class="best-tarif-price">70$\месяц</p>
-              <a href="" class="btn">购买</a>
-            </div>
-
-          </el-carousel-item>
-          <el-carousel-item >
-            <div class="tarif round-block">
-              <div class="tarif-number">
-                <p>1</p>
-                <span>мес</span>
-              </div>
-              <p class="tarif-name">базовый на 1 месяц</p>
-              <ul class="tarif-list">
-                <li>— Бесплатный доступ ко всем курсам</li>
-                <li>— Онлайн-консультации от кураторов</li>
-                <li>— Ведение личной статистики</li>
-              </ul>
-              <p class="tarif-price">70$\месяц</p>
-              <a href="" class="btn">购买</a>
-            </div>
-
-          </el-carousel-item>
-          <el-carousel-item >
-            <div class="tarif round-block">
-              <div class="tarif-number">
-                <p>1</p>
-                <span>мес</span>
-              </div>
-              <p class="tarif-name">базовый на 1 месяц</p>
-              <ul class="tarif-list">
-                <li>— Бесплатный доступ ко всем курсам</li>
-                <li>— Онлайн-консультации от кураторов</li>
-                <li>— Ведение личной статистики</li>
-              </ul>
-              <p class="tarif-price">70$\месяц</p>
-              <a href="" class="btn">购买</a>
-            </div>
-
-          </el-carousel-item>
-        </el-carousel>
         <div class="tarifs">
           <div class="tarif round-block">
             <div class="tarif-number">

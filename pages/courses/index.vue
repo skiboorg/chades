@@ -85,7 +85,7 @@
                 <div class="course__name">
                   <p  :class="{'inProgress':progress_courses.includes(cource.id)}">{{cource.description}}<br>
                     <span :style="{'color':cource.bg_color}" class="course-count" :class="{'inProgress':progress_courses.includes(cource.id)}">
-                        (0/{{cource.lessons.length < 9 ? '0'+cource.lessons.length : cource.lessons.length}})
+<!--                        (0/{{cource.lessons.length < 9 ? '0'+cource.lessons.length : cource.lessons.length}})-->
                       </span>
                   </p>
                 </div>
@@ -103,25 +103,49 @@
         <h3 class="section-header">教育游戏</h3>
         <div class="courses">
            <div  class="course"  >
-             <nuxt-link to="/slider?d=e">
+             <nuxt-link to="/slider_video?d=e">
                <div class="course__wrapper">
                <div class="course__inner">
-                  <img class="course-image" src="http://placehold.it/50" alt="">
+                  <img class="course-image" src="/slider-v-4.png" alt="">
                 </div>
                  <div class="course__name">
-                  <p>EASY</p>
+                  <p>标记视频</p>
                 </div>
              </div>
              </nuxt-link>
             </div>
           <div  class="course"  >
-             <nuxt-link to="/slider?d=n">
+             <nuxt-link to="/slider_video?d=n">
                <div class="course__wrapper">
                <div class="course__inner">
-                  <img class="course-image" src="http://placehold.it/50" alt="">
+                  <img class="course-image" src="/slider-v-4.png" alt="">
                 </div>
                  <div class="course__name">
-                  <p>Normal</p>
+                  <p>标记视频</p>
+                </div>
+             </div>
+             </nuxt-link>
+            </div>
+            <div  class="course"  >
+             <nuxt-link to="/slider_image?d=e">
+               <div class="course__wrapper">
+               <div class="course__inner">
+                  <img class="course-image" src="/slider-i-4.png" alt="">
+                </div>
+                 <div class="course__name">
+                  <p>用图片标记</p>
+                </div>
+             </div>
+             </nuxt-link>
+            </div>
+            <div  class="course"  >
+             <nuxt-link to="/slider_image?d=n">
+               <div class="course__wrapper">
+               <div class="course__inner">
+                  <img class="course-image" src="/slider-i-5.png" alt="">
+                </div>
+                 <div class="course__name">
+                  <p>用图片标记</p>
                 </div>
              </div>
              </nuxt-link>
