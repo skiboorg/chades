@@ -5,15 +5,16 @@
                 <div class="header-logo">
                     <nuxt-link to="/"><img src="/logo.png" alt=""></nuxt-link>
                 </div>
-                <div class="header-nav">
-                  <nuxt-link to="/courses" class="header-nav__item">我们的课程</nuxt-link>
-
-                    <a class="header-nav__item" href="#">关于</a>
-                    <a class="header-nav__item" href="#">费率</a>
-                    <a class="header-nav__item" href="#">联络</a>
-                  <nuxt-link v-if="this.$auth.loggedIn" class="header-nav__item" to="/lk">个人专区</nuxt-link>
-
+                <div v-if="!this.$auth.loggedIn" class="header-nav">
+                    <a class="header-nav__item" v-scroll-to="'#courses'" href="/">我们的课程</a>
+                    <a class="header-nav__item" v-scroll-to="'#learn'" href="/">我们教什么</a>
+                    <a class="header-nav__item" v-scroll-to="'#faq'" href="/">我们如何工作？</a>
+                    <a class="header-nav__item" v-scroll-to="'#callback'" href="/">反馈</a>
                 </div>
+              <div v-else class="header-nav">
+                 <nuxt-link to="/courses" class="header-nav__item">我们的课程</nuxt-link>
+                 <nuxt-link v-if="this.$auth.loggedIn" class="header-nav__item" to="/lk">个人专区</nuxt-link>
+              </div>
                 <div v-if="!this.$auth.loggedIn" class="header-btn">
                    <nuxt-link  to="/entrance" class="btn">登录或注册</nuxt-link>
                  </div>
@@ -55,6 +56,7 @@
     watch: {
       '$route.path': function(val) {
        this.checkUrl(val)
+        this.menuOpen = false
       }
     },
     mounted() {

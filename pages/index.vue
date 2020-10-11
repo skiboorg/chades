@@ -45,7 +45,7 @@
         </div>
       </div>
     </section>
-    <section class="no-mb">
+    <section id="courses" class="no-mb">
       <div class="container">
         <h3 class="section-header text-center">我们有哪些课程:</h3>
         <p class="text-16 text-center mb-50">单击您感兴趣的方向以查看所选方向上所有课程列表</p>
@@ -99,7 +99,7 @@
         <!--        <div class="text-center mb-50"><a href="" class="btn">смотреть все курсы</a></div>-->
       </div>
     </section>
-    <section class="section-pink">
+    <section id="learn" class="section-pink">
       <div class="container">
         <h3 class="section-header white underline underline-center text-center">我们将教您的孩子什么</h3>
         <div class="section-pink-wrapper">
@@ -112,12 +112,12 @@
               <div class="section-pink-item-text">
                 <p>开发逻辑和思维能力</p>
                 <p>我们的每堂课不仅教授专业的计算机能力，还开发思维能力，并教授思考和学习方法。<br>
-我们还设置逻辑和教育益智游戏，帮助开发孩子们的逻辑性和创造性。
+                  我们还设置逻辑和教育益智游戏，帮助开发孩子们的逻辑性和创造性。
                 </p>
               </div>
 
             </div>
-              <div  class="section-pink-item">
+            <div  class="section-pink-item">
               <div class="section-pink-item-top">
                 <p>02</p>
                 <img src="/en.png" alt="">
@@ -134,7 +134,7 @@
             </div>
           </div>
           <div class="section-pink-right">
-              <div  class="section-pink-item">
+            <div  class="section-pink-item">
               <div class="section-pink-item-top">
                 <p>03</p>
                 <img src="/comp.png" alt="">
@@ -149,7 +149,7 @@
               </div>
 
             </div>
-              <div  class="section-pink-item">
+            <div  class="section-pink-item">
               <div class="section-pink-item-top">
                 <p>04</p>
                 <img src="/code.png" alt="">
@@ -157,7 +157,7 @@
               <div class="section-pink-item-text">
                 <p>编程技能</p>
                 <p>编程是一个很大的领域，不仅包括数学和逻辑学，还包括处理信息和算法的能力。<br>
-我们教授您的孩子从入门到高层次知识，期间考虑了所有学习的特殊性，使课堂变得有趣且具吸引力——并为此设计了一个阶段性学习系统。
+                  我们教授您的孩子从入门到高层次知识，期间考虑了所有学习的特殊性，使课堂变得有趣且具吸引力——并为此设计了一个阶段性学习系统。
                 </p>
               </div>
 
@@ -329,7 +329,7 @@
       </div>
 
     </section><!--    feedback-new-->
-    <section>
+    <section id="faq">
       <div class="container">
         <h3 class="section-header  text-center">常见问答</h3>
         <div class="faq-wrapper">
@@ -360,14 +360,34 @@
             <div class="faq-monkey">
               <img src="/monkey.png" alt="">
               <div class="">
-                <p class="faq-monkey__text">常见问题页面</p>
-                <a href="#" class="btn btn-curved">看更多</a>
+                <p class="faq-monkey__text">您对我们门户网站的工作有疑问吗？</p>
+                <a href="#" v-scroll-to="'#callback'" class="btn btn-curved">问我们一个问题</a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section><!--    faq-new-->
+    <section id="callback">
+      <div class="container">
+        <h3 class="section-header">form</h3>
+        <div class="input-group">
+          <el-input placeholder="Please input" v-model="callback.name"></el-input>
+          <el-input placeholder="Please input" v-model="callback.email"></el-input>
+        </div>
+        <el-input
+          style="margin-bottom: 20px"
+          type="textarea"
+          :rows="5"
+          placeholder="Please input"
+          v-model="callback.text">
+        </el-input>
+        <div class="">
+          <p style="display: flex; justify-content: center;max-width: 200px" @click="sendForm" class="btn center">Send</p>
+        </div>
+
+      </div>
+    </section>
 
 
 
@@ -447,10 +467,22 @@
     },
     data() {
       return {
+        callback:
+          {
+          name:'',
+          email:'',
+          text:''
+          },
+
         c1DialogVisible: false,
         c2DialogVisible: false,
         bg: 'Example blog post'
       };
+    },
+    methods:{
+     async sendForm(){
+        const  response_banners= await this.$axios.post(`/api/v1/shool/new_cb/`,this.callback)
+      }
     }
   };
 </script>
