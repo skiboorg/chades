@@ -222,7 +222,6 @@
     <section>
       <div class="container">
         <h3 class="section-header">我们的费用</h3>
-
         <div class="tarifs">
           <div class="tarif round-block">
             <div class="tarif-number">
@@ -235,11 +234,13 @@
               <li>成就与进步</li>
               <li>国际标准注册证书</li>
             </ul>
-            <p class="tarif-price">70$\месяц</p>
-            <a href="" class="btn btn-curved">购买</a>
+            <p class="tarif-price price-top mb-15">275¥ 每月一次</p>
+            <nuxt-link class="btn btn-curved" to="/entrance">购买</nuxt-link>
           </div>
-
           <div class="round-block best-tarif">
+            <div class="corner-text">
+              <p>畅销书</p>
+            </div>
             <div class="best-tarif-number">
               <img src="/bt.png" alt="">
 
@@ -250,11 +251,10 @@
               <li>成就与进步</li>
               <li>国际标准注册证书</li>
             </ul>
-            <p class="best-tarif-price">70$\месяц</p>
-            <a href="" class="btn btn-curved">购买</a>
+            <p class="best-tarif-price price-top">1350¥</p>
+            <p class="best-tarif-price">225¥ 每月一次</p>
+             <nuxt-link class="btn btn-curved" to="/entrance">购买</nuxt-link>
           </div>
-
-
           <div class="tarif round-block">
             <div class="tarif-number">
               <img src="/t2.png" alt="">
@@ -266,8 +266,9 @@
               <li>成就与进步</li>
               <li>国际标准注册证书</li>
             </ul>
-            <p class="tarif-price">70$\месяц</p>
-            <a href="" class="btn btn-curved">购买</a>
+            <p class="tarif-price price-top">2388¥</p>
+            <p class="tarif-price ">199¥ 每月一次</p>
+             <nuxt-link class="btn btn-curved" to="/entrance">购买</nuxt-link>
           </div>
           <div class="round-block best-tarif vip">
             <div class="tarif-overlay">
@@ -276,7 +277,6 @@
             </div>
             <div class="best-tarif-number">
               <img src="/tv.png" alt="">
-
             </div>
             <p class="best-tarif-name">12个月VIP费用</p>
             <ul class="best-tarif-list">
@@ -286,8 +286,9 @@
               <li>与老师一对一聊天</li>
               <li>课程奖励材料</li>
             </ul>
-            <p class="best-tarif-price">70$\месяц</p>
-            <a href="" class="btn btn-curved">购买</a>
+            <p class="best-tarif-price price-top mb-15">588¥ 每月一次</p>
+            <nuxt-link class="btn btn-curved" to="/entrance">购买</nuxt-link>
+
           </div>
         </div>
       </div>
@@ -370,20 +371,22 @@
     </section><!--    faq-new-->
     <section id="callback">
       <div class="container">
-        <h3 class="section-header">form</h3>
+        <h3 class="section-header">反馈</h3>
+        <p class="text-16 mw-600 mb-50">反馈 反馈
+        </p>
         <div class="input-group">
-          <el-input placeholder="Please input" v-model="callback.name"></el-input>
-          <el-input placeholder="Please input" v-model="callback.email"></el-input>
+          <el-input placeholder="你的名字" v-model="callback.name"></el-input>
+          <el-input placeholder="你的邮件" v-model="callback.email"></el-input>
         </div>
         <el-input
           style="margin-bottom: 20px"
           type="textarea"
           :rows="5"
-          placeholder="Please input"
+          placeholder="您的问题或给我们的信"
           v-model="callback.text">
         </el-input>
         <div class="">
-          <p style="display: flex; justify-content: center;max-width: 200px" @click="sendForm" class="btn center">Send</p>
+          <p style="display: flex; justify-content: center;max-width: 200px" :class="{'btnDisabled':callback.email==='' || callback.text===''}" @click="sendForm" class="btn center">发送</p>
         </div>
 
       </div>
@@ -450,6 +453,24 @@
 
 
     </el-dialog>
+        <el-dialog
+      :visible.sync="formSend"
+      width="30%"
+      :close-on-click-modal="false"
+      style="padding: 30px"
+      :show-close="true"
+      center>
+      <div>
+        <div class="text-center">
+          <img style="width: 150px;height: 150px;margin-bottom: 90px"  src="/w_r.png" alt="">
+        </div>
+
+        <p style="word-break: break-word;" class="text-center fs-36">发送成功！ 我们会在24小时内回复您</p>
+      </div>
+      <span slot="footer" class="dialog-footer">
+<!--    <span @click="formSend=false" class="btn">ОК</span>-->
+  </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -475,6 +496,7 @@
           },
 
         c1DialogVisible: false,
+        formSend: false,
         c2DialogVisible: false,
         bg: 'Example blog post'
       };
@@ -482,6 +504,7 @@
     methods:{
      async sendForm(){
         const  response_banners= await this.$axios.post(`/api/v1/shool/new_cb/`,this.callback)
+       this.formSend = true
       }
     }
   };
