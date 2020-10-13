@@ -46,7 +46,7 @@
       </div>
       <div v-if="curStep===2" class="">
         <p class="mb-25">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam asperiores dignissimos doloremque eligendi eos error et eum excepturi facilis incidunt laboriosam, nesciunt nostrum perferendis, quo quod vel. Nam, qui.</p>
-        <div class="auth-form__inner mb-25">
+        <div style="flex-wrap: wrap" class="auth-form__inner mb-25">
           <div style="justify-content: space-between" class="auth-form__block">
             <div class="">
               <input type="text" class="form-control no-mw small-ph " v-model="user_reg.login" placeholder="输入昵称">
