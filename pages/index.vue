@@ -199,21 +199,21 @@
             <p class="best-item__num">#1</p>
             <div class="best-item__name"><img src="/avatar.png" alt=""><p>金龙</p><span>@suniliven</span></div>
             <div class="best-item__ahi">
-              <p class="best-item__ahi-ball">2485 баллов</p>
+              <p class="best-item__ahi-ball">2485 点</p>
             </div>
           </div>
           <div class="best-item round-block">
             <p class="best-item__num">#1</p>
             <div class="best-item__name"><img src="/avatar.png" alt=""><p>卫东</p><span>@suniliven</span></div>
             <div class="best-item__ahi">
-              <p class="best-item__ahi-ball">285 баллов</p>
+              <p class="best-item__ahi-ball">285 点</p>
             </div>
           </div>
           <div class="best-item round-block">
             <p class="best-item__num">#1</p>
             <div class="best-item__name"><img src="/avatar.png" alt=""><p>永生</p><span>@suniliven</span></div>
             <div class="best-item__ahi">
-              <p class="best-item__ahi-ball">285 баллов</p>
+              <p class="best-item__ahi-ball">285 点</p>
             </div>
           </div>
         </div>

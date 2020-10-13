@@ -9,9 +9,9 @@
       <h3 class="text-color fs-24 text-bold mb-25">登录到您的个人帐户</h3>
       <p v-if="is_registered" class="fs-16 text-trans mb-25">Вы успешно зарегистрированы</p>
       <div  class="auth-form__block">
-        <input type="text" class="form-control no-mw small-ph" v-model="user_login.email" placeholder="Введите вашу почту">
-        <input type="password" class="form-control no-mw small-ph mb-100" v-model="user_login.password" placeholder="Ваш пароль">
-        <span class="btn " @click="userLogin" :class="{'btnDisabled': user_login.email === ''}">Войти</span>
+        <input type="text" class="form-control no-mw small-ph" v-model="user_login.email" placeholder="输入您的邮件">
+        <input type="password" class="form-control no-mw small-ph mb-100" v-model="user_login.password" placeholder="输入密码">
+        <span class="btn " @click="userLogin" :class="{'btnDisabled': user_login.email === ''}">输入您的个人帐户</span>
       </div>
 
     </div>
