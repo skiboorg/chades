@@ -15,6 +15,7 @@
           <div class="lk-left">
             <section>
               <div class="container">
+                <h3 class="section-header">为您提供的信息</h3>
                 <div class="lk-news">
                   <img src="/lk-1.png" alt="">
                   <img src="/lk-2.png" alt="">
@@ -23,7 +24,7 @@
             </section>
             <section id="achivements">
               <div class="container">
-                <h3 class="section-header">achivements</h3>
+                <h3 class="section-header">我的成就</h3>
                 <div class="achivements" >
                   <div v-for="achive in achives" class="achivement " :class="{'done':checkAchive(achive.id)}">
                     <div class="achivement__info">
@@ -31,30 +32,25 @@
                       <p>{{achive.name}}</p>
                       <span>{{achive.rules}}</span>
                     </div>
-
                     <div v-if="checkAchive(achive.id)" class="achivement__check done">
                       <span>{{getAchive(achive.id)}}</span>
                       <img src="/chack-mark.png" alt="">
                     </div>
                   </div>
-
-
-
-
                 </div>
               </div>
             </section>
             <section id="certificates">
               <div class="container">
-                <h3 class="section-header">certificates</h3>
+                <h3 class="section-header">我的证书和文凭</h3>
                 <div class="certificates">
                   <div class="certificate">
                     <img src="/cert.png" alt="">
-                    <p>name</p>
+<!--                    <p>name</p>-->
                   </div>
                   <div class="certificate">
                     <img src="/cert.png" alt="">
-                    <p>name</p>
+<!--                    <p>name</p>-->
                   </div>
 
                 </div>
@@ -62,30 +58,29 @@
             </section>
             <section id="settings">
               <div class="container">
-                <h3 class="section-header">settings</h3>
+                <h3 class="section-header">我的设置</h3>
                 <div class="lk-form">
                   <div class="form-group">
-                    <label >avatar</label>
+                    <label >您的头像</label>
                     <el-upload class="avatar-uploader mb-25" action="" :show-file-list="false" :on-success="handleAvatarSuccess">
                       <img v-if="userData.imageUrl" :src="userData.imageUrl" alt="" class="avatar">
                       <i v-else class="el-icon-plus avatar-uploader-icon"></i>
                     </el-upload>
 
-                    <label >change password</label>
+                    <label>你的密码</label>
                     <input type="text" class="form-control" v-model="userData.password1" placeholder="enter new password">
                     <input type="text" class="form-control" v-model="userData.password2" placeholder="confirm new password">
-                    <a href="" @click.prevent="updateUser" class="btn btn-white">done</a>
+                    <a href="" @click.prevent="updateUser" class="btn btn-white">更改</a>
                   </div>
                   <div class="form-group">
-                    <label >nickname</label>
+                    <label>您的昵称</label>
                     <input style="margin-bottom: 75px" type="text" class="form-control " v-model="userData.nickname" placeholder="@dsfsdf">
-                    <label >change password</label>
+                    <label >你的密码</label>
                     <div class="form-group__text">
 
-                        <p>Новый пароль должен отличаться от 5
-последних использованных паролей</p>
-                        <p>Новый пароль должен отличаться от 5
-последних использованных паролей</p>
+                        <p>你的名字: {{userData.nickname}}</p>
+                        <p>你的邮件: {{this.$auth.user.email}}</p>
+                        <p>您的订阅将于{{new Date(this.$auth.user.date_joined).getMonth()}}月{{new Date(this.$auth.user.date_joined).getDate()}}日到期。</p>
                     </div>
                   </div>
                 </div>
@@ -105,15 +100,15 @@
                   <!--              <p style="color: #FFB800">"Молодой разраб"</p>-->
                   <p class="fs-14">@{{$auth.user.nickname}}</p>
                   <p class="fs-24">{{$auth.user.name}}</p>
-                  <p class="fs-14 "><span class="text-color">{{$auth.user.score}} баллов</span> 6/9 courses</p>
+                  <p class="fs-14 "><span class="text-color">{{$auth.user.score}} 点</span></p>
                   <!--              <span class="fs-14 text-trans text-bold text-upper">6/9 courses</span>-->
                 </div>
 
                 <ul>
                   <ul>
-                    <li><a href="#" v-scroll-to="'#achivements'">achivements</a></li>
-                    <li><a href="#" v-scroll-to="'#certificates'">certificates</a></li>
-                    <li><a href="#" v-scroll-to="'#settings'">settings</a></li>
+                    <li><a href="#" v-scroll-to="'#achivements'">我的成就</a></li>
+                    <li><a href="#" v-scroll-to="'#certificates'">我的证书和文凭</a></li>
+                    <li><a href="#" v-scroll-to="'#settings'">我的设置</a></li>
                   </ul>
                 </ul>
               </div>

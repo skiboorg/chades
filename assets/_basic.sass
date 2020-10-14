@@ -33,7 +33,7 @@ section
   margin-bottom: 50px
   p
     color: #ffffff
-    flex-basis: 95%
+    flex-basis: 90%
   img
     margin: 0 auto
 .text-green
@@ -257,9 +257,9 @@ section
   flex-direction: column
   align-items: center
   justify-content: center
-  height: 370px
+  height: 310px
   width: 100%
-  border-radius: 100px
+  border-radius: 40px
   text-align: center
   box-sizing: border-box
 
@@ -422,13 +422,13 @@ section
     align-items: center
     justify-content: center
     &.c-blue
-      background: #6EC4FF
+      background: linear-gradient(180deg, #6EC4FF 0%, #6596DF 100%)
     &.c-orange
-      background: #F1796B
+      background: linear-gradient(180deg, #6BF1B9 0%, #6ADDC1 100%)
     &.c-pink
-      background: #FF77A5
+      background: linear-gradient(180deg, #FF84AD 0%, #FB5990 100%)
     &.c-yellow
-      background: #FFB800
+      background: linear-gradient(180deg, #FFBC0F 1.56%, #FFF500 100%)
 
 
 
@@ -1238,17 +1238,32 @@ section
     padding: 20px 0
     font-weight: 600
     font-size: 14px
-    opacity: .5
+    //opacity: .5
     text-transform: uppercase
     text-align: center
+    letter-spacing: 0.05em
   &.complete
+    position: relative
     border: 1px solid #DADADA
-    background: #84BD95
     box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.05)
     border-radius: 100px
+    color: #26A852
+    opacity: .7
+    &::after
+      position: absolute
+      content: url(/ok_sm.png)
+      right: 40px
+      top: 20px
   &.notAvaiable
+    position: relative
     background: #a0a0a0
+    color: #ffffff
     cursor: not-allowed !important
+    &::after
+      position: absolute
+      content: url(/lock_sm.png)
+      right: 40px
+      top: 20px
   &.progress
     background: $bg-gradient
     border-radius: 100px

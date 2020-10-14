@@ -60,7 +60,7 @@
       }
     },
     mounted() {
-      console.log(this.$route.path)
+      console.log('this.$route.path',this.$route.path)
      this.checkUrl(this.$route.path)
     },
     methods: {
@@ -69,33 +69,42 @@
           this.indexPage = true
           this.noHeader = false
           this.bg = '/header-bg.png'
+           return
         }
         if(url === '/courses'){
           this.indexPage = false
           this.noHeader = false
           this.bg = '/course-top.png'
+          return
         }
         if(url === '/lk'){
           this.indexPage = false
           this.noHeader = false
           this.bg = '/lk-top.png'
+          return
         }
 
         if(url === '/entrance'){
           this.indexPage = false
           this.noHeader = true
           this.bg = ''
+          return
         }
         if(url === '/slider_video'){
           this.indexPage = false
           this.noHeader = true
           this.bg = ''
+          return
         }
         if(url === '/slider_image'){
           this.indexPage = false
           this.noHeader = true
           this.bg = ''
+          return
         }
+        this.indexPage = false
+          this.noHeader = false
+          this.bg = '/course-top.png'
       }
 
     }

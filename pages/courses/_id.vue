@@ -31,11 +31,13 @@
 
           <!-- complete   progress          -->
 
+
           <div class="lessons">
 
 
-            <div class="lesson" :class="{'complete':lesson.status===2, 'notAvaiable':lesson.status===0 }"  v-for="(lesson,index) in lessons" :key="lesson.id">
-              <p v-if="lesson.status===1"  @click="changeLesson(lesson.lesson)">第{{index+1}}课</p>
+            <div class="lesson" :class="{'complete':lesson.status===2, 'notAvaiable':lesson.status===0, 'progress':cur_lesson === index }"  v-for="(lesson,index) in lessons" :key="lesson.id">
+
+              <p v-if="lesson.status===1"  @click="changeLesson(lesson.lesson)">第{{index+1}}课 </p>
               <p v-if="lesson.status===0">第{{index+1}}课</p>
               <p v-if="lesson.status===2" @click="changeLesson(lesson.lesson)">第{{index+1}}课</p>
             </div>
@@ -57,8 +59,13 @@
       <div class="container">
         <div class="round-block bg-green ">
           <img src="/exl.png" alt="">
-          <p>电脑 电脑电脑 电脑电脑 电脑电脑 电脑电脑 电脑电脑 电脑电脑 电脑电脑 电脑电脑 电脑电脑 电脑
-            电脑 电脑电脑 电脑电脑 电脑电脑 电脑电脑 电脑电脑 电脑电脑 电脑电脑 电脑电脑 电脑</p>
+          <p>每节课均由几个部分组成。<br>
+
+第一部分内容丰富。 您需要阅读并在笔记本中写下您感兴趣的问题。<br>
+
+第二部分是新词的含义。 他们需要在笔记本上写下并记住。 在随后的课程中，我们将参考单词的含义。<br>
+第三部分是将术语和单词翻译成英语。<br>
+必须完成测试才能完成每节课。</p>
         </div>
         <h3 class="section-header">{{cource.lessons[cur_lesson].name}}</h3>
         <div class="fs-14  mb-50 round-block p-40" v-html="cource.lessons[cur_lesson].description"></div>
@@ -131,7 +138,7 @@
 
           <div class="text-center">
             <!--            <span :class="{'btnDisabled': !testRadio || testInput===''}" class="btn " @click="checkTest">Проверить</span>-->
-            <span  class="btn " @click="checkTest">Проверить</span>
+            <span  class="btn " @click="checkTest">检查答案</span>
           </div>
 
         </div>
@@ -253,6 +260,7 @@
         offer_units:0,
         value2:false,
         cur_lesson:0,
+        cur_lesson_clicked:0,
         cur_lesson_id:0,
         // radioTests:{
         //   test1:null,
@@ -308,13 +316,11 @@
           console.log('error ')
         }
       },
-
       async checkTest1(){
         let test = this.cource.lessons[this.cur_lesson_id].test[0].choices.find(x => x.id === this.testRadio).is_right
         let input_test = this.cource.lessons[this.cur_lesson_id].input_test[0].answer
         console.log(input_test)
         if (test && input_test.toLowerCase() === this.testInput.toLowerCase()){
-
           this.lessons[this.cur_lesson_id].status = 2
           console.log(this.lessons[this.cur_lesson_id].id)
           const respond = await this.$axios.post('/api/v1/shool/lesson_done/',{lesson_id:this.lessons[this.cur_lesson_id].id})
@@ -324,7 +330,6 @@
           }else{
             this.rightAnswer = true
           }
-
         }
         else{
           this.wrongAnswer = true
@@ -332,6 +337,7 @@
       },
       changeLesson(id){
         this.cur_lesson = this.cource.lessons.findIndex(x => x.id === id)
+        this.cur_lesson_clicked = this.cur_lesson
         this.cur_lesson_id = this.cource.lessons[this.cur_lesson].id
 
       },
@@ -339,7 +345,6 @@
         const respond = await this.$axios.post('/api/v1/order/apply/',{order_id:this.order.id,unit_id:u_id})
         console.log(respond)
       }
-
     }
   }
 

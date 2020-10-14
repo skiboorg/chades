@@ -73,10 +73,10 @@
               </div>
             </div>
           </div>
-          <div class="learn-item-new__wrapper">
+          <div @click="c3DialogVisible = true" class="learn-item-new__wrapper">
             <p class="learn-item-new__number">03</p>
             <div class="learn-item-new">
-              <div class="learn-item-new__inner c-blue">
+              <div class="learn-item-new__inner c-pink">
                 <img src="/ll3.png" alt="">
               </div>
               <div class="learn-item-new__name">
@@ -84,10 +84,10 @@
               </div>
             </div>
           </div>
-          <div class="learn-item-new__wrapper down">
+          <div @click="c4DialogVisible = true" class="learn-item-new__wrapper down">
             <p class="learn-item-new__number">04</p>
             <div class="learn-item-new">
-              <div class="learn-item-new__inner c-orange">
+              <div class="learn-item-new__inner c-yellow">
                 <img src="/ll4.png" alt="">
               </div>
               <div class="learn-item-new__name">
@@ -401,9 +401,9 @@
       :show-close="false"
 
       center>
-      <div class="index-dialog__img" style="background: url(http://placehold.it/900x270)">
+      <div class="index-dialog__img" style="background: url(/m1.png) no-repeat center">
         <span @click="c1DialogVisible=false">&#10005;</span>
-        <p>计算机知识</p>
+
       </div>
       <div class="index-dialog__content">
         <span style="display: block;padding-bottom: 50px" >我们这一方向的课程旨在教授您的孩子使用计算机的基本技能和能力：从计算机设备及其操作方法到使用基本软件的能力！我们的课程内容涵盖诸如信息的类型和如何传输，什么是网络等，除此之外，我们将教您的孩子自己手动组装和拆卸计算机，清除病毒，并使用软件处理文档、演示文稿等。</span>
@@ -432,9 +432,9 @@
       :show-close="false"
 
       center>
-      <div class="index-dialog__img" style="background: url(http://placehold.it/900x270)">
+      <div class="index-dialog__img" style="background: url(/m2.png) no-repeat center">
         <span @click="c2DialogVisible=false">&#10005;</span>
-        <p>视频创意设计与编辑课程</p>
+
       </div>
       <div class="index-dialog__content">
         <span style="display: block;padding-bottom: 50px" >我们这一方向的课程旨在培养您的孩子从事创造性职业——网页设计师、用户体验设计师、视频编辑、视频博主等职业的基本技能和能力。</span>
@@ -453,6 +453,65 @@
 
 
     </el-dialog>
+    <el-dialog
+      class="index-dialog"
+      :visible.sync="c3DialogVisible"
+      width="55%"
+      :show-close="false"
+
+      center>
+      <div class="index-dialog__img" style="background: url(/m3.png) no-repeat center">
+        <span @click="c3DialogVisible=false">&#10005;</span>
+
+      </div>
+      <div class="index-dialog__content">
+        <span style="display: block;padding-bottom: 50px" >我们这一方向的课程旨在培养您的孩子从事创造性职业——网页设计师、用户体验设计师、视频编辑、视频博主等职业的基本技能和能力。</span>
+        <p>1. “设计基础”课程</p>
+        <span>儿童创意设计课程：我们教您的孩子如何使用图形和设计工具和软件，培养孩子的创造性思维和品味。我们还将了解主要的设计技巧、设计方法、色彩组合和一般的设计类型！<br>
+设计师的职业总是有现实需求的。具有设计才能的人才在设计工作中必须保证项目具有趣味和创造性！</span>
+        <p>2. “网页设计”课程</p>
+        <span>我们将教孩子们创建和实现网站和应用程序的设计：从简单的布局到复杂的图表和带有弹窗和转换功能的页面。我们将教孩子们这项工作的基本规则和基础网页设计，以及如何正确使用软件界面和基本的设计技巧。</span>
+        <p>3. “视频编辑”课程</p>
+        <span>在本课程中，我们将教给您的孩子一项有趣且有用的技能：在现代信息世界中运用视频材料：我们将教您如何正确录制视频、编辑和处理视频、提高视频质量和应用效果！<br>
+编辑视频能力被应用于许多活动领域：从电视、广播，到视频博客和在大公司创建演示文稿。</span>
+        <p>4. “绘制标识”课程</p>
+        <span>我们将教孩子们正确和创造性地绘制标识：从简单的形状和明亮的字体到最复杂难忘的几何设计！为您的孩子未来的工作学习储备一些作品。<br>
+这门课程可以为开发孩子的创造性潜能打造良好基础。在设计行业，年龄并不重要，天赋和毅力才是重要的！所以，您的孩子可以从小开始练习了！</span>
+      </div>
+
+
+    </el-dialog>
+    <el-dialog
+      class="index-dialog"
+      :visible.sync="c4DialogVisible"
+      width="55%"
+      :show-close="false"
+
+      center>
+      <div class="index-dialog__img" style="background: url(/m4.png) no-repeat center">
+        <span @click="c4DialogVisible=false">&#10005;</span>
+
+      </div>
+      <div class="index-dialog__content">
+        <span style="display: block;padding-bottom: 50px" >我们这一方向的课程旨在培养您的孩子从事创造性职业——网页设计师、用户体验设计师、视频编辑、视频博主等职业的基本技能和能力。</span>
+        <p>1. “设计基础”课程</p>
+        <span>儿童创意设计课程：我们教您的孩子如何使用图形和设计工具和软件，培养孩子的创造性思维和品味。我们还将了解主要的设计技巧、设计方法、色彩组合和一般的设计类型！<br>
+设计师的职业总是有现实需求的。具有设计才能的人才在设计工作中必须保证项目具有趣味和创造性！</span>
+        <p>2. “网页设计”课程</p>
+        <span>我们将教孩子们创建和实现网站和应用程序的设计：从简单的布局到复杂的图表和带有弹窗和转换功能的页面。我们将教孩子们这项工作的基本规则和基础网页设计，以及如何正确使用软件界面和基本的设计技巧。</span>
+        <p>3. “视频编辑”课程</p>
+        <span>在本课程中，我们将教给您的孩子一项有趣且有用的技能：在现代信息世界中运用视频材料：我们将教您如何正确录制视频、编辑和处理视频、提高视频质量和应用效果！<br>
+编辑视频能力被应用于许多活动领域：从电视、广播，到视频博客和在大公司创建演示文稿。</span>
+        <p>4. “绘制标识”课程</p>
+        <span>我们将教孩子们正确和创造性地绘制标识：从简单的形状和明亮的字体到最复杂难忘的几何设计！为您的孩子未来的工作学习储备一些作品。<br>
+这门课程可以为开发孩子的创造性潜能打造良好基础。在设计行业，年龄并不重要，天赋和毅力才是重要的！所以，您的孩子可以从小开始练习了！</span>
+      </div>
+
+
+    </el-dialog>
+
+
+
         <el-dialog
       :visible.sync="formSend"
       width="30%"
@@ -498,6 +557,8 @@
         c1DialogVisible: false,
         formSend: false,
         c2DialogVisible: false,
+        c3DialogVisible: false,
+        c4DialogVisible: false,
         bg: 'Example blog post'
       };
     },

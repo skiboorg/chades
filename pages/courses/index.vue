@@ -22,7 +22,7 @@
                 <!--              <p style="color: #FFB800">"Молодой разраб"</p>-->
                 <p class="fs-14">@gfdg</p>
                 <p class="fs-24">{{$auth.user.name}}</p>
-                <p class="fs-14 "><span class="text-color">{{$auth.user.score}} баллов</span> 6/9 courses</p>
+                <p class="fs-14 "><span class="text-color">{{$auth.user.score}} 点</span></p>
                 <!--              <span class="fs-14 text-trans text-bold text-upper">6/9 courses</span>-->
               </div>
 
