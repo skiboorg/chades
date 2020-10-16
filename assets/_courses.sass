@@ -61,15 +61,20 @@
   &.courceNotAvaiable
     position: relative
     background: rgba(5, 5, 5, 0.5) !important
-    pointer-events: none
+    //opacity: 0.5
 
+    pointer-events: none
     &::after
       position: absolute
       content: url('/c_not.png')
-      display: flex
-      align-items: center
-      justify-content: center
+      //display: flex
+      //align-items: center
+      //justify-content: center
+      top: 55px
+      z-index: 1
       opacity: 1
+    & .course__name
+      background: rgba(5, 5, 5, 0) !important
   &-count
     font-weight: 600
     font-size: 14px
@@ -95,7 +100,7 @@
     letter-spacing: 0.05em
     font-weight: 600
     text-transform: uppercase
-    color: #5B5B5B
+    color: #ffffff
     //opacity: 0.5
     left: 0
     right: 0

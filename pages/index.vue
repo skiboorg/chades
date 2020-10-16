@@ -52,7 +52,7 @@
 
         <div class="learn mb-50">
           <div class="learn-item-new__wrapper">
-            <p class="learn-item-new__number">01</p>
+<!--            <p class="learn-item-new__number">01</p>-->
             <div @click="c1DialogVisible = true" class="learn-item-new">
               <div class="learn-item-new__inner c-blue">
                 <img src="/ll1.png" alt="">
@@ -63,7 +63,7 @@
             </div>
           </div>
           <div @click="c2DialogVisible = true" class="learn-item-new__wrapper down">
-            <p class="learn-item-new__number">02</p>
+
             <div class="learn-item-new">
               <div class="learn-item-new__inner c-orange">
                 <img src="/ll2.png" alt="">
@@ -74,7 +74,7 @@
             </div>
           </div>
           <div @click="c3DialogVisible = true" class="learn-item-new__wrapper">
-            <p class="learn-item-new__number">03</p>
+
             <div class="learn-item-new">
               <div class="learn-item-new__inner c-pink">
                 <img src="/ll3.png" alt="">
@@ -85,7 +85,7 @@
             </div>
           </div>
           <div @click="c4DialogVisible = true" class="learn-item-new__wrapper down">
-            <p class="learn-item-new__number">04</p>
+
             <div class="learn-item-new">
               <div class="learn-item-new__inner c-yellow">
                 <img src="/ll4.png" alt="">
@@ -106,11 +106,12 @@
           <div class="section-pink-left">
             <div  class="section-pink-item">
               <div class="section-pink-item-top">
-                <p>01</p>
+<!--                <p>01</p>-->
+                 <p>开发逻辑和思维能力</p>
                 <img src="/puzle.png" alt="">
               </div>
               <div class="section-pink-item-text">
-                <p>开发逻辑和思维能力</p>
+
                 <p>我们的每堂课不仅教授专业的计算机能力，还开发思维能力，并教授思考和学习方法。<br>
                   我们还设置逻辑和教育益智游戏，帮助开发孩子们的逻辑性和创造性。
                 </p>
@@ -119,11 +120,11 @@
             </div>
             <div  class="section-pink-item">
               <div class="section-pink-item-top">
-                <p>02</p>
+         <p>英语技能</p>
                 <img src="/en.png" alt="">
               </div>
               <div class="section-pink-item-text">
-                <p>英语技能</p>
+
                 <p> 我们的主要任务是提升语言技能，并展示如何在实践中进行运用。                 <br>
                   编程与英语紧密相连。我们让孩子清楚地看到如何将它用于发展和教育。<br>
                   我们的技巧在于每个句子都有两行，以便孩子们记住句型结构和语言模式。<br>
@@ -136,11 +137,11 @@
           <div class="section-pink-right">
             <div  class="section-pink-item">
               <div class="section-pink-item-top">
-                <p>03</p>
+                  <p>计算机教育</p>
                 <img src="/comp.png" alt="">
               </div>
               <div class="section-pink-item-text">
-                <p>计算机教育</p>
+
                 <p>编程是二十一世纪需求最大的专业。即使孩子选择了不同的职业道路，任何聘用单位都会高度重视IT技术领域的知识。我们的课程旨在开发各种专业领域的儿童计算机技能：<br>
                   基础系统技能<br>
                   演示文稿和文档处理能力<br>
@@ -151,11 +152,11 @@
             </div>
             <div  class="section-pink-item">
               <div class="section-pink-item-top">
-                <p>04</p>
+               <p>编程技能</p>
                 <img src="/code.png" alt="">
               </div>
               <div class="section-pink-item-text">
-                <p>编程技能</p>
+
                 <p>编程是一个很大的领域，不仅包括数学和逻辑学，还包括处理信息和算法的能力。<br>
                   我们教授您的孩子从入门到高层次知识，期间考虑了所有学习的特殊性，使课堂变得有趣且具吸引力——并为此设计了一个阶段性学习系统。
                 </p>
@@ -203,14 +204,63 @@
             </div>
           </div>
           <div class="best-item round-block">
-            <p class="best-item__num">#1</p>
+            <p class="best-item__num">#2</p>
             <div class="best-item__name"><img src="/avatar.png" alt=""><p>卫东</p><span>@suniliven</span></div>
             <div class="best-item__ahi">
               <p class="best-item__ahi-ball">285 点</p>
             </div>
           </div>
           <div class="best-item round-block">
-            <p class="best-item__num">#1</p>
+            <p class="best-item__num">#3</p>
+            <div class="best-item__name"><img src="/avatar.png" alt=""><p>永生</p><span>@suniliven</span></div>
+            <div class="best-item__ahi">
+              <p class="best-item__ahi-ball">285 点</p>
+            </div>
+          </div>
+          <div class="best-item round-block">
+            <p class="best-item__num">#4</p>
+            <div class="best-item__name"><img src="/avatar.png" alt=""><p>永生</p><span>@suniliven</span></div>
+            <div class="best-item__ahi">
+              <p class="best-item__ahi-ball">285 点</p>
+            </div>
+          </div>
+          <div class="best-item round-block">
+            <p class="best-item__num">#5</p>
+            <div class="best-item__name"><img src="/avatar.png" alt=""><p>永生</p><span>@suniliven</span></div>
+            <div class="best-item__ahi">
+              <p class="best-item__ahi-ball">285 点</p>
+            </div>
+          </div>
+          <div class="best-item round-block">
+            <p class="best-item__num">#6</p>
+            <div class="best-item__name"><img src="/avatar.png" alt=""><p>永生</p><span>@suniliven</span></div>
+            <div class="best-item__ahi">
+              <p class="best-item__ahi-ball">285 点</p>
+            </div>
+          </div>
+          <div class="best-item round-block">
+            <p class="best-item__num">#7</p>
+            <div class="best-item__name"><img src="/avatar.png" alt=""><p>永生</p><span>@suniliven</span></div>
+            <div class="best-item__ahi">
+              <p class="best-item__ahi-ball">285 点</p>
+            </div>
+          </div>
+          <div class="best-item round-block">
+            <p class="best-item__num">#8</p>
+            <div class="best-item__name"><img src="/avatar.png" alt=""><p>永生</p><span>@suniliven</span></div>
+            <div class="best-item__ahi">
+              <p class="best-item__ahi-ball">285 点</p>
+            </div>
+          </div>
+          <div class="best-item round-block">
+            <p class="best-item__num">#9</p>
+            <div class="best-item__name"><img src="/avatar.png" alt=""><p>永生</p><span>@suniliven</span></div>
+            <div class="best-item__ahi">
+              <p class="best-item__ahi-ball">285 点</p>
+            </div>
+          </div>
+          <div class="best-item round-block">
+            <p class="best-item__num">#10</p>
             <div class="best-item__name"><img src="/avatar.png" alt=""><p>永生</p><span>@suniliven</span></div>
             <div class="best-item__ahi">
               <p class="best-item__ahi-ball">285 点</p>
@@ -234,7 +284,7 @@
               <li>成就与进步</li>
               <li>国际标准注册证书</li>
             </ul>
-            <p class="tarif-price price-top mb-15">275¥ 每月一次</p>
+            <p class="tarif-price price-top mb-15">175¥ 每月一次</p>
             <nuxt-link class="btn btn-curved" to="/entrance">购买</nuxt-link>
           </div>
           <div class="round-block best-tarif">
@@ -251,8 +301,8 @@
               <li>成就与进步</li>
               <li>国际标准注册证书</li>
             </ul>
-            <p class="best-tarif-price price-top">1350¥</p>
-            <p class="best-tarif-price">225¥ 每月一次</p>
+            <p class="best-tarif-price price-top">810¥</p>
+            <p class="best-tarif-price">135¥ 每月一次</p>
              <nuxt-link class="btn btn-curved" to="/entrance">购买</nuxt-link>
           </div>
           <div class="tarif round-block">
@@ -266,8 +316,8 @@
               <li>成就与进步</li>
               <li>国际标准注册证书</li>
             </ul>
-            <p class="tarif-price price-top">2388¥</p>
-            <p class="tarif-price ">199¥ 每月一次</p>
+            <p class="tarif-price price-top">1188¥</p>
+            <p class="tarif-price ">99¥ 每月一次</p>
              <nuxt-link class="btn btn-curved" to="/entrance">购买</nuxt-link>
           </div>
           <div class="round-block best-tarif vip">
@@ -286,7 +336,7 @@
               <li>与老师一对一聊天</li>
               <li>课程奖励材料</li>
             </ul>
-            <p class="best-tarif-price price-top mb-15">588¥ 每月一次</p>
+            <p class="best-tarif-price price-top mb-15">599¥ 每月一次</p>
             <nuxt-link class="btn btn-curved" to="/entrance">购买</nuxt-link>
 
           </div>

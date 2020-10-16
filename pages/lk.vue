@@ -3,7 +3,7 @@
     <div class="container">
       <div class="breadcrumbs">
         <ul>
-          <li><a href="">主页</a></li>
+          <li><nuxt-link to="/">主页</nuxt-link></li>
           <li>我的个人资料</li>
         </ul>
       </div>
@@ -78,9 +78,9 @@
                     <label >你的密码</label>
                     <div class="form-group__text">
 
-                        <p>你的名字: {{userData.nickname}}</p>
+                        <p>你的名字: {{this.$auth.user.name}}</p>
                         <p>你的邮件: {{this.$auth.user.email}}</p>
-                        <p>您的订阅将于{{new Date(this.$auth.user.date_joined).getMonth()}}月{{new Date(this.$auth.user.date_joined).getDate()}}日到期。</p>
+                        <p>您的订阅将于{{new Date(this.$auth.user.expiry_time).getFullYear()}}年{{new Date(this.$auth.user.expiry_time).getMonth()}}月{{new Date(this.$auth.user.expiry_time).getDate()}}日到期。</p>
                     </div>
                   </div>
                 </div>
@@ -103,14 +103,12 @@
                   <p class="fs-14 "><span class="text-color">{{$auth.user.score}} 点</span></p>
                   <!--              <span class="fs-14 text-trans text-bold text-upper">6/9 courses</span>-->
                 </div>
-
-                <ul>
                   <ul>
-                    <li><a href="#" v-scroll-to="'#achivements'">我的成就</a></li>
-                    <li><a href="#" v-scroll-to="'#certificates'">我的证书和文凭</a></li>
-                    <li><a href="#" v-scroll-to="'#settings'">我的设置</a></li>
+                    <li class="about-user__left-item"><a href="#" v-scroll-to="'#achivements'">我的成就</a></li>
+                    <li class="about-user__left-item"><a href="#" v-scroll-to="'#certificates'">我的证书和文凭</a></li>
+                    <li class="about-user__left-item"><a href="#" v-scroll-to="'#settings'">我的设置</a></li>
                   </ul>
-                </ul>
+
               </div>
             </div>
           </div>

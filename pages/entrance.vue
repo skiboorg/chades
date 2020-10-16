@@ -10,7 +10,8 @@
       <p v-if="is_registered" class="fs-16 text-trans mb-25">Вы успешно зарегистрированы</p>
       <div  class="auth-form__block">
         <input type="text" class="form-control no-mw small-ph" v-model="user_login.email" placeholder="输入您的邮件">
-        <input type="password" class="form-control no-mw small-ph mb-100" v-model="user_login.password" placeholder="输入密码">
+        <input type="password" class="form-control no-mw small-ph mb-75" v-model="user_login.password" placeholder="输入密码">
+        <p>恢复密码</p>
         <span class="btn " @click="userLogin" :class="{'btnDisabled': user_login.email === ''}">输入您的个人帐户</span>
       </div>
 

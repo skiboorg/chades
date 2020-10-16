@@ -3,7 +3,7 @@
     <div class="container">
       <div class="breadcrumbs">
         <ul>
-          <li><a href="">主页</a></li>
+         <li><nuxt-link to="/courses">主页</nuxt-link></li>
           <li>我的课程</li>
         </ul>
       </div>
@@ -77,10 +77,9 @@
 
                   <p v-if="progress_courses.includes(cource.id)" class="course-status">in process</p>
                   <p v-if="finished_courses.includes(cource.id) " style="color: #27AE60" class="course-status">done</p>
-<!--                  <div v-if="!avaiable_courses.includes(cource.id)" class="course-status">-->
-
-<!--                    <p class="">зависит от {{cource.depence}}</p>-->
-<!--                  </div>-->
+                  <div v-if="!avaiable_courses.includes(cource.id)" class="course-status">
+                    <p class="">完成课程 {{cource.depence}}</p>
+                  </div>
                 </div>
                 <div class="course__name">
                   <p  :class="{'inProgress':progress_courses.includes(cource.id)}">{{cource.description}}<br>

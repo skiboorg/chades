@@ -68,14 +68,14 @@
 必须完成测试才能完成每节课。</p>
         </div>
         <h3 class="section-header">{{cource.lessons[cur_lesson].name}}</h3>
-        <div class="fs-14  mb-50 round-block p-40" v-html="cource.lessons[cur_lesson].description"></div>
+        <div class="fs-14 lesson-content  mb-50 round-block p-40" v-html="cource.lessons[cur_lesson].description"></div>
       </div>
     </section>
     <section >
       <div class="container ">
         <div class="">
           <h3 class="section-header">新定义</h3>
-          <div class="round-block p-40" v-html="cource.lessons[cur_lesson].means"></div>
+          <div class="round-block p-40 lesson-content" v-html="cource.lessons[cur_lesson].means"></div>
         </div>
 
       </div>
@@ -84,7 +84,7 @@
       <div class="container ">
         <div class="p-400">
           <h3 class="section-header">新词</h3>
-          <div class="round-block p-40" v-html="cource.lessons[cur_lesson].words"></div>
+          <div class="round-block p-40 lesson-content" v-html="cource.lessons[cur_lesson].words"></div>
         </div>
       </div>
     </section>
@@ -156,10 +156,10 @@
           <img style="width: 150px;height: 150px;margin-bottom: 90px"  src="/w_a.png" alt="">
         </div>
 
-        <p style="word-break: break-word;" class="text-center fs-36">YOUR ANSWER IS <span class="text-color">WRONG</span></p>
+        <p style="word-break: break-word;" class="text-center fs-36"><span class="text-color">你回答错了！</span></p>
       </div>
       <span slot="footer" class="dialog-footer">
-    <span class="btn">try again</span>
+    <span class="btn">再试一次</span>
   </span>
     </el-dialog>
 
@@ -175,10 +175,11 @@
           <img style="width: 150px;height: 150px;margin-bottom: 90px"  src="/w_r.png" alt="">
         </div>
 
-        <p style="word-break: break-word;" class="text-center fs-36">YOUR ANSWER IS <span class="text-green">CORRECT</span></p>
+        <p style="word-break: break-word;" class="text-center fs-36"><span class="text-green">您已经成功完成了本教程！</span></p>
+        <p style="font-size: 18px;letter-spacing: 0.05em;color: #888888">明天开始下一节课，今天休息一下，复习材料。</p>
       </div>
       <span slot="footer" class="dialog-footer">
-    <span @click="rightAnswer=false" class="btn">go next</span>
+    <span @click="rightAnswer=false" class="btn">为了</span>
   </span>
     </el-dialog>
     <el-dialog
