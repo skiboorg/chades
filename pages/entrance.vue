@@ -29,7 +29,7 @@
           <input type="text" class="form-control no-mw small-ph mb-25" v-model="user_reg.password2" placeholder="重复输入密码">
 
 
-          <span class="btn" @click="curStep+=1" :class="{'btnDisabled': user_reg.password2 === '' || user_reg.password1 !==user_reg.password2}">下一步注册</span>
+          <span class="btn" @click="checkUserData" >下一步注册</span>
 
 
 
@@ -114,6 +114,27 @@
       };
     },
     methods: {
+      checkUserData(){
+        if (this.user_reg.email === ''){
+           this.showError('Email пустой')
+          return
+        }
+        if (this.user_reg.name === ''){
+           this.showError('Name пустой')
+          return
+        }
+
+        if (this.user_reg.password1 === '' || this.user_reg.password2 === ''){
+          this.showError('Пароли пустые')
+          return
+        }
+        if (this.user_reg.password1 !== this.user_reg.password2 ){
+          this.showError('Пароли не совпадают')
+          return
+        }
+        this.curStep+=1
+
+      },
       async userLogin() {
 
         try {
@@ -121,12 +142,15 @@
           console.log(response)
 
         } catch (err) {
-          this.$message({
+          this.showError('ERROR TEXT')
+        }
+      },
+      showError(text){
+        this.$message({
             showClose: true,
-            message: 'Oops, this is a error message.',
+            message: text,
             type: 'error'
           });
-        }
       },
       async registerUser() {
 

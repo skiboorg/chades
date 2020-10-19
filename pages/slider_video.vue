@@ -1,6 +1,30 @@
 <template>
-  <div style="height: 100vh">
-     <div class="slider-container">
+  <div class="container" >
+
+      <div class="lesson-wrapper mb-50">
+           <div class="game-item" style="background: #FF77A5">
+              <img :src="gameImg" alt="">
+              <p>标记视频</p>
+            </div>
+
+
+          <div style="flex-basis: 900px" class="">
+            <p class="section-header">电脑 电脑 </p>
+            <p>Можно предположить, что промоакция концентрирует бюджет на размещение. Фокус-группа концентрирует принцип восприятия, опираясь на опыт западных коллег. </p>
+          </div>
+        </div>
+    <div class="round-block bg-green ">
+          <img src="/exl.png" alt="">
+          <p>每节课均由几个部分组成。<br>
+
+第一部分内容丰富。 您需要阅读并在笔记本中写下您感兴趣的问题。<br>
+
+第二部分是新词的含义。 他们需要在笔记本上写下并记住。 在随后的课程中，我们将参考单词的含义。<br>
+第三部分是将术语和单词翻译成英语。<br>
+必须完成测试才能完成每节课。</p>
+        </div>
+    <div class="slider-area mb-50">
+       <div class="slider-container">
 
       <puzzle-board v-if="show"
         :autoResize="autoResize"
@@ -20,6 +44,32 @@
 
 
  </div>
+    </div>
+    <div class="mb-50">
+      <p class="btn" @click="reload">restart</p>
+      <nuxt-link to="/courses"><p class="btn btn-outline">back</p></nuxt-link>
+
+    </div>
+     <el-dialog
+      :visible.sync="gameWin"
+      width="30%"
+      :close-on-click-modal="false"
+      style="padding: 30px"
+      :show-close="false"
+      center>
+      <div>
+        <div class="text-center">
+          <img style="width: 150px;height: 150px;margin-bottom: 90px"  src="/w_r.png" alt="">
+        </div>
+
+        <p style="word-break: break-word;" class="text-center fs-36"><span class="text-green">您已经成功完成了本教程！</span></p>
+        <p style="font-size: 18px;letter-spacing: 0.05em;color: #888888">明天开始下一节课，今天休息一下，复习材料。</p>
+      </div>
+      <span slot="footer" class="dialog-footer">
+    <span @click="gameWin=false" class="btn">为了</span>
+  </span>
+    </el-dialog>
+
   </div>
 
 </template>
@@ -85,9 +135,6 @@ const getGiphySrc = async function() {
         const src = response_video.data
         console.log(src)
         return {src}
-
-
-
       }catch (e) {
         throw e
       }
@@ -97,10 +144,12 @@ const getGiphySrc = async function() {
       return {
       src:null,
       show: true,
+       gameImg:null,
       videoTitle: 'Cat',
       difficulty: null,
       distance: null,
       isGoal: false,
+      gameWin: false,
       autoResize: true,
       width: 300,
       height: 300,
@@ -121,9 +170,11 @@ const getGiphySrc = async function() {
      console.log(this.$route.query)
       if (this.$route.query.d==='e'){
         this.difficulty = 'Easy'
+        this.gameImg = '/slider-v-4.png'
       }
        if (this.$route.query.d==='n'){
         this.difficulty = 'Normal'
+         this.gameImg = '/slider-v-5.png'
       }
     },
   computed: {
@@ -137,15 +188,28 @@ const getGiphySrc = async function() {
   watch: {
     isGoal(isGoal) {
       if (isGoal) {
-        this.$confetti.start({
-          shape: 'rect'
-        })
+        //this.$confetti.start({
+        //  shape: 'rect'
+        //})
+        this.gameWin=true
+        this.addPoints()
       } else {
-        this.$confetti.stop()
+        //this.$confetti.stop()
       }
     }
   },
   methods: {
+     async reload(){
+       const  response_video= await this.$axios.get(`/api/v1/game/get_random_video/`)
+        const src = response_video.data
+       this.isGoal = false
+       this.src = src
+       //window.location.reload(true)
+     },
+    async addPoints(){
+       await this.$axios.post(`/api/v1/user/add_points/`,{points:200})
+
+    },
     onTitleClick() {
       window.open('https://github.com/meganetaaan/vue-8-puzzle')
     },
@@ -175,13 +239,18 @@ const getGiphySrc = async function() {
 </script>
 
 <style>
-
+.slider-area{
+  position: relative;
+  background: #FFFCFC;
+  border-radius: 20px;
+  height: 700px;
+}
 .slider-container {
   position: absolute;
-  top: calc(50% + 30px);
+  top:  50% ;
   left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
+
   width: 90%;
   height: calc(90% - 60px);
   margin: 0px;

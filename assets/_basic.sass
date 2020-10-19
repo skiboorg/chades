@@ -1408,3 +1408,26 @@ section
       padding: 20px
     &-wrapper
       grid-template-columns: 1fr
+
+.grid3
+  display: grid
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr))
+  grid-gap: 20px
+
+.grid2
+  display: grid
+  grid-template-columns: repeat(auto-fit,minmax(400px,1fr))
+  grid-gap: 20px
+
+.grid-item
+  text-align: center
+  p
+    margin-bottom: 15px
+    font-weight: bold
+
+@media (max-width: 500px)
+  .grid3
+    grid-template-columns: 1fr
+
+  .grid2
+    grid-template-columns: 1fr

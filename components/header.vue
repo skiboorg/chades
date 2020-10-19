@@ -65,6 +65,7 @@
     },
     methods: {
       checkUrl(url){
+        //this.$confetti.stop()
          if(url === '/'){
           this.indexPage = true
           this.noHeader = false

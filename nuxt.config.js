@@ -78,6 +78,9 @@ export default {
 
 
   auth: {
+    redirect: {
+    home: '/courses'
+  },
   strategies: {
     local: {
       endpoints: {

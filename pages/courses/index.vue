@@ -3,14 +3,14 @@
     <div class="container">
       <div class="breadcrumbs">
         <ul>
-         <li><nuxt-link to="/courses">主页</nuxt-link></li>
+          <li><nuxt-link to="/courses">主页</nuxt-link></li>
           <li>我的课程</li>
         </ul>
       </div>
     </div>
     <section>
       <div class="container">
-         <h3 class="section-header">我的进步</h3>
+        <h3 class="section-header">我的进步</h3>
         <div class="course-top">
           <div class="round-block about-user">
             <p class="about-user__num">#{{$auth.user.id}} </p>
@@ -38,20 +38,20 @@
               <img src="/course-img.png" alt="">
             </div>
 
-              <div class="progress-top">
-          <div class="progress-top__item " v-for="stage in stages" :key="stage.id">
-            <div class="tarif-number " :class="{'notActive':stage.number>1}">
-              <p>{{stage.number}}</p>
-              <span>lvl</span>
+            <div class="progress-top">
+              <div class="progress-top__item " v-for="stage in stages" :key="stage.id">
+                <div class="tarif-number " :class="{'notActive':stage.number>1}">
+                  <p>{{stage.number}}</p>
+                  <span>lvl</span>
+                </div>
+                <p class="progress-top__item-exp">{{stage.score_need}}</p>
+              </div>
             </div>
-            <p class="progress-top__item-exp">{{stage.score_need}}</p>
-          </div>
-        </div>
-        <div class="progress-bottom">
-          <div :style="{width: this.$auth.user.score / 40 + '%'}" class="progress-bottom__inner">
-            <p >{{this.$auth.user.score}}</p>
-          </div>
-        </div>
+            <div class="progress-bottom">
+              <div :style="{width: this.$auth.user.score / 40 + '%'}" class="progress-bottom__inner">
+                <p >{{this.$auth.user.score}}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -101,54 +101,32 @@
       <div class="container">
         <h3 class="section-header">教育游戏</h3>
         <div class="courses">
-           <div  class="course"  >
-             <nuxt-link to="/slider_video?d=e">
-               <div class="course__wrapper">
-               <div class="course__inner">
-                  <img class="course-image" src="/slider-v-4.png" alt="">
-                </div>
-                 <div class="course__name">
-                  <p>标记视频</p>
-                </div>
-             </div>
-             </nuxt-link>
+          <nuxt-link to="/slider_video?d=e">
+            <div class="game-item" style="background: #FF77A5">
+              <img src="/slider-v-4.png" alt="">
+              <p>标记视频</p>
             </div>
-          <div  class="course"  >
-             <nuxt-link to="/slider_video?d=n">
-               <div class="course__wrapper">
-               <div class="course__inner">
-                  <img class="course-image" src="/slider-v-5.png" alt="">
-                </div>
-                 <div class="course__name">
-                  <p>标记视频</p>
-                </div>
-             </div>
-             </nuxt-link>
+          </nuxt-link>
+          <nuxt-link to="/slider_video?d=n">
+            <div class="game-item" style="background: #FF77A5">
+              <img src="/slider-v-5.png" alt="">
+              <p>标记视频</p>
             </div>
-            <div  class="course"  >
-             <nuxt-link to="/slider_image?d=e">
-               <div class="course__wrapper">
-               <div class="course__inner">
-                  <img class="course-image" src="/slider-i-4.png" alt="">
-                </div>
-                 <div class="course__name">
-                  <p>用图片标记</p>
-                </div>
-             </div>
-             </nuxt-link>
+          </nuxt-link>
+          <nuxt-link to="/slider_image?d=e">
+            <div class="game-item" style="background: #FF77A5">
+              <img src="/slider-i-4.png" alt="">
+              <p>用图片标记</p>
             </div>
-            <div  class="course"  >
-             <nuxt-link to="/slider_image?d=n">
-               <div class="course__wrapper">
-               <div class="course__inner">
-                  <img class="course-image" src="/slider-i-5.png" alt="">
-                </div>
-                 <div class="course__name">
-                  <p>用图片标记</p>
-                </div>
-             </div>
-             </nuxt-link>
+          </nuxt-link>
+          <nuxt-link to="/slider_image?d=n">
+            <div class="game-item" style="background: #FF77A5">
+              <img src="/slider-i-5.png" alt="">
+              <p>用图片标记</p>
             </div>
+          </nuxt-link>
+
+
         </div>
       </div>
     </section>

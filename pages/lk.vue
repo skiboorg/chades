@@ -17,8 +17,8 @@
               <div class="container">
                 <h3 class="section-header">为您提供的信息</h3>
                 <div class="lk-news">
-                  <img src="/lk-1.png" alt="">
-                  <img src="/lk-2.png" alt="">
+                  <img @click="infoModal=true" src="/lk-1.png" alt="">
+                  <img @click="infoModal=true" src="/lk-2.png" alt="">
                 </div>
               </div>
             </section>
@@ -44,7 +44,7 @@
               <div class="container">
                 <h3 class="section-header">我的证书和文凭</h3>
                 <div class="certificates">
-                  <div class="certificate">
+                  <div  class="certificate">
                     <img src="/cert.png" alt="">
 <!--                    <p>name</p>-->
                   </div>
@@ -115,7 +115,22 @@
 
         </div>
 
-
+ <el-dialog
+      :visible.sync="infoModal"
+      width="30%"
+      :close-on-click-modal="false"
+      style="padding: 30px"
+      :show-close="false"
+      center>
+      <div class="">
+        <div class="mb-50 text-center">
+         <p>info modal</p>
+      </div>
+      <div slot="footer" class="dialog-footer">
+    <span style="display: block" @click="infoModal=false" class="btn">为了</span>
+  </div>
+      </div>
+    </el-dialog>
       </div>
 
 
@@ -145,6 +160,7 @@
     },
     data() {
       return {
+        infoModal:false,
         avatar:null,
         userData:{
           nickname: this.$auth.user.nickname,
