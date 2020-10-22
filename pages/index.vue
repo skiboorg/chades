@@ -196,7 +196,7 @@
       <div class="container">
         <h3 class="section-header">我们最好的学生</h3>
         <div class="best">
-          <div class="best-item round-block">
+          <div class="best-item round-block best-pupil">
             <p class="best-item__num">#1</p>
             <div class="best-item__name"><img src="/avatar.png" alt=""><p>金龙</p><span>@suniliven</span></div>
             <div class="best-item__ahi">
@@ -245,27 +245,7 @@
               <p class="best-item__ahi-ball">285 点</p>
             </div>
           </div>
-          <div class="best-item round-block">
-            <p class="best-item__num">#8</p>
-            <div class="best-item__name"><img src="/avatar.png" alt=""><p>永生</p><span>@suniliven</span></div>
-            <div class="best-item__ahi">
-              <p class="best-item__ahi-ball">285 点</p>
-            </div>
-          </div>
-          <div class="best-item round-block">
-            <p class="best-item__num">#9</p>
-            <div class="best-item__name"><img src="/avatar.png" alt=""><p>永生</p><span>@suniliven</span></div>
-            <div class="best-item__ahi">
-              <p class="best-item__ahi-ball">285 点</p>
-            </div>
-          </div>
-          <div class="best-item round-block">
-            <p class="best-item__num">#10</p>
-            <div class="best-item__name"><img src="/avatar.png" alt=""><p>永生</p><span>@suniliven</span></div>
-            <div class="best-item__ahi">
-              <p class="best-item__ahi-ball">285 点</p>
-            </div>
-          </div>
+
         </div>
       </div>
     </section><!--   best-->
@@ -372,6 +352,30 @@
                 <p class="feedback-item__text">儿子很开心，他在空闲时间学习有用的技能。这个学习系统很方便，不仓促，一切都清晰易懂。</p>
               </div>
             </div>
+             <div class="feedback-item__wrapper">
+              <div class="feedback-item round-block coala">
+                <div class="feedback-item__header">
+                  <img src="http://placehold.it/300" alt="">
+                  <div class="feedback-item__header-name">
+                    <p>СУ ЛИНЬ ПИНЬ</p>
+                    <span>работает в гугл, 27 лет</span>
+                  </div>
+                </div>
+                <p class="feedback-item__text">我的孩子已经在我们平台上学习一个月了，他比我更了解计算机的结构和工作原理！</p>
+              </div>
+            </div>
+            <div class="feedback-item__wrapper">
+              <div class="feedback-item round-block fox">
+                <div class="feedback-item__header">
+                  <img src="http://placehold.it/300" alt="">
+                  <div class="feedback-item__header-name">
+                    <p>СУ ЛИНЬ ПИНЬ</p>
+                    <span>работает в гугл, 27 лет</span>
+                  </div>
+                </div>
+                <p class="feedback-item__text">儿子很开心，他在空闲时间学习有用的技能。这个学习系统很方便，不仓促，一切都清晰易懂。</p>
+              </div>
+            </div>
 
 
           </div>
@@ -441,36 +445,29 @@
 
       </div>
     </section>
-
-
-
     <el-dialog
       class="index-dialog"
       :visible.sync="c1DialogVisible"
       width="55%"
       :show-close="false"
-
       center>
       <div class="index-dialog__img" style="background: url(/m1.png) no-repeat center">
         <span @click="c1DialogVisible=false">&#10005;</span>
 
       </div>
       <div class="index-dialog__content">
-        <span style="display: block;padding-bottom: 50px" >我们这一方向的课程旨在教授您的孩子使用计算机的基本技能和能力：从计算机设备及其操作方法到使用基本软件的能力！我们的课程内容涵盖诸如信息的类型和如何传输，什么是网络等，除此之外，我们将教您的孩子自己手动组装和拆卸计算机，清除病毒，并使用软件处理文档、演示文稿等。</span>
-        <p>1.	“计算机设备”课程</p>
-        <span>这是我们的主修课，在这门课上我们将带领学生熟悉计算机及其类型，学习计算机内部结构、部件和基本工作原理。这门课程对于了解计算机的整体操作和研究不同类型计算机的性能都是必要的。<br>
-我们还会详细学习计算机模块和组件，学习如何将其组合在一起，并在特定任务中相互匹配。</span>
-        <p>2.	“计算机知识”课程</p>
-        <span>在这门课程中，我们将学习计算机使用规范和基本知识：包括如何在计算机上正常工作，它有什么功能，文件和程序是什么，系统是什么等。<br>
-本课程是进一步学习程序设计和所有其他计算机课程的起点。</span>
-        <p>3.	“什么是信息”课程</p>
-        <span>本课程教孩子们如何处理信息：信息是什么，您能用它做什么，如何使用和处理它。在本课程中我们还将学生信息学基础知识，其基础信息理论、信息怎样传输、计算机内部信息是什么形式以及信息如何投身到屏幕上。</span>
-        <p>4.“网络与互联网基础”课程</p>
-        <span>这门课程是为最有好奇心的孩子们准备的——它将带领我们了解互联网的历史，了解信息是如何通过网络传输的，有哪些网络，如何创建自己的网络，以及网络中是否可以再存在一个网络等。</span>
-        <p>5.“使用office程序：MS office”课程</p>
-        <span>本课程是孩子们未来职业生涯的重要课程：我们教您如何使用基本的office程序，即Microsoft office（PowerPoint、Word、Excel、Access）。<br>
-无论您的孩子将来选择什么样的职业，在生活和工作的各个领域都重视使用这些软件的工作能力！
-</span>
+        <span style="display: block;padding-bottom: 50px" >技术对儿童非常有吸引力。在现代世界中，计算机扫盲已成为每个孩子的必需品。本课程的目的是向孩子们讲授计算机知识的基础知识，拓宽有关ICT的知识范围，教他们使用计算机。</span>
+        <p>课程“计算机技术”</p>
+        <span>该计算机有助于解决最困难的问题。学习IT首先要了解计算机设备。您的孩子将了解它的组成部分以及其工作原理。我们将熟悉各种PC模块，学习如何将它们组合以完成特定任务。</span>
+        <p>课程“计算机知识”</p>
+        <span>软件部分与硬件部分一样重要。在这一部分中，您的孩子将了解操作系统的所有功能。他将学习如何对文件和文件夹执行操作，启动应用程序。</span>
+
+        <p>课程“什么是信息”</p>
+        <span>IT的基础是信息。完成本课程后，孩子将了解计算机以何种形式以及数据如何移动以及如何处理信息。如果孩子成功地掌握了这门课程，他将有机会认真参与编程。</span>
+        <p>课程“网络和互联网”</p>
+        <span>在本课程的第一堂课之后，您的孩子将能够独立配置局域网，了解Internet和Internet的工作方式。</span>
+        <p>课程“使用程序OFFICE：MS OFFICE”</p>
+        <span>最重要的是，您的孩子将学习使用Office程序的基础知识：在MS WORD中创建文本文件，在MS EXCEL中创建表，在MS POWERPOINT中进行演示。</span>
       </div>
 
 
@@ -480,25 +477,21 @@
       :visible.sync="c2DialogVisible"
       width="55%"
       :show-close="false"
-
       center>
       <div class="index-dialog__img" style="background: url(/m2.png) no-repeat center">
         <span @click="c2DialogVisible=false">&#10005;</span>
 
       </div>
       <div class="index-dialog__content">
-        <span style="display: block;padding-bottom: 50px" >我们这一方向的课程旨在培养您的孩子从事创造性职业——网页设计师、用户体验设计师、视频编辑、视频博主等职业的基本技能和能力。</span>
-        <p>1. “设计基础”课程</p>
-        <span>儿童创意设计课程：我们教您的孩子如何使用图形和设计工具和软件，培养孩子的创造性思维和品味。我们还将了解主要的设计技巧、设计方法、色彩组合和一般的设计类型！<br>
-设计师的职业总是有现实需求的。具有设计才能的人才在设计工作中必须保证项目具有趣味和创造性！</span>
-        <p>2. “网页设计”课程</p>
-        <span>我们将教孩子们创建和实现网站和应用程序的设计：从简单的布局到复杂的图表和带有弹窗和转换功能的页面。我们将教孩子们这项工作的基本规则和基础网页设计，以及如何正确使用软件界面和基本的设计技巧。</span>
-        <p>3. “视频编辑”课程</p>
-        <span>在本课程中，我们将教给您的孩子一项有趣且有用的技能：在现代信息世界中运用视频材料：我们将教您如何正确录制视频、编辑和处理视频、提高视频质量和应用效果！<br>
-编辑视频能力被应用于许多活动领域：从电视、广播，到视频博客和在大公司创建演示文稿。</span>
-        <p>4. “绘制标识”课程</p>
-        <span>我们将教孩子们正确和创造性地绘制标识：从简单的形状和明亮的字体到最复杂难忘的几何设计！为您的孩子未来的工作学习储备一些作品。<br>
-这门课程可以为开发孩子的创造性潜能打造良好基础。在设计行业，年龄并不重要，天赋和毅力才是重要的！所以，您的孩子可以从小开始练习了！</span>
+        <span style="display: block;padding-bottom: 50px" >本课程致力于开发设计，视频和照片处理程序。我们在理论教学方面有很多实践课程。结果，您的孩子将学习如何制作现成的网站，在社交网络上的创意头像以及如何编辑视频。</span>
+        <p>基础设计课程</p>
+        <span>基本的平面设计课程是在孩子中发展创造性思维的好机会。我们的课程将为儿童提供图形设计的基础知识，使用文本的规则，颜色，构图以及创建简单插图，图标，象形图的实践技能。在教孩子时要特别注意创造力。</span>
+        <p>课程“网页设计”</p>
+        <span>这些课程将使孩子熟悉网站的类型。孩子们将与老师一起掌握创建网站的阶段，元素和原则。在课程结束时，学生将学习如何专业地创建应用程序设计。</span>
+        <p>课程“视频编辑”</p>
+        <span>视频编辑课程结合了创造力和技术技能。孩子们将学习如何制作第一批视频杰作，以及发明，拍摄和编辑最佳照片。</span>
+        <p>课程“打标”</p>
+        <span>在这一部分中，我们将教孩子们创造力，并画出各种复杂程度的徽标。幼儿从小就可以上课。最主要的是渴望掌握这一创新方向。</span>
       </div>
 
 
@@ -508,25 +501,21 @@
       :visible.sync="c3DialogVisible"
       width="55%"
       :show-close="false"
-
       center>
       <div class="index-dialog__img" style="background: url(/m3.png) no-repeat center">
         <span @click="c3DialogVisible=false">&#10005;</span>
 
       </div>
       <div class="index-dialog__content">
-        <span style="display: block;padding-bottom: 50px" >我们这一方向的课程旨在培养您的孩子从事创造性职业——网页设计师、用户体验设计师、视频编辑、视频博主等职业的基本技能和能力。</span>
-        <p>1. “设计基础”课程</p>
-        <span>儿童创意设计课程：我们教您的孩子如何使用图形和设计工具和软件，培养孩子的创造性思维和品味。我们还将了解主要的设计技巧、设计方法、色彩组合和一般的设计类型！<br>
-设计师的职业总是有现实需求的。具有设计才能的人才在设计工作中必须保证项目具有趣味和创造性！</span>
-        <p>2. “网页设计”课程</p>
-        <span>我们将教孩子们创建和实现网站和应用程序的设计：从简单的布局到复杂的图表和带有弹窗和转换功能的页面。我们将教孩子们这项工作的基本规则和基础网页设计，以及如何正确使用软件界面和基本的设计技巧。</span>
-        <p>3. “视频编辑”课程</p>
-        <span>在本课程中，我们将教给您的孩子一项有趣且有用的技能：在现代信息世界中运用视频材料：我们将教您如何正确录制视频、编辑和处理视频、提高视频质量和应用效果！<br>
-编辑视频能力被应用于许多活动领域：从电视、广播，到视频博客和在大公司创建演示文稿。</span>
-        <p>4. “绘制标识”课程</p>
-        <span>我们将教孩子们正确和创造性地绘制标识：从简单的形状和明亮的字体到最复杂难忘的几何设计！为您的孩子未来的工作学习储备一些作品。<br>
-这门课程可以为开发孩子的创造性潜能打造良好基础。在设计行业，年龄并不重要，天赋和毅力才是重要的！所以，您的孩子可以从小开始练习了！</span>
+        <span style="display: block;padding-bottom: 50px" >孩子们喜欢电脑游戏。如果孩子不断要求您玩智能手机，请不要限制他的兴趣。最好让他参加编程课程-让他自己编写游戏。游戏和应用开发逻辑，运动技能，想象力和记忆力。</span>
+        <p>课程“算法和编程基础”</p>
+        <span>算法开发是一个复杂且耗时的过程。但这是学习编程的基础。在课程中，我们将研究编写算法的各种方式，我们将研究算法语言中使用的命令的分类。</span>
+        <p>课程“编程的第一步”</p>
+        <span>如果您的孩子对编程感兴趣，那么从他喜欢的东西开始就很重要。我们已经开发了一系列不是以理论形式而是以游戏形式的类。所使用的教育程序适用于所有年龄段的儿童，并且基于图形和动画。</span>
+        <p>课程“游戏开发和游戏设计：在roblox工作室”</p>
+        <span>roblox studio上的计算机游戏开发今天对孩子们来说很受欢迎。 Roblox是一种流行且前景广阔的游戏环境。这里有许多简化的细微差别，语言模块功能齐全，结构合理且易于理解。</span>
+        <p>课程“代数：循环，集合和逻辑”</p>
+        <span>各种编程算法的方法都是基于数学的，我们以简单易行的方式教给孩子一些基础知识。</span>
       </div>
 
 
@@ -543,26 +532,20 @@
 
       </div>
       <div class="index-dialog__content">
-        <span style="display: block;padding-bottom: 50px" >我们这一方向的课程旨在培养您的孩子从事创造性职业——网页设计师、用户体验设计师、视频编辑、视频博主等职业的基本技能和能力。</span>
-        <p>1. “设计基础”课程</p>
-        <span>儿童创意设计课程：我们教您的孩子如何使用图形和设计工具和软件，培养孩子的创造性思维和品味。我们还将了解主要的设计技巧、设计方法、色彩组合和一般的设计类型！<br>
-设计师的职业总是有现实需求的。具有设计才能的人才在设计工作中必须保证项目具有趣味和创造性！</span>
-        <p>2. “网页设计”课程</p>
-        <span>我们将教孩子们创建和实现网站和应用程序的设计：从简单的布局到复杂的图表和带有弹窗和转换功能的页面。我们将教孩子们这项工作的基本规则和基础网页设计，以及如何正确使用软件界面和基本的设计技巧。</span>
-        <p>3. “视频编辑”课程</p>
-        <span>在本课程中，我们将教给您的孩子一项有趣且有用的技能：在现代信息世界中运用视频材料：我们将教您如何正确录制视频、编辑和处理视频、提高视频质量和应用效果！<br>
-编辑视频能力被应用于许多活动领域：从电视、广播，到视频博客和在大公司创建演示文稿。</span>
-        <p>4. “绘制标识”课程</p>
-        <span>我们将教孩子们正确和创造性地绘制标识：从简单的形状和明亮的字体到最复杂难忘的几何设计！为您的孩子未来的工作学习储备一些作品。<br>
-这门课程可以为开发孩子的创造性潜能打造良好基础。在设计行业，年龄并不重要，天赋和毅力才是重要的！所以，您的孩子可以从小开始练习了！</span>
+        <span style="display: block;padding-bottom: 50px" >启动您的网站是一个简单的目标，它将帮助您的孩子立即了解信息技术的多个方面。对于那些想教孩子创建网站的父母，我们准备了全面的课程。</span>
+        <p>课程“网站如何运作？”</p>
+        <span>在开始学习网络编程和网站之前，孩子们将学习网页如何工作的基本原理。在课程结束时，孩子将能够学习互联网，网页设计和数据安全的基础知识。</span>
+        <p>课程“网页设计基础”</p>
+        <span>掌握网页设计的基础知识始于图形编辑器，掌握基本工具，为您自己的网站创建单独的插图，图标和标识。</span>
+        <p>基本水平：HTML和CSS课程</p>
+        <span>在线学习儿童HTML的在线课程为迈向掌握各种复杂程度的Web开发迈出了第一步。在课程结束时，学生将能够获得有关程序和布局工具，HTML标记，CSS语法的基础知识，创建菜单，标题，侧边栏等的知识。</span>
+        <p>课程“基本水平：PYTHON”</p>
+        <span>Python是一种严肃的语言，在当今的专业环境中非常流行。上面写着严肃的大型软件系统。在学习语言的过程中，孩子将制作动画和简单的游戏。每节课中，他都会清楚地看到他的新知识和技能在屏幕上的体现。</span>
       </div>
 
 
     </el-dialog>
-
-
-
-        <el-dialog
+    <el-dialog
       :visible.sync="formSend"
       width="30%"
       :close-on-click-modal="false"

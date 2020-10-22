@@ -69,6 +69,7 @@
 
                            }"
                   :style="{'background':cource.bg_color}"
+
             >
 
               <nuxt-link :to="'/courses/'+cource.id">
@@ -102,9 +103,8 @@
         <h3 class="section-header">教育游戏</h3>
         <div class="courses">
           <nuxt-link to="/slider_video?d=e">
-            <div class="game-item" style="background: #FF77A5">
-              <img src="/slider-v-4.png" alt="">
-              <p>标记视频</p>
+            <div class="game-item" style="background: url(/game_test.png) center no-repeat; background-size: cover">
+
             </div>
           </nuxt-link>
           <nuxt-link to="/slider_video?d=n">

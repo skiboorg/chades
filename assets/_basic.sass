@@ -503,7 +503,7 @@ section
 
 .feedback-new
   background: url(/feedback-bg.png) no-repeat center
-  height: 800px
+  height: fit-content
   border-radius: 20px
   &__wrapper
     padding: 150px 0
@@ -525,9 +525,15 @@ section
     &.frog
       &::after
         content: url(/frog.png)
+    &.coala
+      &::after
+        content: url(/coala.png)
+    &.fox
+      &::after
+        content: url(/fox.png)
 
     &__wrapper
-      &:first-child
+      &:nth-child(odd)
         padding-top: 40px
     &__header
       display: flex
@@ -927,6 +933,22 @@ section
   align-items: center
   justify-content: space-between
   margin-bottom: 15px
+  &.best-pupil
+    background: $bg-gradient
+    & .best-item__ahi-ball
+      color: #ffffff
+      background: unset
+      -webkit-background-clip: unset
+      -webkit-text-fill-color: unset
+    & .best-item__num
+      color: #ffffff
+    & .best-item__name
+      color: #ffffff
+      span
+        color: #ffffff
+        background: unset
+        -webkit-background-clip: unset
+        -webkit-text-fill-color: unset
   &:last-child
     margin-bottom: 0
   &__num

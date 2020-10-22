@@ -11,7 +11,10 @@
       <div  class="auth-form__block">
         <input type="text" class="form-control no-mw small-ph" v-model="user_login.email" placeholder="输入您的邮件">
         <input type="password" class="form-control no-mw small-ph mb-75" v-model="user_login.password" placeholder="输入密码">
-        <p>恢复密码</p>
+        <p>
+          <nuxt-link to="/#callback">恢复密码</nuxt-link>
+        </p>
+
         <span class="btn " @click="userLogin" :class="{'btnDisabled': user_login.email === ''}">输入您的个人帐户</span>
       </div>
 
@@ -46,18 +49,19 @@
 
       </div>
       <div v-if="curStep===2" class="">
-        <p class="mb-25">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam asperiores dignissimos doloremque eligendi eos error et eum excepturi facilis incidunt laboriosam, nesciunt nostrum perferendis, quo quod vel. Nam, qui.</p>
+        <p class="mb-15">付款后，您的注册确认信将发送到您的邮件中。</p>
+        <p class="mb-25">付款时，请在付款说明中注明您的昵称和姓名。</p>
         <div style="flex-wrap: wrap" class="auth-form__inner mb-25">
           <div style="justify-content: space-between" class="auth-form__block">
-            <div class="">
+            <div style="padding-top: 35px;margin-bottom: 20px">
               <input type="text" class="form-control no-mw small-ph " v-model="user_reg.login" placeholder="输入昵称">
-              <p>Lorem ipsum dolor.</p>
-              <p>Lorem ipsum dolor.</p>
-              <p>Lorem ipsum dolor.</p>
+              <p class="text-bold">1个月费用 175¥</p>
+              <p class="text-bold">6个月费用 810¥</p>
+              <p class="text-bold">12个月费用 1188¥</p>
             </div>
             <div class="">
-              <span v-if="is_registered===false" class="btn mb-15" @click="registerUser" :class="{'btnDisabled': user_reg.login === ''}">зарегистрироваться</span>
-              <p v-if="is_registered===false" class="fs-14 text-trans">Нажимая на кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+              <span v-if="is_registered===false" class="btn mb-15" @click="registerUser" >在网站上注册</span>
+              <!--              <p v-if="is_registered===false" class="fs-14 text-trans">Нажимая на кнопку, вы соглашаетесь с политикой конфиденциальности</p>-->
             </div>
           </div>
           <div class="auth-form__block">
@@ -66,22 +70,24 @@
         </div>
       </div>
     </div>
-      <el-dialog
+    <el-dialog
       :visible.sync="regComplete"
       width="30%"
       :close-on-click-modal="false"
       style="padding: 30px"
-      :show-close="false"
+      :show-close="true"
       center>
       <div>
-        <div class="text-center">
-          <img style="width: 150px;height: 150px;margin-bottom: 90px"  src="/w_r.png" alt="">
-        </div>
 
-        <p style="word-break: break-word;" class="text-center fs-36">Registration<span class="text-green"> complete</span></p>
+        <div class="text-center">
+          <img style="width: 150px;height: 150px;margin-bottom: 50px"  src="/w_r.png" alt="">
+        </div>
+        <p style="word-break: break-word; font-size: 22px; padding: 0 40px" class="text-center "><span class="text-green fs-36">您已成功完成注册！</span><br><br>
+
+          我们将在24小时内向您发送一封电子邮件，确认您的注册，然后您可以使用个人帐户访问该网站并开始学习！</p>
       </div>
       <span slot="footer" class="dialog-footer">
-    <span @click="regComplete=false,regActive=false,loginActive=true" class="btn">login</span>
+    <span @click="regComplete=false,regActive=false,loginActive=true" class="btn">关闭通知</span>
   </span>
     </el-dialog>
   </div>
@@ -94,7 +100,6 @@
         regActive: true,
         loginActive: false,
         regComplete: false,
-
         user_login: {
           email: '',
           password: '',
@@ -109,34 +114,29 @@
           password1: '',
           password2: '',
         }
-
-
       };
     },
     methods: {
       checkUserData(){
         if (this.user_reg.email === ''){
-           this.showError('Email пустой')
+          this.showError('输入你的电子邮箱')
           return
         }
         if (this.user_reg.name === ''){
-           this.showError('Name пустой')
+          this.showError('输入你的名字')
           return
         }
-
         if (this.user_reg.password1 === '' || this.user_reg.password2 === ''){
-          this.showError('Пароли пустые')
+          this.showError('输入密码')
           return
         }
         if (this.user_reg.password1 !== this.user_reg.password2 ){
-          this.showError('Пароли не совпадают')
+          this.showError('密码不匹配')
           return
         }
         this.curStep+=1
-
       },
       async userLogin() {
-
         try {
           let response = await this.$auth.loginWith('local', {data: this.user_login})
           console.log(response)
@@ -147,13 +147,16 @@
       },
       showError(text){
         this.$message({
-            showClose: true,
-            message: text,
-            type: 'error'
-          });
+          showClose: true,
+          message: text,
+          type: 'error'
+        });
       },
       async registerUser() {
-
+        if (this.user_reg.login === ''){
+          this.showError('输入昵称')
+          return
+        }
         await this.$axios.post('/auth/users/', {
           password: this.user_reg.password2,
           email: this.user_reg.email,
@@ -181,10 +184,10 @@
             console.log('response2')
             console.log(error.response)
             this.$message({
-            showClose: true,
-            message: error.response.data,
-            type: 'error'
-          });
+              showClose: true,
+              message: error.response.data,
+              type: 'error'
+            });
 
           });
       }
