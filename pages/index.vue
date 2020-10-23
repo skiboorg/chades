@@ -198,51 +198,51 @@
         <div class="best">
           <div class="best-item round-block best-pupil">
             <p class="best-item__num">#1</p>
-            <div class="best-item__name"><img src="/avatar.png" alt=""><p>金龙</p><span>@suniliven</span></div>
+            <div class="best-item__name"><img src="/avatar.png" alt=""><p>金龙</p><span>@Sunlive</span></div>
             <div class="best-item__ahi">
-              <p class="best-item__ahi-ball">2485 点</p>
+              <p class="best-item__ahi-ball">540 点</p>
             </div>
           </div>
           <div class="best-item round-block">
             <p class="best-item__num">#2</p>
-            <div class="best-item__name"><img src="/avatar.png" alt=""><p>卫东</p><span>@suniliven</span></div>
+            <div class="best-item__name"><img src="/avatar.png" alt=""><p>卫东</p><span>@user27</span></div>
             <div class="best-item__ahi">
-              <p class="best-item__ahi-ball">285 点</p>
+              <p class="best-item__ahi-ball">523 点</p>
             </div>
           </div>
           <div class="best-item round-block">
             <p class="best-item__num">#3</p>
-            <div class="best-item__name"><img src="/avatar.png" alt=""><p>永生</p><span>@suniliven</span></div>
+            <div class="best-item__name"><img src="/avatar.png" alt=""><p>永生</p><span>@user04</span></div>
             <div class="best-item__ahi">
-              <p class="best-item__ahi-ball">285 点</p>
+              <p class="best-item__ahi-ball">312 点</p>
             </div>
           </div>
           <div class="best-item round-block">
             <p class="best-item__num">#4</p>
-            <div class="best-item__name"><img src="/avatar.png" alt=""><p>永生</p><span>@suniliven</span></div>
+            <div class="best-item__name"><img src="/avatar.png" alt=""><p>永生</p><span>@progmaster</span></div>
             <div class="best-item__ahi">
-              <p class="best-item__ahi-ball">285 点</p>
+              <p class="best-item__ahi-ball">207 点</p>
             </div>
           </div>
           <div class="best-item round-block">
             <p class="best-item__num">#5</p>
-            <div class="best-item__name"><img src="/avatar.png" alt=""><p>永生</p><span>@suniliven</span></div>
+            <div class="best-item__name"><img src="/avatar.png" alt=""><p>永生</p><span>@88Yoon</span></div>
             <div class="best-item__ahi">
-              <p class="best-item__ahi-ball">285 点</p>
+              <p class="best-item__ahi-ball">100 点</p>
             </div>
           </div>
           <div class="best-item round-block">
             <p class="best-item__num">#6</p>
-            <div class="best-item__name"><img src="/avatar.png" alt=""><p>永生</p><span>@suniliven</span></div>
+            <div class="best-item__name"><img src="/avatar.png" alt=""><p>永生</p><span>@雨季</span></div>
             <div class="best-item__ahi">
-              <p class="best-item__ahi-ball">285 点</p>
+              <p class="best-item__ahi-ball">64 点</p>
             </div>
           </div>
           <div class="best-item round-block">
             <p class="best-item__num">#7</p>
-            <div class="best-item__name"><img src="/avatar.png" alt=""><p>永生</p><span>@suniliven</span></div>
+            <div class="best-item__name"><img src="/avatar.png" alt=""><p>永生</p><span>@7373</span></div>
             <div class="best-item__ahi">
-              <p class="best-item__ahi-ball">285 点</p>
+              <p class="best-item__ahi-ball">25 点</p>
             </div>
           </div>
 
@@ -333,7 +333,7 @@
                 <div class="feedback-item__header">
                   <img src="http://placehold.it/300" alt="">
                   <div class="feedback-item__header-name">
-                    <p>СУ ЛИНЬ ПИНЬ</p>
+                    <p>春生王</p>
                     <span>работает в гугл, 27 лет</span>
                   </div>
                 </div>
@@ -345,7 +345,7 @@
                 <div class="feedback-item__header">
                   <img src="http://placehold.it/300" alt="">
                   <div class="feedback-item__header-name">
-                    <p>СУ ЛИНЬ ПИНЬ</p>
+                    <p>晓明陈</p>
                     <span>работает в гугл, 27 лет</span>
                   </div>
                 </div>
@@ -357,7 +357,7 @@
                 <div class="feedback-item__header">
                   <img src="http://placehold.it/300" alt="">
                   <div class="feedback-item__header-name">
-                    <p>СУ ЛИНЬ ПИНЬ</p>
+                    <p>永生德</p>
                     <span>работает в гугл, 27 лет</span>
                   </div>
                 </div>
@@ -369,7 +369,7 @@
                 <div class="feedback-item__header">
                   <img src="http://placehold.it/300" alt="">
                   <div class="feedback-item__header-name">
-                    <p>СУ ЛИНЬ ПИНЬ</p>
+                    <p>胜杨</p>
                     <span>работает в гугл, 27 лет</span>
                   </div>
                 </div>
@@ -426,8 +426,8 @@
     <section id="callback">
       <div class="container">
         <h3 class="section-header">反馈</h3>
-        <p class="text-16 mw-600 mb-50">反馈 反馈
-        </p>
+        <p class="text-16 mw-600 mb-50">在此窗口中，您可以给我们写您对我们以及我们的工作的意见和希望！
+如果您忘记了密码-输入您的姓名或昵称以及您注册帐户的邮件-我们将把密码发送到您的邮件中！ </p>
         <div class="input-group">
           <el-input placeholder="你的名字" v-model="callback.name"></el-input>
           <el-input placeholder="你的邮件" v-model="callback.email"></el-input>

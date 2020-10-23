@@ -103,28 +103,19 @@
         <h3 class="section-header">教育游戏</h3>
         <div class="courses">
           <nuxt-link to="/slider_video?d=e">
-            <div class="game-item" style="background: url(/game_test.png) center no-repeat; background-size: cover">
-
-            </div>
+            <div class="game-item" style="background: url(/slider-v-5.png) center no-repeat; background-size: cover"></div>
           </nuxt-link>
           <nuxt-link to="/slider_video?d=n">
-            <div class="game-item" style="background: #FF77A5">
-              <img src="/slider-v-5.png" alt="">
-              <p>标记视频</p>
-            </div>
+            <div class="game-item" style="background: url(/slider-v-4.png) center no-repeat; background-size: cover"></div>
           </nuxt-link>
           <nuxt-link to="/slider_image?d=e">
-            <div class="game-item" style="background: #FF77A5">
-              <img src="/slider-i-4.png" alt="">
-              <p>用图片标记</p>
-            </div>
+              <div class="game-item" style="background: url(/slider-i-4.png) center no-repeat; background-size: cover"></div>
           </nuxt-link>
           <nuxt-link to="/slider_image?d=n">
-            <div class="game-item" style="background: #FF77A5">
-              <img src="/slider-i-5.png" alt="">
-              <p>用图片标记</p>
-            </div>
+             <div class="game-item" style="background: url(/slider-i-5.png) center no-repeat; background-size: cover"></div>
           </nuxt-link>
+          <div class="game-item" style="background: url(/g1.png) center no-repeat; background-size: cover"></div>
+          <div class="game-item" style="background: url(/g2.png) center no-repeat; background-size: cover"></div>
 
 
         </div>

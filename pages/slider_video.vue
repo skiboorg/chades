@@ -2,9 +2,8 @@
   <div class="container" >
 
       <div class="lesson-wrapper mb-50">
-           <div class="game-item" style="background: #FF77A5">
-              <img :src="gameImg" alt="">
-              <p>标记视频</p>
+            <div class="game-item" :style="{'background': 'url('+gameImg+') center no-repeat; background-size: cover'}">
+
             </div>
 
 
