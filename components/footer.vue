@@ -17,7 +17,7 @@
                  <nuxt-link v-if="this.$auth.loggedIn" class="footer-nav__item" to="/lk">个人专区</nuxt-link>
               </div>
                   <div v-if="!this.$auth.loggedIn" class="footer-btn">
-                   <nuxt-link  to="/register" class="btn">登录或注册</nuxt-link>
+                   <nuxt-link  to="/entrance" class="btn">登录或注册</nuxt-link>
                  </div>
               <div v-else class="footer-btn">
                  <span  @click="$auth.logout()" class="btn">从您的个人资料中删除</span>
