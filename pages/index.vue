@@ -170,7 +170,6 @@
       </div>
 
     </section>
-
     <section class="steps-cover" >
       <div class="container">
         <h3  class="section-header text-center steps-header">如何在我们的平台上完成学习</h3>
@@ -245,7 +244,6 @@
               <p class="best-item__ahi-ball">25 点</p>
             </div>
           </div>
-
         </div>
       </div>
     </section><!--   best-->
@@ -334,7 +332,7 @@
                   <img src="http://placehold.it/300" alt="">
                   <div class="feedback-item__header-name">
                     <p>春生王</p>
-                    <span>работает в гугл, 27 лет</span>
+                    <span>孩子从2020年9月开始学习</span>
                   </div>
                 </div>
                 <p class="feedback-item__text">我的孩子已经在我们平台上学习一个月了，他比我更了解计算机的结构和工作原理！</p>
@@ -346,22 +344,22 @@
                   <img src="http://placehold.it/300" alt="">
                   <div class="feedback-item__header-name">
                     <p>晓明陈</p>
-                    <span>работает в гугл, 27 лет</span>
+                    <span>孩子从2020年8月开始学习</span>
                   </div>
                 </div>
                 <p class="feedback-item__text">儿子很开心，他在空闲时间学习有用的技能。这个学习系统很方便，不仓促，一切都清晰易懂。</p>
               </div>
             </div>
-             <div class="feedback-item__wrapper">
+            <div class="feedback-item__wrapper">
               <div class="feedback-item round-block coala">
                 <div class="feedback-item__header">
                   <img src="http://placehold.it/300" alt="">
                   <div class="feedback-item__header-name">
                     <p>永生德</p>
-                    <span>работает в гугл, 27 лет</span>
+                    <span>孩子从2020年9月开始学习</span>
                   </div>
                 </div>
-                <p class="feedback-item__text">我的孩子已经在我们平台上学习一个月了，他比我更了解计算机的结构和工作原理！</p>
+                <p class="feedback-item__text">我喜欢一切，我们将很快进入第二阶段的培训</p>
               </div>
             </div>
             <div class="feedback-item__wrapper">
@@ -370,19 +368,15 @@
                   <img src="http://placehold.it/300" alt="">
                   <div class="feedback-item__header-name">
                     <p>胜杨</p>
-                    <span>работает в гугл, 27 лет</span>
+                    <span>该孩子从2020年6月开始学习（进行封闭式测试）</span>
                   </div>
                 </div>
-                <p class="feedback-item__text">儿子很开心，他在空闲时间学习有用的技能。这个学习系统很方便，不仓促，一切都清晰易懂。</p>
+                <p class="feedback-item__text">优秀的学习学校！ 这些课程具有挑战性和趣味性，需要学习许多不同的材料。</p>
               </div>
             </div>
-
-
           </div>
         </div>
-
       </div>
-
     </section><!--    feedback-new-->
     <section id="faq">
       <div class="container">

@@ -65,7 +65,7 @@
             </div>
           </div>
           <div class="auth-form__block">
-            <img src="/pay.jpeg" alt="">
+            <img src="/pay.png" alt="">
           </div>
         </div>
       </div>
