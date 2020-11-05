@@ -18,7 +18,7 @@
                 <h3 class="section-header">为您提供的信息</h3>
                 <div class="lk-news">
                   <img @click="infoModal=true" src="/lk-1.png" alt="">
-                  <img @click="infoModal=true" src="/lk-2.png" alt="">
+                  <img @click="infoModal1=true" src="/lk-2.png" alt="">
                 </div>
               </div>
             </section>
@@ -68,8 +68,8 @@
                     </el-upload>
 
                     <label>你的密码</label>
-                    <input type="text" class="form-control" v-model="userData.password1" placeholder="enter new password">
-                    <input type="text" class="form-control" v-model="userData.password2" placeholder="confirm new password">
+                    <input type="text" class="form-control" v-model="userData.password1" placeholder="输入新密码">
+                    <input type="text" class="form-control" v-model="userData.password2" placeholder="确认新密码">
                     <a href="" @click.prevent="updateUser" class="btn btn-white">更改</a>
                   </div>
                   <div class="form-group">
@@ -124,10 +124,41 @@
       center>
       <div class="">
         <div class="mb-50 text-center">
-         <p>info modal</p>
+         <p>我们现在正在为您开发VIP帐户，并提供更多选择和学习机会！<br><br>
+每个VIP学生都会与老师进行在线聊天，以回答任何问题，以及获得其他教育材料和机会！<br><br>
+我们还想从您那里了解VIP帐户可能需要哪些其他选项。 在“反馈”块的主页上写下您的愿望！</p>
       </div>
       <div slot="footer" class="dialog-footer">
-    <span style="display: block" @click="infoModal=false" class="btn">为了</span>
+    <span style="display: block;text-align: center" @click="infoModal=false" class="btn">关</span>
+  </div>
+      </div>
+    </el-dialog>
+        <el-dialog
+      :visible.sync="infoModal1"
+      width="30%"
+      :close-on-click-modal="false"
+      style="padding: 30px"
+      :show-close="false"
+      center>
+      <div class="">
+        <div class="mb-50 text-center">
+         <p>以什么形式进行培训？<br><br>
+我们提供了所有领域的课程目录，为方便起见，将其分为多个培训
+阶段。只有成功完成前面的课程，您才能够进入更为复杂和高级的
+课程。<br><br>
+每门课程均包含按主题划分的多个课时。每个课时都有一个理论部
+分、一个测验/作业形式的实践部分以及必须写在笔记本上并记住词
+义和正确发音的英语词汇和英语动词。<br><br>
+
+孩子如何更好按时地学习？<br><br>
+
+在我们系统中，每日都会开放后续课时的访问权限。这一设置专门
+用于确保孩子能更好的消化吸收必要的信息量，系统且从容地掌握
+知识，而非匆忙的学习所有课程。
+         </p>
+      </div>
+      <div slot="footer" class="dialog-footer">
+    <span style="display: block;text-align: center" @click="infoModal1=false" class="btn">关</span>
   </div>
       </div>
     </el-dialog>
@@ -161,6 +192,7 @@
     data() {
       return {
         infoModal:false,
+        infoModal1:false,
         avatar:null,
         userData:{
           nickname: this.$auth.user.nickname,

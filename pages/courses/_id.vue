@@ -88,6 +88,7 @@
         </div>
       </div>
     </section>
+
     <section v-if="lessons[this.cur_lesson_id].status !== 2">
       <!--    <section>-->
       <div class="container">
@@ -132,7 +133,7 @@
           <div class="round-block p-40 mb-50" v-for="(test,index) in cource.lessons[cur_lesson].input_test">
             <div class="mb-25" v-html="test.description"> </div>
             <el-input placeholder="" v-model="inputTests.test_id[index].answer">
-              <template slot="prepend">Ответ</template>
+              <template slot="prepend">你的回应</template>
             </el-input>
           </div>
 
@@ -315,6 +316,7 @@
         }
         catch (e) {
           console.log('error ')
+          this.wrongAnswer = true
         }
       },
       async checkTest1(){
@@ -339,7 +341,7 @@
       changeLesson(id){
         this.cur_lesson = this.cource.lessons.findIndex(x => x.id === id)
         this.cur_lesson_clicked = this.cur_lesson
-        this.cur_lesson_id = this.cource.lessons[this.cur_lesson].id
+        this.cur_lesson_id = this.cource.lessons[this.cur_lesson].id-1
 
       },
       async applyUnit(u_id){

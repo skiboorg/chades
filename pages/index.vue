@@ -204,35 +204,35 @@
           </div>
           <div class="best-item round-block">
             <p class="best-item__num">#2</p>
-            <div class="best-item__name"><img src="/avatar.png" alt=""><p>卫东</p><span>@user27</span></div>
+            <div class="best-item__name"><img src="/avatar.png" alt=""><p>Zhan Jing</p><span>@user27</span></div>
             <div class="best-item__ahi">
               <p class="best-item__ahi-ball">523 点</p>
             </div>
           </div>
           <div class="best-item round-block">
             <p class="best-item__num">#3</p>
-            <div class="best-item__name"><img src="/avatar.png" alt=""><p>永生</p><span>@user04</span></div>
+            <div class="best-item__name"><img src="/avatar.png" alt=""><p>邢家豪</p><span>@user04</span></div>
             <div class="best-item__ahi">
               <p class="best-item__ahi-ball">312 点</p>
             </div>
           </div>
           <div class="best-item round-block">
             <p class="best-item__num">#4</p>
-            <div class="best-item__name"><img src="/avatar.png" alt=""><p>永生</p><span>@progmaster</span></div>
+            <div class="best-item__name"><img src="/avatar.png" alt=""><p>Xing Jiahao</p><span>@progmaster</span></div>
             <div class="best-item__ahi">
               <p class="best-item__ahi-ball">207 点</p>
             </div>
           </div>
           <div class="best-item round-block">
             <p class="best-item__num">#5</p>
-            <div class="best-item__name"><img src="/avatar.png" alt=""><p>永生</p><span>@88Yoon</span></div>
+            <div class="best-item__name"><img src="/avatar.png" alt=""><p>Guo Guo</p><span>@88Yoon</span></div>
             <div class="best-item__ahi">
               <p class="best-item__ahi-ball">100 点</p>
             </div>
           </div>
           <div class="best-item round-block">
             <p class="best-item__num">#6</p>
-            <div class="best-item__name"><img src="/avatar.png" alt=""><p>永生</p><span>@雨季</span></div>
+            <div class="best-item__name"><img src="/avatar.png" alt=""><p>潘志</p><span>@雨季</span></div>
             <div class="best-item__ahi">
               <p class="best-item__ahi-ball">64 点</p>
             </div>
@@ -329,7 +329,7 @@
             <div class="feedback-item__wrapper">
               <div class="feedback-item round-block tiger">
                 <div class="feedback-item__header">
-                  <img src="http://placehold.it/300" alt="">
+                  <img src="/fb1.jpg" alt="">
                   <div class="feedback-item__header-name">
                     <p>春生王</p>
                     <span>孩子从2020年9月开始学习</span>
@@ -341,7 +341,7 @@
             <div class="feedback-item__wrapper">
               <div class="feedback-item round-block frog">
                 <div class="feedback-item__header">
-                  <img src="http://placehold.it/300" alt="">
+                  <img src="/fb2.jpg" alt="">
                   <div class="feedback-item__header-name">
                     <p>晓明陈</p>
                     <span>孩子从2020年8月开始学习</span>
@@ -353,7 +353,7 @@
             <div class="feedback-item__wrapper">
               <div class="feedback-item round-block coala">
                 <div class="feedback-item__header">
-                  <img src="http://placehold.it/300" alt="">
+                  <img src="/fb2.jpg" alt="">
                   <div class="feedback-item__header-name">
                     <p>永生德</p>
                     <span>孩子从2020年9月开始学习</span>
@@ -365,7 +365,7 @@
             <div class="feedback-item__wrapper">
               <div class="feedback-item round-block fox">
                 <div class="feedback-item__header">
-                  <img src="http://placehold.it/300" alt="">
+                  <img src="/fb1.jpg" alt="">
                   <div class="feedback-item__header-name">
                     <p>胜杨</p>
                     <span>该孩子从2020年6月开始学习（进行封闭式测试）</span>

@@ -3,13 +3,15 @@
 
       <div class="lesson-wrapper mb-50">
             <div class="game-item" :style="{'background': 'url('+gameImg+') center no-repeat; background-size: cover'}">
-
+              <img :src="gameImg" alt="">
             </div>
 
 
           <div style="flex-basis: 900px" class="">
-            <p class="section-header">电脑 电脑 </p>
-            <p>Можно предположить, что промоакция концентрирует бюджет на размещение. Фокус-группа концентрирует принцип восприятия, опираясь на опыт западных коллег. </p>
+            <p class="section-header">标签游戏</p>
+            <p>
+              游戏的目的是还原图片的原始正确位置。 究竟哪个初始位置未知，这就是游戏的难度！ 游戏的原理：单击空白区域旁边的图块时，图块会跳到那里。 游戏时间是无限的！
+            </p>
           </div>
         </div>
     <div class="round-block bg-green ">
@@ -45,8 +47,8 @@
  </div>
     </div>
     <div class="mb-50">
-      <p class="btn" @click="reload">restart</p>
-      <nuxt-link to="/courses"><p class="btn btn-outline">back</p></nuxt-link>
+      <p class="btn" @click="reload">重来</p>
+      <nuxt-link to="/courses"><p class="btn btn-outline">背部</p></nuxt-link>
 
     </div>
      <el-dialog
