@@ -76,8 +76,8 @@
                 <div class="course__inner">
                   <img class="course-image" :src="cource.icon" alt="">
 
-                  <p v-if="progress_courses.includes(cource.id)" class="course-status">in process</p>
-                  <p v-if="finished_courses.includes(cource.id) " style="color: #27AE60" class="course-status">done</p>
+                  <p v-if="progress_courses.includes(cource.id)" class="course-status"></p>
+                  <p v-if="finished_courses.includes(cource.id) " style="color: #27AE60" class="course-status">课程成功完成</p>
                   <div v-if="!avaiable_courses.includes(cource.id)" class="course-status">
                     <p class="">完成课程 {{cource.depence}}</p>
                   </div>

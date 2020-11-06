@@ -142,7 +142,7 @@
           console.log(response)
 
         } catch (err) {
-          this.showError('ERROR TEXT')
+          this.showError('您输入了错误的用户名或密码')
         }
       },
       showError(text){
