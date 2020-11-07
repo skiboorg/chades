@@ -78,6 +78,7 @@
                     <label >你的密码</label>
                     <div class="form-group__text">
 
+                        <p>微信号码: {{this.$auth.user.vi_chat}}</p>
                         <p>你的名字: {{this.$auth.user.name}}</p>
                         <p>你的邮件: {{this.$auth.user.email}}</p>
                         <p>您的订阅将于{{new Date(this.$auth.user.expiry_time).getFullYear()}}年{{new Date(this.$auth.user.expiry_time).getMonth()}}月{{new Date(this.$auth.user.expiry_time).getDate()}}日到期。</p>

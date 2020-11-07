@@ -25,6 +25,7 @@
       <div v-if="curStep===1" class="auth-form__inner">
         <div class="auth-form__block">
           <input type="text" class="form-control no-mw small-ph" v-model="user_reg.promo" placeholder="促销代码">
+          <input type="text" class="form-control no-mw small-ph" v-model="user_reg.vi_chat" placeholder="输入您的微信">
           <input type="text" class="form-control no-mw small-ph" v-model="user_reg.name" placeholder="输入学生姓名">
           <input type="text" class="form-control no-mw small-ph" v-model="user_reg.email" placeholder="你的邮件">
 
@@ -54,7 +55,7 @@
         <div style="flex-wrap: wrap" class="auth-form__inner mb-25">
           <div style="justify-content: space-between" class="auth-form__block">
             <div style="padding-top: 35px;margin-bottom: 20px">
-              <input type="text" class="form-control no-mw small-ph " v-model="user_reg.login" placeholder="输入昵称">
+              <input type="text" class="form-control no-mw small-ph " v-model="user_reg.nickname" placeholder="输入昵称">
               <p class="text-bold">1个月费用 175¥</p>
               <p class="text-bold">6个月费用 810¥</p>
               <p class="text-bold">12个月费用 1188¥</p>
@@ -109,7 +110,8 @@
         user_reg: {
           name: '',
           promo: '',
-          login: '',
+          nickname: '',
+          vi_chat: '',
           email: '',
           password1: '',
           password2: '',
@@ -117,9 +119,26 @@
       };
     },
     methods: {
-      checkUserData(){
+     async checkUserData(){
         if (this.user_reg.email === ''){
           this.showError('输入你的电子邮箱')
+          return
+        }else {
+          const response = await this.$axios.post('/api/v1/user/check_email/',{email:this.user_reg.email})
+
+          if (response.data['status'] === 'emailbad'){
+            this.showError('您输入了不正确的邮件')
+            return
+          }
+          if (response.data['status'] === 'found'){
+              this.showError('该邮件已被使用')
+              return
+            }
+
+        }
+
+        if (this.user_reg.vi_chat === ''){
+          this.showError('微信字段为空')
           return
         }
         if (this.user_reg.name === ''){
@@ -153,7 +172,7 @@
         });
       },
       async registerUser() {
-        if (this.user_reg.login === ''){
+        if (this.user_reg.nickname === ''){
           this.showError('输入昵称')
           return
         }
@@ -161,8 +180,9 @@
           password: this.user_reg.password2,
           email: this.user_reg.email,
           name: this.user_reg.name,
-          nickname: this.user_reg.login,
+          nickname: this.user_reg.nickname,
           promo: this.user_reg.promo,
+          vi_chat: this.user_reg.vi_chat,
 
 
         })

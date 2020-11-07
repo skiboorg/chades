@@ -67,7 +67,7 @@
         <p style="font-size: 18px;letter-spacing: 0.05em;color: #888888">明天开始下一节课，今天休息一下，复习材料。</p>
       </div>
       <span slot="footer" class="dialog-footer">
-    <span @click="gameWin=false" class="btn">为了</span>
+    <span @click="reload" class="btn">为了</span>
   </span>
     </el-dialog>
 
