@@ -25,7 +25,7 @@
             </div>
             <div class="footer-bottom">
                 <p>版权所有 2020.</p>
-                <p>All Rights Reserved</p>
+                <p>上海二迩信息科技有限公司 QRSocial All Rights Reserved</p>
 
             </div>
         </div>
