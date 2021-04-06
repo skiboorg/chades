@@ -54,11 +54,11 @@
         <p class="mb-25">付款时，请在付款说明中注明您的昵称和姓名。</p>
         <div style="flex-wrap: wrap" class="auth-form__inner mb-25">
           <div style="justify-content: space-between" class="auth-form__block">
-            <div style="padding-top: 35px;margin-bottom: 20px">
-              <input type="text" class="form-control no-mw small-ph " v-model="user_reg.nickname" placeholder="输入昵称">
-              <p class="text-bold">1个月费用 175¥</p>
-              <p class="text-bold">6个月费用 810¥</p>
-              <p class="text-bold">12个月费用 1188¥</p>
+            <div style="padding-top: 35px;margin-bottom: 20px; display: flex;flex-direction: column">
+              <input type="text" class="form-control no-mw small-ph mb-50" v-model="user_reg.nickname" placeholder="输入昵称">
+              <el-radio class="mb-25" v-model="user_reg.type" label="1">1个月费用 175¥</el-radio>
+              <el-radio class="mb-25" v-model="user_reg.type" label="6">6个月费用 810¥</el-radio>
+              <el-radio v-model="user_reg.type" label="12">12个月费用 1188¥</el-radio>
             </div>
             <div class="">
               <span v-if="is_registered===false" class="btn mb-15" @click="registerUser" >在网站上注册</span>
@@ -66,7 +66,7 @@
             </div>
           </div>
           <div class="auth-form__block">
-            <img src="/pay.png" alt="">
+            <img style="width: 400px;height: 400px;object-fit: contain" src="/pay.jpeg" alt="">
           </div>
         </div>
       </div>
@@ -105,7 +105,7 @@
           email: '',
           password: '',
         },
-        curStep: 1,
+        curStep: 2,
         is_registered: false,
         user_reg: {
           name: '',
@@ -115,6 +115,7 @@
           email: '',
           password1: '',
           password2: '',
+          type:null
         }
       };
     },
@@ -183,6 +184,7 @@
           nickname: this.user_reg.nickname,
           promo: this.user_reg.promo,
           vi_chat: this.user_reg.vi_chat,
+          type: this.user_reg.type,
 
 
         })

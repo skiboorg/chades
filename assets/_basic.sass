@@ -1009,13 +1009,16 @@ section
       flex-basis: unset
       flex-wrap: wrap
       justify-content: center
-      margin-bottom: 20px
+
     &__ahi
       flex-basis: unset
       flex-wrap: wrap
       justify-content: center
+      flex-grow: unset
 
-
+@media (max-width: 500px)
+  .best-item
+    flex-direction: column
 
 .breadcrumbs
   margin-bottom: 25px
@@ -1416,6 +1419,17 @@ section
     background-size: cover
     &-item
       margin-bottom: 20px
+      &-top
+        align-items: center
+        p
+          font-size: 20px
+      &-text
+        p
+          &:first-child
+            font-size: 14px
+            margin-bottom: 10px
+          &:last-child
+            opacity: .6
     &-wrapper
       grid-gap: 20px
 
@@ -1449,3 +1463,9 @@ section
 
   .grid2
     grid-template-columns: 1fr
+
+.el-radio__input.is-checked+.el-radio__label
+  color: #EB5757 !important
+.el-radio__input.is-checked .el-radio__inner
+  border-color: #EB5757 !important
+  background: #EB5757 !important
