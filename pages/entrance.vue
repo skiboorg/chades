@@ -61,6 +61,7 @@
               <el-radio v-model="user_reg.type" label="12">12个月费用 1188¥</el-radio>
             </div>
             <div class="">
+              <span  class="btn mb-15" @click="curStep=1" >背部</span>
               <span v-if="is_registered===false" class="btn mb-15" @click="registerUser" >在网站上注册</span>
               <!--              <p v-if="is_registered===false" class="fs-14 text-trans">Нажимая на кнопку, вы соглашаетесь с политикой конфиденциальности</p>-->
             </div>

@@ -11,7 +11,7 @@
           <a class="footer-nav__item" v-scroll-to="'#learn'" href="/">我们教什么</a>
           <a class="footer-nav__item" v-scroll-to="'#faq'" href="/">我们如何工作？</a>
           <a class="footer-nav__item" v-scroll-to="'#callback'" href="/">反馈</a>
-           <nuxt-link class="footer-nav__item" to="/about" >about</nuxt-link>
+           <nuxt-link class="footer-nav__item" to="/about" >关于</nuxt-link>
         </div>
         <div v-else class="footer-nav">
           <nuxt-link to="/courses" class="footer-nav__item">我们的课程</nuxt-link>

@@ -12,14 +12,14 @@
             <a class="header-nav__item" v-scroll-to="'#learn'" href="/">我们教什么</a>
             <a class="header-nav__item" v-scroll-to="'#faq'" href="/">我们如何工作？</a>
             <a class="header-nav__item" v-scroll-to="'#callback'" href="/">反馈</a>
-             <nuxt-link class="header-nav__item" to="/about" >about</nuxt-link>
+             <nuxt-link class="header-nav__item" to="/about" >关于</nuxt-link>
           </div>
           <div v-else>
             <nuxt-link class="header-nav__item" to="/#courses">我们的课程</nuxt-link>
             <nuxt-link class="header-nav__item" to="/#learn">我们教什么</nuxt-link>
             <nuxt-link class="header-nav__item" to="/#faq">我们如何工作？</nuxt-link>
             <nuxt-link class="header-nav__item" to="/#callback">反馈</nuxt-link>
-            <nuxt-link class="header-nav__item" to="/about" >about</nuxt-link>
+            <nuxt-link class="header-nav__item" to="/about" >关于</nuxt-link>
           </div>
 
         </div>
