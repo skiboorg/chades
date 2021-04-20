@@ -106,7 +106,7 @@
           email: '',
           password: '',
         },
-        curStep: 2,
+        curStep: 1,
         is_registered: false,
         user_reg: {
           name: '',
