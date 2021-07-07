@@ -135,7 +135,6 @@
         const  response_cources= await $axios.get(`/api/v1/shool/cources/`)
         const stages = response_stages.data
         const cources = response_cources.data
-
         return {stages,cources}
 
       }catch (e) {
@@ -155,6 +154,11 @@
     computed: {
 
     },
+    mounted() {
+      if (!this.$auth.user.expiry_time){
+        this.$router.push('/')
+      }
+    },
     methods:{
 
       getFinishedLessons(id){
@@ -173,12 +177,6 @@
           }
           return count
         })
-
-
-
-
-
-
       },
     }
   };

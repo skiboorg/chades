@@ -204,6 +204,11 @@
         }
       }
     },
+    mounted() {
+      if (!this.$auth.user.expiry_time){
+        this.$router.push('/')
+      }
+    },
     methods:{
       async updateUser(){
         if (this.userData.password1 !== this.userData.password2){

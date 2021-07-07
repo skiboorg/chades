@@ -1,8 +1,12 @@
 <template>
+
   <header class="header" :style="{'background':'url('+ bg+')'}" :class="{'header-small':!indexPage,'no-header':noHeader}">
+
     <div class="container"
+
          style="position: fixed; top: 20px; width: 100%; left: 50%; transform: translateX(-50%);z-index: 10;">
       <div class="header-wrapper">
+<!--         {{$auth.user}}-->
         <div class="header-logo">
           <nuxt-link to="/"><img src="/logo.png" alt=""></nuxt-link>
         </div>

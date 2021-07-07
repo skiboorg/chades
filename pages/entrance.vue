@@ -20,20 +20,21 @@
 
     </div>
     <div v-if="regActive"  class="auth-form text-center">
-      <h3 class="text-color fs-24 text-bold mb-25">在网站上注册 {{curStep}}/2</h3>
+      <h3 class="text-color fs-24 text-bold mb-25">在网站上注册</h3>
 
-      <div v-if="curStep===1" class="auth-form__inner">
+      <div  class="auth-form__inner">
         <div class="auth-form__block">
           <input type="text" class="form-control no-mw small-ph" v-model="user_reg.promo" placeholder="促销代码">
           <input type="text" class="form-control no-mw small-ph" v-model="user_reg.vi_chat" placeholder="输入您的微信">
           <input type="text" class="form-control no-mw small-ph" v-model="user_reg.name" placeholder="输入学生姓名">
           <input type="text" class="form-control no-mw small-ph" v-model="user_reg.email" placeholder="你的邮件">
+          <input type="text" class="form-control no-mw small-ph " v-model="user_reg.nickname" placeholder="输入昵称">
 
           <input type="text" class="form-control no-mw small-ph" v-model="user_reg.password1" placeholder="密码">
           <input type="text" class="form-control no-mw small-ph mb-25" v-model="user_reg.password2" placeholder="重复输入密码">
 
 
-          <span class="btn" @click="checkUserData" >下一步注册</span>
+          <span class="btn mb-25" @click="checkUserData" >下一步注册</span>
 
 
 
@@ -49,28 +50,7 @@
 
 
       </div>
-      <div v-if="curStep===2" class="">
-        <p class="mb-15">付款后，您的注册确认信将发送到您的邮件中。</p>
-        <p class="mb-25">付款时，请在付款说明中注明您的昵称和姓名。</p>
-        <div style="flex-wrap: wrap" class="auth-form__inner mb-25">
-          <div style="justify-content: space-between" class="auth-form__block">
-            <div style="padding-top: 35px;margin-bottom: 20px; display: flex;flex-direction: column">
-              <input type="text" class="form-control no-mw small-ph mb-50" v-model="user_reg.nickname" placeholder="输入昵称">
-              <el-radio class="mb-25" v-model="user_reg.type" label="1">1个月费用 175¥</el-radio>
-              <el-radio class="mb-25" v-model="user_reg.type" label="6">6个月费用 810¥</el-radio>
-              <el-radio v-model="user_reg.type" label="12">12个月费用 1188¥</el-radio>
-            </div>
-            <div class="">
-              <span  class="btn mb-15" @click="curStep=1" >背部</span>
-              <span v-if="is_registered===false" class="btn mb-15" @click="registerUser" >在网站上注册</span>
-              <!--              <p v-if="is_registered===false" class="fs-14 text-trans">Нажимая на кнопку, вы соглашаетесь с политикой конфиденциальности</p>-->
-            </div>
-          </div>
-          <div class="auth-form__block">
-            <img style="width: 400px;height: 400px;object-fit: contain" src="/pay.jpeg" alt="">
-          </div>
-        </div>
-      </div>
+
     </div>
     <el-dialog
       :visible.sync="regComplete"
@@ -155,7 +135,7 @@
           this.showError('密码不匹配')
           return
         }
-        this.curStep+=1
+        await  this.registerUser()
       },
       async userLogin() {
         try {

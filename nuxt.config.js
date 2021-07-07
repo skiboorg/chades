@@ -79,7 +79,7 @@ export default {
 
   auth: {
     redirect: {
-    home: '/courses'
+    home: '/'
   },
   strategies: {
     local: {

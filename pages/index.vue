@@ -557,6 +557,26 @@
 <!--    <span @click="formSend=false" class="btn">ОК</span>-->
   </span>
     </el-dialog>
+
+     <el-dialog
+      :visible.sync="needPay"
+      width="30%"
+      :close-on-click-modal="false"
+      style="padding: 30px"
+      :show-close="true"
+
+      center>
+      <div>
+        <div class="text-center">
+
+        </div>
+
+        <p style="word-break: break-word;" class="text-center fs-36">need pay</p>
+      </div>
+      <span slot="footer" class="dialog-footer">
+<!--    <span @click="formSend=false" class="btn">ОК</span>-->
+  </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -580,7 +600,7 @@
           email:'',
           text:''
           },
-
+        needPay: this.$auth.loggedIn && !this.$auth.user.expiry_time ? true : false,
         c1DialogVisible: false,
         formSend: false,
         c2DialogVisible: false,
@@ -588,6 +608,21 @@
         c4DialogVisible: false,
         bg: 'Example blog post'
       };
+    },
+    computed:{
+      needPay1:{
+       get(){
+         if(this.$auth.loggedIn){
+          return !this.$auth.user.expiry_time
+        }else{
+          return false
+        }
+       },
+        set(val){
+             return false
+           }
+
+      }
     },
     methods:{
      async sendForm(){
