@@ -4,7 +4,7 @@
 
     <div class="container"
 
-         style="position: fixed; top: 20px; width: 100%; left: 50%; transform: translateX(-50%);z-index: 10;">
+         style="position: fixed; top: 10px; width: 100%; left: 50%; transform: translateX(-50%);z-index: 10;">
       <div class="header-wrapper">
 <!--         {{$auth.user}}-->
         <div class="header-logo">

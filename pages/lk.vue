@@ -213,8 +213,8 @@
       async updateUser(){
         if (this.userData.password1 !== this.userData.password2){
           this.$notify({
-            title: 'Ошибка',
-            message: 'Пароли не совпадают',
+            title: '错误',
+            message: '密码不匹配',
             type: 'danger'
           });
           return
@@ -234,8 +234,8 @@
         }).then((response) => {
 
           this.$notify({
-            title: 'Успешно',
-            message: 'Ваши данные обновлены',
+            title: '成功地',
+            message: '您的详细信息已更新',
             type: 'success'
           });
           this.$auth.fetchUser()

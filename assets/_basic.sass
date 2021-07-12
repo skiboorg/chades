@@ -9,8 +9,19 @@ body
   font: 16px 'Msyh', sans-serifi
   background: #f4f4f4 url('/body.png')
 
-
   color: #5B5B5B
+
+::-webkit-scrollbar
+  width: 5px
+
+::-webkit-scrollbar-track
+  background: #f1f1f1
+
+::-webkit-scrollbar-thumb
+  background: #E85961
+
+::-webkit-scrollbar-thumb:hover
+  background: #E85961
 
 section
   margin-bottom: 100px
@@ -551,7 +562,7 @@ section
         span
           letter-spacing: 0.05em
     &__text
-      font-size: 14px
+      font-size: 16px
       line-height: 140%
 
 @media (max-width: 960px)
@@ -1018,7 +1029,13 @@ section
 
 @media (max-width: 500px)
   .best-item
-    flex-direction: column
+    &__name
+      p
+        font-size: 14px
+      span
+        font-size: 12px
+    &__ahi-ball
+      font-size: 14px
 
 .breadcrumbs
   margin-bottom: 25px
@@ -1401,13 +1418,15 @@ section
     &-top
       display: flex
       justify-content: space-between
+      align-items: center
+      margin-bottom: 15px
       p
         font-size: 24px
         font-weight: bold
     &-text
       p
         &:first-child
-          font-size: 20px
+          font-size: 16px
           margin-bottom: 10px
         &:last-child
           opacity: .6
