@@ -56,34 +56,28 @@
 
           <p style="text-align: left">充值金额</p>
           <div class="pay-amounts">
-            <div @click="pay_amount='150'" class="pay-amount" :class="{'active':pay_amount==='150'}">
+            <div @click="pay_amount='1'" class="pay-amount" :class="{'active':pay_amount==='1'}">
               <div class="pay-amount__inner">
-                <img src="/pay_al.png" alt="">
-                <p>150</p>
+                <p>1个月费用</p>
               </div>
-              <p class="pay-amount__text"><sub>Y</sub> 100</p>
+              <p class="pay-amount__text"><sub>¥</sub> 175</p>
+              <p class="pay-amount__text1">每月一次</p>
             </div>
-            <div @click="pay_amount='300'" class="pay-amount" :class="{'active':pay_amount==='300'}">
+            <div @click="pay_amount='2'" class="pay-amount" :class="{'active':pay_amount==='2'}">
               <div class="pay-amount__inner">
-                <img src="/pay_al.png" alt="">
-                <p>150</p>
+                <p>6个月费用</p>
               </div>
-              <p class="pay-amount__text"><sub>Y</sub> 180</p>
+              <p class="pay-amount__text"><sub>¥</sub> 810</p>
+              <p class="pay-amount__text1">135¥ 每月一次</p>
             </div>
-            <div @click="pay_amount='750'" class="pay-amount pay-best" :class="{'active':pay_amount==='750'}">
-              <div class="pay-amount__inner ">
-                <img src="/pay_al.png" alt="">
-                <p>150</p>
-              </div>
-              <p class="pay-amount__text"><sub>Y</sub> 450  <span class="old-price">Y950</span></p>
-            </div>
-            <div @click="pay_amount='1500'" class="pay-amount" :class="{'active':pay_amount==='1500'}">
+            <div @click="pay_amount='3'" class="pay-amount" :class="{'active':pay_amount==='3'}">
               <div class="pay-amount__inner">
-                <img src="/pay_al.png" alt="">
-                <p>150</p>
+                <p>12个月费用</p>
               </div>
-              <p class="pay-amount__text"><sub>Y</sub> 700</p>
+              <p class="pay-amount__text"><sub>¥</sub> 1188</p>
+              <p class="pay-amount__text1">99¥ 每月一次</p>
             </div>
+
 
           </div>
 
@@ -130,7 +124,7 @@
     data() {
       return {
         pay_type:'ali',
-        pay_amount:'150',
+        pay_amount:'1',
         regActive: true,
         loginActive: false,
         regComplete: false,

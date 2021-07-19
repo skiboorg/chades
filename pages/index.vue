@@ -251,7 +251,7 @@
       <div class="container">
         <h3 class="section-header">我们的费用</h3>
         <div class="tarifs">
-          <div style="cursor: pointer" @click="$router.push('/entrance')" class="tarif round-block">
+          <div   class="tarif round-block">
             <div class="tarif-number">
               <img src="/t1.png" alt="">
 
@@ -263,9 +263,9 @@
               <li>国际标准注册证书</li>
             </ul>
             <p class="tarif-price price-top mb-15">175¥ 每月一次</p>
-            <nuxt-link class="btn btn-curved" to="/entrance">购买</nuxt-link>
+            <nuxt-link  class="btn btn-curved" to="/entrance">购买</nuxt-link>
           </div>
-          <div style="cursor: pointer" @click="$router.push('/entrance')" class="round-block best-tarif">
+          <div  class="round-block best-tarif">
             <div class="corner-text">
               <p>畅销书</p>
             </div>
@@ -283,7 +283,7 @@
             <p class="best-tarif-price">135¥ 每月一次</p>
              <nuxt-link class="btn btn-curved" to="/entrance">购买</nuxt-link>
           </div>
-          <div style="cursor: pointer" @click="$router.push('/entrance')" class="tarif round-block">
+          <div  class="tarif round-block">
             <div class="tarif-number">
               <img src="/t2.png" alt="">
 
@@ -298,7 +298,7 @@
             <p class="tarif-price ">99¥ 每月一次</p>
              <nuxt-link class="btn btn-curved" to="/entrance">购买</nuxt-link>
           </div>
-          <div style="cursor: pointer" @click="$router.push('/entrance')" class="round-block best-tarif vip">
+          <div  class="round-block best-tarif vip">
             <div class="tarif-overlay">
               <img src="/tl.png" alt="">
               <p>将于十二月开放</p>
@@ -353,7 +353,7 @@
             <div class="feedback-item__wrapper">
               <div class="feedback-item round-block coala">
                 <div class="feedback-item__header">
-                  <img src="/fb2.jpg" alt="">
+                  <img src="/fb3.jpg" alt="">
                   <div class="feedback-item__header-name">
                     <p>永生德</p>
                     <span>孩子从2020年9月开始学习</span>
@@ -365,7 +365,7 @@
             <div class="feedback-item__wrapper">
               <div class="feedback-item round-block fox">
                 <div class="feedback-item__header">
-                  <img src="/fb1.jpg" alt="">
+                  <img src="/fb4.png" alt="">
                   <div class="feedback-item__header-name">
                     <p>胜杨</p>
                     <span>该孩子从2020年6月开始学习（进行封闭式测试）</span>

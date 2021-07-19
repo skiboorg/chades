@@ -28,8 +28,7 @@
 
       <div class="footer-bottom">
           <div class="footerText">
-            <a style="color: inherit;text-decoration: underline" href=" ">中文</a>
-            <span>hejiasu.com Shenzhen Speed Up Network Technology Co., Ltd. 2019-2020</span>
+            <span>© 2021</span>
             <a style="color: inherit;text-decoration: underline" class="footer-icp footer-component" href="https://beian.miit.gov.cn/" rel="external nofollow" target="_blank">上海二迩信息科技有限公司
           沪ICP备2021018911号-1</a>
 
