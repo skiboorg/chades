@@ -24,14 +24,68 @@
 
       <div  class="auth-form__inner">
         <div class="auth-form__block">
+          <div style="text-align: left; margin-bottom: 25px">
+             <p>学校将发布促销代码以获取更多奖金。</p>
+          <p>请输入四个字符的数字（0-9）作为密码。</p>
+          <p>付款后，您的注册确认信将发送到您的邮件中。</p>
+          </div>
           <input type="text" class="form-control no-mw small-ph" v-model="user_reg.promo" placeholder="促销代码">
-          <input type="text" class="form-control no-mw small-ph" v-model="user_reg.vi_chat" placeholder="输入您的微信">
+          <div class="form-row">
+            <input type="text" class="form-control no-mw small-ph" v-model="user_reg.vi_chat" placeholder="输入您的微信">
           <input type="text" class="form-control no-mw small-ph" v-model="user_reg.name" placeholder="输入学生姓名">
+          </div>
+
           <input type="text" class="form-control no-mw small-ph" v-model="user_reg.email" placeholder="你的邮件">
           <input type="text" class="form-control no-mw small-ph " v-model="user_reg.nickname" placeholder="输入昵称">
 
           <input type="text" class="form-control no-mw small-ph" v-model="user_reg.password1" placeholder="密码">
           <input type="text" class="form-control no-mw small-ph mb-25" v-model="user_reg.password2" placeholder="重复输入密码">
+
+          <el-divider></el-divider>
+
+          <p style="text-align: left">补货方法</p>
+
+          <div class="pay-types">
+            <div @click="pay_type='ali'" class="pay-type" :class="{'active':pay_type==='ali'}">
+              <img src="/pay_ali.png" alt="">
+            </div>
+            <div @click="pay_type='we'" class="pay-type" :class="{'active':pay_type==='we'}">
+              <img src="/pay_we.png" alt="">
+            </div>
+          </div>
+
+          <p style="text-align: left">充值金额</p>
+          <div class="pay-amounts">
+            <div @click="pay_amount='150'" class="pay-amount" :class="{'active':pay_amount==='150'}">
+              <div class="pay-amount__inner">
+                <img src="/pay_al.png" alt="">
+                <p>150</p>
+              </div>
+              <p class="pay-amount__text"><sub>Y</sub> 100</p>
+            </div>
+            <div @click="pay_amount='300'" class="pay-amount" :class="{'active':pay_amount==='300'}">
+              <div class="pay-amount__inner">
+                <img src="/pay_al.png" alt="">
+                <p>150</p>
+              </div>
+              <p class="pay-amount__text"><sub>Y</sub> 180</p>
+            </div>
+            <div @click="pay_amount='750'" class="pay-amount pay-best" :class="{'active':pay_amount==='750'}">
+              <div class="pay-amount__inner ">
+                <img src="/pay_al.png" alt="">
+                <p>150</p>
+              </div>
+              <p class="pay-amount__text"><sub>Y</sub> 450  <span class="old-price">Y950</span></p>
+            </div>
+            <div @click="pay_amount='1500'" class="pay-amount" :class="{'active':pay_amount==='1500'}">
+              <div class="pay-amount__inner">
+                <img src="/pay_al.png" alt="">
+                <p>150</p>
+              </div>
+              <p class="pay-amount__text"><sub>Y</sub> 700</p>
+            </div>
+
+          </div>
 
 
           <span class="btn mb-25" @click="checkUserData" >下一步注册</span>
@@ -39,11 +93,7 @@
 
 
         </div>
-        <div style="align-items: flex-start" class="auth-form__block">
-          <p>学校将发布促销代码以获取更多奖金。</p>
-          <p>请输入四个字符的数字（0-9）作为密码。</p>
-          <p>付款后，您的注册确认信将发送到您的邮件中。</p>
-        </div>
+
 
 
 
@@ -79,6 +129,8 @@
   export default {
     data() {
       return {
+        pay_type:'ali',
+        pay_amount:'150',
         regActive: true,
         loginActive: false,
         regComplete: false,

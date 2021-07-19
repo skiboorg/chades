@@ -172,7 +172,7 @@
     </section>
     <section class="steps-cover" >
       <div class="container">
-        <h3  class="section-header text-center steps-header">如何在我们的平台上完成学习</h3>
+        <h3  class="section-header text-center steps-header">如何更好的使用我们的平台</h3>
         <div class="steps-new">
           <div class="step-number step-1-number"><p>1</p></div>
           <p class="step-1-text">注册并创建一个有孩子学习进度<br>的个人账号</p>
@@ -183,7 +183,7 @@
           <img class="step-img-1" src="/sn1.png" alt="">
 
           <div class="step-number step-3-number"><p>3</p></div>
-          <p class="step-3-text">分成课时的课程——每课时——<br>包含实践作业的酒店主题度</p>
+          <p class="step-3-text">分成课时的课程----<br>每课时包含在线作业批改答疑</p>
           <img class="step-img-2" src="/sn2.png" alt="">
           <div class="step-number step-4-number"><p>4</p></div>
           <p class="step-4-text">追溯学习进度和成<br>就，以及空闲时间<br>的益智游戏</p>
@@ -251,7 +251,7 @@
       <div class="container">
         <h3 class="section-header">我们的费用</h3>
         <div class="tarifs">
-          <div class="tarif round-block">
+          <div style="cursor: pointer" @click="$router.push('/entrance')" class="tarif round-block">
             <div class="tarif-number">
               <img src="/t1.png" alt="">
 
@@ -265,7 +265,7 @@
             <p class="tarif-price price-top mb-15">175¥ 每月一次</p>
             <nuxt-link class="btn btn-curved" to="/entrance">购买</nuxt-link>
           </div>
-          <div class="round-block best-tarif">
+          <div style="cursor: pointer" @click="$router.push('/entrance')" class="round-block best-tarif">
             <div class="corner-text">
               <p>畅销书</p>
             </div>
@@ -283,7 +283,7 @@
             <p class="best-tarif-price">135¥ 每月一次</p>
              <nuxt-link class="btn btn-curved" to="/entrance">购买</nuxt-link>
           </div>
-          <div class="tarif round-block">
+          <div style="cursor: pointer" @click="$router.push('/entrance')" class="tarif round-block">
             <div class="tarif-number">
               <img src="/t2.png" alt="">
 
@@ -298,7 +298,7 @@
             <p class="tarif-price ">99¥ 每月一次</p>
              <nuxt-link class="btn btn-curved" to="/entrance">购买</nuxt-link>
           </div>
-          <div class="round-block best-tarif vip">
+          <div style="cursor: pointer" @click="$router.push('/entrance')" class="round-block best-tarif vip">
             <div class="tarif-overlay">
               <img src="/tl.png" alt="">
               <p>将于十二月开放</p>

@@ -35,7 +35,7 @@
           <nuxt-link  to="/entrance" class="btn">登录或注册</nuxt-link>
         </div>
         <div v-else class="header-btn">
-          <span  @click="$auth.logout()" class="btn">从您的个人资料中删除</span>
+          <span  @click="$auth.logout()" class="btn">退出</span>
         </div>
 
         <div class="header-mobile-btn" @click="!menuOpen ? menuOpen=true : menuOpen=false" :class="{'mobileBtnActive':menuOpen}">
