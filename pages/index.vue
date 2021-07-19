@@ -332,7 +332,7 @@
                   <img src="/fb1.jpg" alt="">
                   <div class="feedback-item__header-name">
                     <p>春生王</p>
-                    <span>孩子从2020年9月开始学习</span>
+                    <span>孩子从2021年05月开始学习</span>
                   </div>
                 </div>
                 <p class="feedback-item__text">我的孩子已经在我们平台上学习一个月了，他比我更了解计算机的结构和工作原理！</p>
@@ -344,7 +344,7 @@
                   <img src="/fb2.jpg" alt="">
                   <div class="feedback-item__header-name">
                     <p>晓明陈</p>
-                    <span>孩子从2020年8月开始学习</span>
+                    <span>孩子从2021年05月开始学习</span>
                   </div>
                 </div>
                 <p class="feedback-item__text">儿子很开心，他在空闲时间学习有用的技能。这个学习系统很方便，不仓促，一切都清晰易懂。</p>
@@ -356,7 +356,7 @@
                   <img src="/fb3.jpg" alt="">
                   <div class="feedback-item__header-name">
                     <p>永生德</p>
-                    <span>孩子从2020年9月开始学习</span>
+                    <span>孩子从2021年06月开始学习</span>
                   </div>
                 </div>
                 <p class="feedback-item__text">我喜欢一切，我们将很快进入第二阶段的培训</p>
@@ -368,7 +368,7 @@
                   <img src="/fb4.png" alt="">
                   <div class="feedback-item__header-name">
                     <p>胜杨</p>
-                    <span>该孩子从2020年6月开始学习（进行封闭式测试）</span>
+                    <span>该孩子从2021年07月开始学习（进行封闭式测试）</span>
                   </div>
                 </div>
                 <p class="feedback-item__text">优秀的学习学校！ 这些课程具有挑战性和趣味性，需要学习许多不同的材料。</p>

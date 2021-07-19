@@ -13,8 +13,8 @@
 实体办公室地址：上海市松江区广富林路4855弄7号楼
     </p>
     <div class="grid2">
-       <img src="/a1.jpg" alt="">
-    <img src="/a2.jpg" alt="">
+       <img src="/q1.jpg" alt="">
+
     </div>
 
 
