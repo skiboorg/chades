@@ -571,9 +571,9 @@
 
         </div>
 
-        <el-divider></el-divider>
 
-          <p style="text-align: left">补货方法</p>
+
+          <p style="text-align: left; margin-bottom: 15px">补货方法</p>
 
           <div class="pay-types">
             <div @click="pay_type='ali'" class="pay-type" :class="{'active':pay_type==='ali'}">
@@ -584,7 +584,7 @@
             </div>
           </div>
 
-          <p style="text-align: left">充值金额</p>
+          <p style="text-align: left; margin-bottom: 15px">充值金额</p>
           <div class="pay-amounts">
             <div @click="pay_amount='1'" class="pay-amount" :class="{'active':pay_amount==='1'}">
               <div class="pay-amount__inner">
@@ -632,6 +632,8 @@
     },
     data() {
       return {
+        pay_type:'ali',
+        pay_amount:'1',
         callback:
           {
           name:'',
