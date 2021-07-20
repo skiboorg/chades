@@ -560,7 +560,7 @@
 
      <el-dialog
       :visible.sync="needPay"
-      width="30%"
+      width="50%"
       :close-on-click-modal="false"
       style="padding: 30px"
       :show-close="true"
@@ -571,7 +571,45 @@
 
         </div>
 
-        <p style="word-break: break-word;" class="text-center fs-36">need pay</p>
+        <el-divider></el-divider>
+
+          <p style="text-align: left">补货方法</p>
+
+          <div class="pay-types">
+            <div @click="pay_type='ali'" class="pay-type" :class="{'active':pay_type==='ali'}">
+              <img src="/pay_ali.png" alt="">
+            </div>
+            <div @click="pay_type='we'" class="pay-type" :class="{'active':pay_type==='we'}">
+              <img src="/pay_we.png" alt="">
+            </div>
+          </div>
+
+          <p style="text-align: left">充值金额</p>
+          <div class="pay-amounts">
+            <div @click="pay_amount='1'" class="pay-amount" :class="{'active':pay_amount==='1'}">
+              <div class="pay-amount__inner">
+                <p>1个月费用</p>
+              </div>
+              <p class="pay-amount__text"><sub>¥</sub> 175</p>
+              <p class="pay-amount__text1">每月一次</p>
+            </div>
+            <div @click="pay_amount='2'" class="pay-amount" :class="{'active':pay_amount==='2'}">
+              <div class="pay-amount__inner">
+                <p>6个月费用</p>
+              </div>
+              <p class="pay-amount__text"><sub>¥</sub> 810</p>
+              <p class="pay-amount__text1">135¥ 每月一次</p>
+            </div>
+            <div @click="pay_amount='3'" class="pay-amount" :class="{'active':pay_amount==='3'}">
+              <div class="pay-amount__inner">
+                <p>12个月费用</p>
+              </div>
+              <p class="pay-amount__text"><sub>¥</sub> 1188</p>
+              <p class="pay-amount__text1">99¥ 每月一次</p>
+            </div>
+
+
+          </div>
       </div>
       <span slot="footer" class="dialog-footer">
 <!--    <span @click="formSend=false" class="btn">ОК</span>-->
