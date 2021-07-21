@@ -564,8 +564,23 @@
       :close-on-click-modal="false"
       style="padding: 30px"
       :show-close="true"
-
       center>
+       <el-dialog
+        width="30%"
+        :visible.sync="qrModal"
+        append-to-body>
+         
+         <div class="text-center">
+           <img src="http://placehold.it/300" alt="">
+           <p>Lorem ipsum dolor sit.</p>
+
+            <p v-if="pay_amount==='1'" class="pay-amount__text"><sub>¥</sub> 175</p>
+            <p v-if="pay_amount==='2'" class="pay-amount__text"><sub>¥</sub> 810</p>
+            <p v-if="pay_amount==='3'" class="pay-amount__text"><sub>¥</sub> 1188</p>
+         </div>
+         
+         
+    </el-dialog>
       <div>
         <div class="text-center">
 
@@ -579,9 +594,9 @@
             <div @click="pay_type='ali'" class="pay-type" :class="{'active':pay_type==='ali'}">
               <img src="/pay_ali.png" alt="">
             </div>
-            <div @click="pay_type='we'" class="pay-type" :class="{'active':pay_type==='we'}">
-              <img src="/pay_we.png" alt="">
-            </div>
+<!--            <div @click="pay_type='we'" class="pay-type" :class="{'active':pay_type==='we'}">-->
+<!--              <img src="/pay_we.png" alt="">-->
+<!--            </div>-->
           </div>
 
           <p style="text-align: left; margin-bottom: 15px">充值金额</p>
@@ -610,6 +625,10 @@
 
 
           </div>
+        <div class="text-center">
+          <span class="btn " @click="payAction" >下一步注册</span>
+        </div>
+
       </div>
       <span slot="footer" class="dialog-footer">
 <!--    <span @click="formSend=false" class="btn">ОК</span>-->
@@ -642,6 +661,7 @@
           },
         needPay: this.$auth.loggedIn && !this.$auth.user.expiry_time ? true : false,
         c1DialogVisible: false,
+        qrModal: false,
         formSend: false,
         c2DialogVisible: false,
         c3DialogVisible: false,
@@ -668,6 +688,9 @@
      async sendForm(){
         const  response_banners= await this.$axios.post(`/api/v1/shool/new_cb/`,this.callback)
        this.formSend = true
+      },
+      payAction(){
+        this.qrModal = true
       }
     }
   };
