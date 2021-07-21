@@ -571,9 +571,12 @@
         append-to-body>
          
          <div class="text-center">
-           <img src="http://placehold.it/300" alt="">
-           <p>Lorem ipsum dolor sit.</p>
-
+           <img class="mb-15" src="http://placehold.it/300" alt="">
+           <div class="pay-amount__inner">
+           <p  v-if="pay_amount==='1'">1个月费用</p>
+           <p  v-if="pay_amount==='2'">6个月费用</p>
+           <p  v-if="pay_amount==='3'">12个月费用</p>
+           </div>
             <p v-if="pay_amount==='1'" class="pay-amount__text"><sub>¥</sub> 175</p>
             <p v-if="pay_amount==='2'" class="pay-amount__text"><sub>¥</sub> 810</p>
             <p v-if="pay_amount==='3'" class="pay-amount__text"><sub>¥</sub> 1188</p>
@@ -605,28 +608,28 @@
               <div class="pay-amount__inner">
                 <p>1个月费用</p>
               </div>
-              <p class="pay-amount__text"><sub>¥</sub> 175</p>
-              <p class="pay-amount__text1">每月一次</p>
+              <p class="pay-amount__text text-center"><sub>¥</sub> 175</p>
+<!--              <p class="pay-amount__text1">每月一次</p>-->
             </div>
             <div @click="pay_amount='2'" class="pay-amount" :class="{'active':pay_amount==='2'}">
               <div class="pay-amount__inner">
                 <p>6个月费用</p>
               </div>
-              <p class="pay-amount__text"><sub>¥</sub> 810</p>
-              <p class="pay-amount__text1">135¥ 每月一次</p>
+              <p class="pay-amount__text text-center"><sub>¥</sub> 810</p>
+<!--              <p class="pay-amount__text1">135¥ 每月一次</p>-->
             </div>
             <div @click="pay_amount='3'" class="pay-amount" :class="{'active':pay_amount==='3'}">
               <div class="pay-amount__inner">
                 <p>12个月费用</p>
               </div>
-              <p class="pay-amount__text"><sub>¥</sub> 1188</p>
-              <p class="pay-amount__text1">99¥ 每月一次</p>
+              <p class="pay-amount__text text-center"><sub>¥</sub> 1188</p>
+<!--              <p class="pay-amount__text1">99¥ 每月一次</p>-->
             </div>
 
 
           </div>
         <div class="text-center">
-          <span class="btn " @click="payAction" >下一步注册</span>
+          <span class="btn " @click="payAction" >点击购买</span>
         </div>
 
       </div>
