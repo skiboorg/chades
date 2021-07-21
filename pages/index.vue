@@ -263,7 +263,8 @@
               <li>国际标准注册证书</li>
             </ul>
             <p class="tarif-price price-top mb-15">175¥ 每月一次</p>
-            <nuxt-link  class="btn btn-curved" to="/entrance">购买</nuxt-link>
+            <a href="#" @click.prevent="needPay=true" class="btn btn-curved">购买</a>
+<!--            <nuxt-link  class="btn btn-curved" to="/entrance">购买</nuxt-link>-->
           </div>
           <div  class="round-block best-tarif">
             <div class="corner-text">
@@ -281,7 +282,7 @@
             </ul>
             <p class="best-tarif-price price-top">810¥</p>
             <p class="best-tarif-price">135¥ 每月一次</p>
-             <nuxt-link class="btn btn-curved" to="/entrance">购买</nuxt-link>
+            <a href="#" @click.prevent="needPay=true" class="btn btn-curved">购买</a>
           </div>
           <div  class="tarif round-block">
             <div class="tarif-number">
@@ -296,7 +297,7 @@
             </ul>
             <p class="tarif-price price-top">1188¥</p>
             <p class="tarif-price ">99¥ 每月一次</p>
-             <nuxt-link class="btn btn-curved" to="/entrance">购买</nuxt-link>
+            <a href="#" @click.prevent="needPay=true" class="btn btn-curved">购买</a>
           </div>
           <div  class="round-block best-tarif vip">
             <div class="tarif-overlay">
@@ -315,8 +316,8 @@
               <li>课程奖励材料</li>
             </ul>
             <p class="best-tarif-price price-top mb-15">599¥ 每月一次</p>
-            <nuxt-link class="btn btn-curved" to="/entrance">购买</nuxt-link>
 
+<a href="#" @click.prevent="needPay=true" class="btn btn-curved">购买</a>
           </div>
         </div>
       </div>
@@ -662,7 +663,8 @@
           email:'',
           text:''
           },
-        needPay: this.$auth.loggedIn && !this.$auth.user.expiry_time ? true : false,
+        //needPay: this.$auth.loggedIn && !this.$auth.user.expiry_time ? true : false,
+        needPay: false,
         c1DialogVisible: false,
         qrModal: false,
         formSend: false,
