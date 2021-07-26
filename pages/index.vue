@@ -596,7 +596,7 @@
 
           <div class="pay-types">
             <div @click="pay_type='ali'" class="pay-type" :class="{'active':pay_type==='ali'}">
-              <img src="/pay_ali.png" alt="">
+              <img src="/pay_we.png" alt="">
             </div>
 <!--            <div @click="pay_type='we'" class="pay-type" :class="{'active':pay_type==='we'}">-->
 <!--              <img src="/pay_we.png" alt="">-->
