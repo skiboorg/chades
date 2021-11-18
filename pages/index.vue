@@ -566,41 +566,21 @@
       style="padding: 30px"
       :show-close="true"
       center>
-       <el-dialog
-        width="30%"
-        :visible.sync="qrModal"
-        append-to-body>
-         
-         <div class="text-center">
-           <img class="mb-15" src="http://placehold.it/300" alt="">
-           <div class="pay-amount__inner">
-           <p  v-if="pay_amount==='1'">1个月费用</p>
-           <p  v-if="pay_amount==='2'">6个月费用</p>
-           <p  v-if="pay_amount==='3'">12个月费用</p>
-           </div>
-            <p v-if="pay_amount==='1'" class="pay-amount__text"><sub>¥</sub> 175</p>
-            <p v-if="pay_amount==='2'" class="pay-amount__text"><sub>¥</sub> 810</p>
-            <p v-if="pay_amount==='3'" class="pay-amount__text"><sub>¥</sub> 1188</p>
-         </div>
-         
-         
-    </el-dialog>
+
       <div>
         <div class="text-center">
-
+          text
         </div>
-
-
 
           <p style="text-align: left; margin-bottom: 15px">补货方法</p>
 
           <div class="pay-types">
             <div @click="pay_type='ali'" class="pay-type" :class="{'active':pay_type==='ali'}">
+              <img src="/pay_ali.png" alt="">
+            </div>
+            <div @click="pay_type='we'" style="cursor: not-allowed; opacity: .8" class="pay-type" :class="{'active':pay_type==='we1'}">
               <img src="/pay_we.png" alt="">
             </div>
-<!--            <div @click="pay_type='we'" class="pay-type" :class="{'active':pay_type==='we'}">-->
-<!--              <img src="/pay_we.png" alt="">-->
-<!--            </div>-->
           </div>
 
           <p style="text-align: left; margin-bottom: 15px">充值金额</p>
@@ -657,6 +637,7 @@
       return {
         pay_type:'ali',
         pay_amount:'1',
+        intervalId:null,
         callback:
           {
           name:'',
@@ -664,7 +645,7 @@
           text:''
           },
         //needPay: this.$auth.loggedIn && !this.$auth.user.expiry_time ? true : false,
-        needPay: false,
+        //needPay: false,
         c1DialogVisible: false,
         qrModal: false,
         formSend: false,
@@ -675,10 +656,10 @@
       };
     },
     computed:{
-      needPay1:{
+      needPay:{
        get(){
          if(this.$auth.loggedIn){
-          return !this.$auth.user.expiry_time
+          return new Date().toLocaleDateString() > new Date(this.$auth.user.expiry_time).toLocaleDateString()
         }else{
           return false
         }
@@ -694,9 +675,24 @@
         const  response_banners= await this.$axios.post(`/api/v1/shool/new_cb/`,this.callback)
        this.formSend = true
       },
-      payAction(){
-        this.qrModal = true
+      async payAction(){
+        const  response = await this.$axios.post(`/api/v1/shool/create_pay/`,{
+          period:this.pay_amount,
+          user_id:this.$auth.user.id
+        })
+        // console.log(response.data)
+        // window.open(response.data, '_blank').focus();
+        this.intervalId = setInterval(async function(){
+           await this.$auth.fetchUser()
+          console.log(this.$auth.user.expiry_time)
+          if(this.$auth.user.expiry_time){
+            clearInterval(this.intervalId)
+          }
+        }.bind(this), 3000);
       }
+    },
+    beforeDestroy() {
+
     }
   };
 </script>

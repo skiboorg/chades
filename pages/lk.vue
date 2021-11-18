@@ -204,8 +204,8 @@
         }
       }
     },
-    mounted() {
-      if (!this.$auth.user.expiry_time){
+    beforeMount() {
+      if (new Date().toLocaleDateString() > new Date(this.$auth.user.expiry_time).toLocaleDateString()){
         this.$router.push('/')
       }
     },
