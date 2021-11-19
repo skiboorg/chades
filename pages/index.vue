@@ -680,8 +680,8 @@
           period:this.pay_amount,
           user_id:this.$auth.user.id
         })
-        // console.log(response.data)
-        // window.open(response.data, '_blank').focus();
+        console.log(response.data)
+        window.open(response.data, '_blank').focus();
         this.intervalId = setInterval(async function(){
            await this.$auth.fetchUser()
           console.log(this.$auth.user.expiry_time)
